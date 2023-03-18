@@ -20,7 +20,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  var password , email;
+  var password , email,phoneNum,gender,dateOfBirth;
   bool? passwordVisible = false;
   GlobalKey<FormState>formstate = GlobalKey<FormState>();
 
@@ -52,7 +52,8 @@ class _SignUpState extends State<SignUp> {
           ).show();
           print("The account already exists for the email");
         }
-      }catch(e){
+      }
+      catch(e){
         print(e);
       }
     }else{

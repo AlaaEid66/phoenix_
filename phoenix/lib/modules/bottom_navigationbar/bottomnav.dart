@@ -42,7 +42,7 @@ class _BottomNavState extends State<BottomNav> {
         },
         items: const[
           Icon(Icons.home,color: Colors.grey,),
-          Icon(Icons.video_call,color: Colors.grey,),
+          Icon(Icons.ondemand_video,color: Colors.grey,),
           Icon(Icons.notifications,color: Colors.grey,),
           Icon(Icons.search,color: Colors.grey),
           Icon(Icons.perm_identity_rounded,color:Colors.grey)

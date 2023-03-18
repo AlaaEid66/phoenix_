@@ -1,3 +1,4 @@
+import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -9,8 +10,24 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.red,
+    return  SafeArea(
+      child: Scaffold(
+        backgroundColor: Colour('#FFFFFF'),
+        appBar: AppBar(
+          backgroundColor:Colour('#FFFFFF') ,
+         centerTitle:true,
+          title:Text(
+            'My Profile',
+          ),
+        ),
+         body: SingleChildScrollView(
+           child: Column(
+             children: [
+
+             ],
+           ),
+         ),
+      ),
     );
   }
 }
