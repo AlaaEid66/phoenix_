@@ -1,6 +1,9 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/modules/posts/post.dart';
+import 'package:phoenix/modules/posts/postdata.dart';
 import 'package:phoenix/modules/stories/storydata.dart';
+import 'package:phoenix/shared/components/component.dart';
 import 'package:phoenix/shared/components/story.dart';
 
 
@@ -14,7 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<StoryData> stories=[
     StoryData(
-      'Seif ali',
+      'Seif ahmed seif',
       'assets/images/s1.jpg',
     ),
     StoryData(
@@ -33,20 +36,22 @@ class _HomePageState extends State<HomePage> {
       'yehia ali',
        'assets/images/s1.jpg',
     ),
-    // StoryData(
-    //   'raneem ahmed',
-    //   "assets/images/s1.jpg",
-    // ),
   ];
   List<StoryDataProfile> story=[
     StoryDataProfile(
       'YourStory',
       avatarUrlProfile: 'assets/images/s1.jpg',
-    )
+    ),
   ];
-
-
-
+  List<PostData> post=[
+    PostData(
+        'assets/images/s1.jpg',
+        'Ali Magdy',
+        '10 Oct . 2022',
+        '''The second degree of burns should be treated
+        as soon as possible to reduce the risk of
+        infection and scarring.'''),
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -54,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colour('#FFFFFF'),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(14),
             child: Column(
               children: [
                 Container(
@@ -75,8 +80,8 @@ class _HomePageState extends State<HomePage> {
                      ],
                    ),
                  ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height*0.029,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -93,8 +98,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width:16,
+                    SizedBox(
+                      width:MediaQuery.sizeOf(context).width*0.052,
                     ),
                     SizedBox(
                       width: 320,
@@ -114,22 +119,104 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 24,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height*0.027,
                 ),
                 Row(
+                  mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                   children: [
-                    IconButton(
-                      iconSize:10,
-                      onPressed:(){},
-                      icon: Icon(Icons.ondemand_video,color:Colour('#505050')),
+                    Container(
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            iconSize:18,
+                            onPressed:(){},
+                            icon: Icon(Icons.videocam_outlined,color:Colour('#707070')),
+                          ),
+                          Text(
+                            'Live',
+                            style: TextStyle(
+                              textBaseline:TextBaseline.alphabetic,
+                              fontFamily:'Segoe UI',
+                              fontSize:12,
+                              color: Colour('#505050'),
+                              fontWeight:FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width:MediaQuery.of(context).size.width*0.04,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                     child: Row(
+                       children: [
+                         IconButton(
+                           onPressed:(){},
+                           iconSize: 16,
+                           icon:Icon(Icons.add_a_photo),
+                           color:Colour('#505050'),
+                         ),
+                         Text(
+                           'Photo/video',
+                           style: TextStyle(
+                             textBaseline:TextBaseline.alphabetic,
+                             fontFamily:'Segoe UI',
+                             fontSize:12,
+                             color: Colour('#505050'),
+                             fontWeight:FontWeight.w500,
+                           ),
+                         ),
+                       ],
+                     ),
+                    ),
+                    SizedBox(
+                      width:MediaQuery.of(context).size.width*0.04,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed:(){},
+                            iconSize: 16,
+                            icon:Icon(Icons.mood),
+                            color:Colour('#505050'),
+                          ),
+                          Text(
+                            'feeling',
+                            style: TextStyle(
+                              textBaseline:TextBaseline.alphabetic,
+                              fontFamily:'Segoe UI',
+                              fontSize:12,
+                              color: Colour('#505050'),
+                              fontWeight:FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width:MediaQuery.of(context).size.width*0.05,
+                    ),
+                    defButton(
+                      border:8,
+                      backgroundColor:Colour('#008894'),
+                      pressed:(){},
+                      text:'post',
+                      height: 26,
+                      width:60,
                     ),
                   ],
                 ),
+                postPage(post[0], context),
               ],
             ),
           ),
-        )
+        ),
       ),
     );
   }

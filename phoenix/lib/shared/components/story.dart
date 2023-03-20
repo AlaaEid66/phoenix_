@@ -1,4 +1,5 @@
- import 'package:flutter/cupertino.dart';
+ import 'package:colour/colour.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/modules/stories/storydata.dart';
  Widget storyButton(StoryData storyData,BuildContext context){
@@ -17,7 +18,7 @@ import 'package:phoenix/modules/stories/storydata.dart';
                width: 54,
                height: 54,
                decoration: BoxDecoration(
-                 border:Border.all(color:Colors.red,width:2),
+                 border:Border.all(color:Colour('#02FF00'),width:2),
                  borderRadius:BorderRadius.circular(50),
                  image: DecorationImage(
                    image:AssetImage('${storyData.avatarUrl}'),
@@ -68,6 +69,7 @@ import 'package:phoenix/modules/stories/storydata.dart';
                      width:18,
                      height: 18,
                      child: FloatingActionButton(
+                       backgroundColor: Colour('#02FF00'),
                        mini: true,
                          onPressed:(){},
                          child: const Icon(
@@ -82,7 +84,10 @@ import 'package:phoenix/modules/stories/storydata.dart';
            ),
          ),
         const SizedBox(height: 5,),
-         Expanded(child: Text('${storyDataProfile.userNameProfile}')),
+         Expanded(child: Text('${storyDataProfile.userNameProfile}',
+           overflow:TextOverflow.ellipsis,
+         ),
+         ),
        ],
      ) ,
    );
