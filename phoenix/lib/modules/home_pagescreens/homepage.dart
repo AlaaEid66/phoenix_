@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<StoryData> stories=[
     StoryData(
-      'Seif ahmed seif',
+      'Seif ahmed',
       'assets/images/s1.jpg',
     ),
     StoryData(
@@ -48,9 +48,7 @@ class _HomePageState extends State<HomePage> {
         'assets/images/s1.jpg',
         'Ali Magdy',
         '10 Oct . 2022',
-        '''The second degree of burns should be treated
-        as soon as possible to reduce the risk of
-        infection and scarring.'''),
+        'The second degree of burns should be treated\nas soon as possible to reduce the risk of\ninfection and scarring.'),
   ];
   @override
   Widget build(BuildContext context) {

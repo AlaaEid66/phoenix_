@@ -13,6 +13,7 @@ Widget postPage(PostData postData,BuildContext context){
   ];
   return SafeArea(
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -27,44 +28,83 @@ Widget postPage(PostData postData,BuildContext context){
                 ),
               ),
             ),
+            SizedBox(
+              width:MediaQuery.of(context).size.width*0.03,
+            ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('${postData.postUserName}'),
+                SizedBox(
+                  height:MediaQuery.of(context).size.height*0.0001,
+                ),
                 Text('${postData.postDate}'),
               ],
             ),
-            IconButton(
-              onPressed:(){},
-              color: Colour('#505050'),
-              icon:  const Icon(Icons.more_horiz),
-              iconSize: 18,
+            const SizedBox(
+              width:148,
             ),
-            IconButton(
-              iconSize: 10,
-              color: Colour('#505050'),
-              onPressed:(){},
-              icon:const Icon(Icons.close,
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                IconButton(
+                  onPressed:(){},
+                  color: Colour('#505050'),
+                  icon:  const Icon(Icons.more_horiz),
+                  iconSize: 18,
+                ),
+                IconButton(
+                  iconSize: 10,
+                  color: Colour('#505050'),
+                  onPressed:(){},
+                  icon:const Icon(Icons.close,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-        Text('${postData.postBody}'),
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: Text('${postData.postBody}',
+            style: TextStyle(
+              textBaseline: TextBaseline.alphabetic,
+              fontFamily: 'Segoe UI',
+              fontSize: 15,
+              fontWeight:FontWeight.normal,
+              color:Colour('#505050'),
+            ),
+          ),
+        ),
+        Padding(
+          padding:const EdgeInsets.only(
+            left: 14,
+            right: 10,
+          ),
+          child: Divider(
+            height: 1,
+            color: Colors.blueGrey.shade500,
+          ),
+        ),
+
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Row(
               children: [
                 IconButton(
-                  icon:Icon(Icons.repeat,
-                    size: 25,
+                  icon:const Icon(Icons.thumb_up_alt_rounded,
+                    size: 20,
                   ),
-                  color: Colors.grey.shade500,
+                  color: Colour('#505050'),
                   onPressed:(){} ,
                 ),
-                Text('25',
+                Text('Like',
                   style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Segoe UI',
+                    color:Colour('#505050'),
+                    fontSize: 14,
                   ),
                 ),
               ],
@@ -72,22 +112,33 @@ Widget postPage(PostData postData,BuildContext context){
             Row(
               children: [
                 IconButton(
-                  icon: Icon(Icons.favorite,color: Colors.red,),onPressed:(){},),
-                Text('45',
+                  icon:  Icon(Icons.edit_note_rounded,
+                    color:Colour('#505050') ,
+                  ),
+                  onPressed:(){},),
+                Text('Comment',
                   style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
+                    color:Colour('#505050'),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Segoe UI',
                   ),
                 ),
               ],
             ),
             Row(
               children: [
-                IconButton(icon: Icon(Icons.mode_comment_outlined,color: Colors.grey.shade500,),onPressed:(){},),
-                Text('15',
+                IconButton(
+                  icon:  Icon(Icons.share,
+                    color:Colour('#505050') ,
+                  ),
+                  onPressed:(){},),
+                Text('Share',
                   style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
+                    color:Colour('#505050'),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Segoe UI',
                   ),
                 ),
               ],
