@@ -17,29 +17,29 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<StoryData> stories=[
     StoryData(
-      'Seif ahmed',
+      'Seif',
       'assets/images/s1.jpg',
     ),
     StoryData(
-      'ali tarek',
+      'Ali',
       'assets/images/s1.jpg',
      ),
     StoryData(
-      'yousef ramy',
+      'Youssef',
       'assets/images/s1.jpg',
     ),
     StoryData(
-      'younis ahmed',
+      'Yehia',
       'assets/images/s1.jpg',
     ),
     StoryData(
-      'yehia ali',
+      'Younis',
        'assets/images/s1.jpg',
     ),
   ];
   List<StoryDataProfile> story=[
     StoryDataProfile(
-      'YourStory',
+      'Your Story',
       avatarUrlProfile: 'assets/images/s1.jpg',
     ),
   ];
@@ -49,6 +49,14 @@ class _HomePageState extends State<HomePage> {
         'Ali Magdy',
         '10 Oct . 2022',
         'The second degree of burns should be treated\nas soon as possible to reduce the risk of\ninfection and scarring.'),
+  ];
+  List<PostData> posts=[
+    PostData(
+        'assets/images/s1.jpg',
+        'Ahmed Mahdy',
+        '10 Oct . 2022',
+        'assets/images/first-aid.jpg',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -90,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                       height: 40,
                       decoration: BoxDecoration(
                         borderRadius:BorderRadius.circular(50),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image:AssetImage('assets/images/s1.jpg'),
                           fit: BoxFit.cover,
                         ),
@@ -210,7 +218,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-                postPage(post[0], context),
+                postWritten(post[0], context),
+                SizedBox(
+                  height:MediaQuery.of(context).size.height*0.002,
+                ),
+                postImage(posts[0], context),
               ],
             ),
           ),
