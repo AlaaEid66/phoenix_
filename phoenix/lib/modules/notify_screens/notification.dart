@@ -14,7 +14,7 @@ class _NotifyState extends State<Notify> {
     NotifyData(
       'assets/images/s1.jpg',
       'Ahmed Mahdy',
-      '''liked your post.."basics of
+      '''     liked your post.."basics of
        marketing''',
       '4 hours',
     ),
@@ -47,6 +47,7 @@ class _NotifyState extends State<Notify> {
         backgroundColor: Colour('#FFFFFF'),
         body: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
                notifyPage(notifies[0], context),
             ],

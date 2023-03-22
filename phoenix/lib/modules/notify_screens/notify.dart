@@ -68,6 +68,9 @@ Widget notifyPage(NotifyData notifyData,BuildContext context){
                   ],
                 ),
               ),
+              SizedBox(
+                width: 42,
+              ),
               IconButton(
                   onPressed:(){},
                   icon:const Icon(Icons.close),
@@ -81,6 +84,7 @@ Widget notifyPage(NotifyData notifyData,BuildContext context){
         ],
       ),
       Text('${notifyData.notifyDate}',
+        textAlign:TextAlign.center,
         style:TextStyle(
           fontFamily: 'Segoe UI',
           fontSize:10,
