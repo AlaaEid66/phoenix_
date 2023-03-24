@@ -49,7 +49,7 @@ class _WritePostState extends State<WritePost> {
         ),
         backgroundColor: Colour('#FFFFFF'),
         body:  SingleChildScrollView(
-          physics: ClampingScrollPhysics(parent: NeverScrollableScrollPhysics()),
+          physics: const ClampingScrollPhysics(parent: NeverScrollableScrollPhysics()),
           child: Container(
             height: MediaQuery.of(context).size.height,
             child: Column(

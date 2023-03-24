@@ -1,5 +1,9 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/modules/posts/post.dart';
+import 'package:phoenix/modules/posts/postdata.dart';
+import 'package:phoenix/modules/profile_screens/profiledata.dart';
+import 'package:phoenix/shared/components/component.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
@@ -8,25 +12,418 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  List<PostDataProfile> profile=[
+    PostDataProfile(
+        'assets/images/s1.jpg',
+        'Noah Talb'
+    )
+  ];
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
-      child: Scaffold(
-        backgroundColor: Colour('#FFFFFF'),
-        appBar: AppBar(
-          backgroundColor:Colour('#FFFFFF') ,
-         centerTitle:true,
-          title:Text(
-            'My Profile',
-          ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top:30,
         ),
-         body: SingleChildScrollView(
-           child: Column(
-             children: [
+        child: Scaffold(
+          backgroundColor: Colour('#FFFFFF'),
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor:Colour('#FFFFFF') ,
+           centerTitle:true,
+            title:Text(
+              'My Profile',
+              style:TextStyle(
+                color: Colour('#505050'),
+                fontFamily: 'Segoe UI',
+                fontSize: 18,
+                fontWeight:FontWeight.bold,
+              ),
+            ),
+            leading:IconButton(
+              color:Colour('#000000').withOpacity(0.5),
+              onPressed:()=>Navigator.pop(context),
+              icon:const Icon(Icons.arrow_back_ios_new_rounded),
+            ),
+          ),
+           body: SingleChildScrollView(
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.center,
+               children: [
+                 Center(child: profileData(profile[0], context)),
+                 const SizedBox(
+                   height: 8,
+                 ),
+                 Container(
+                   width: 120,
+                   height: 40,
+                   decoration: BoxDecoration(
+                     color:Colour('#008894'),
+                     borderRadius:BorderRadius.circular(10),
+                   ),
+                   child: MaterialButton(
+                     onPressed:(){},
+                     child: Text('Edit profile',
+                       style:TextStyle(
+                         color:Colour('#FFFFFF'),
+                         fontSize: 16,
+                         fontFamily:'Segoe UI',
+                         fontWeight: FontWeight.bold,
+                ),
+              ),
 
-             ],
+            ),
+          ),
+                 const SizedBox(
+                   height: 33,
+                 ),
+                 Card(
+                   color: Colour('#EFEFEF'),
+                   child: Column(
+                     children: [
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.mail_sharp,
+                               color: Colour('#505050'),
+                                 size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Messages',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.52,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.photo_size_select_large,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Degree of burn',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.4,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.group,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Friends',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.56,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.groups,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Communities(Groups)',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.26,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                     ],
+                   ),
+                 ),
+                 const SizedBox(
+                   height: 6,
+                 ),
+                 Card(
+                   color: Colour('#EFEFEF'),
+                   child: Column(
+                     children: [
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.abc,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Doctors',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.56,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.calendar_month_outlined,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'My appointments',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.35,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                     ],
+                   ),
+                 ),
+                 const SizedBox(
+                   height: 6,
+                 ),
+                 Card(
+                   color: Colour('#EFEFEF'),
+                   child: Column(
+                     children: [
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.bookmark,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Saved items',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.47,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.settings,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Setting',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.56,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                     ],
+                   ),
+                 ),
+                 const SizedBox(
+                   height: 6,
+                 ),
+                 Card(
+                   color: Colour('#EFEFEF'),
+                   child: Column(
+                     children: [
+                       Row(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(
+                               left: 24,
+                             ),
+                             child: Icon(Icons.exit_to_app,
+                               color: Colour('#505050'),
+                               size: 24,
+                             ),
+                           ),
+                           const SizedBox(
+                             width: 10,
+                           ),
+                           Text(
+                             'Logout',
+                             style:TextStyle(
+                               color: Colour('#505050'),
+                               fontWeight: FontWeight.bold,
+                               fontFamily: 'Segoe UI',
+                               fontSize:18,
+                             ),
+                           ),
+                           SizedBox(
+                             width:MediaQuery.of(context).size.width*0.56,
+                           ),
+                           IconButton(
+                             onPressed:(){},
+                             icon:const Icon(Icons.arrow_forward_ios_rounded),
+                             color:Colour('#505050'),
+                             iconSize: 24,
+                           ),
+                         ],
+                       ),
+                     ],
+                   ),
+                 ),
+               ],
+             ),
            ),
-         ),
+        ),
       ),
     );
   }

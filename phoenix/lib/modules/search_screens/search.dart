@@ -1,5 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/shared/components/component.dart';
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
 
@@ -55,7 +56,7 @@ class _SearchState extends State<Search> {
                         fontFamily: 'Segoe UI',
                         fontWeight: FontWeight.normal,
                         color: Colour('#505050'),
-                      )
+                      ),
                     ),
                   ),
                 ),
@@ -64,35 +65,56 @@ class _SearchState extends State<Search> {
             actions: [
               IconButton(
                 onPressed:(){},
-                icon:Icon(Icons.line_style),
+                icon:const Icon(Icons.line_style),
               ),
             ],
           ),
           body:SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Container(
-                      decoration:BoxDecoration(
-                        color: Colour('#EFEFEF'),
-                        
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 33,
+                    top: 16,
 
-                      child:TextButton(
-                         child: Text('All',
-                           style:TextStyle(
-                             fontSize: 16,
-                             fontFamily: 'Segoe UI',
-                             fontWeight: FontWeight.normal,
-                             color:Colour('#505050'),
-                           ),
-                         ),
-                        onPressed:(){},
+                  ),
+                  child: Row(
+                    children: [
+                      searchButton(text:'All', pressed:(){},width:48),
+                      const SizedBox(
+                        width: 8,
                       ),
-                    ),
+                      searchButton(text: 'People', pressed: (){},width:82),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      searchButton(text: 'Groups', pressed: (){},width:82),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      searchButton(text: 'Pages', pressed: (){},width:80),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 77,
+                    top: 10,
 
-                  ],
+                  ),
+                  child: Row(
+                    children: [
+                      searchButton(text:'Photos', pressed:(){},width:77),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      searchButton(text: 'Videos', pressed: (){},width:73),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      searchButton(text: 'Posts', pressed: (){},width:61),
+                    ],
+                  ),
                 ),
               ],
             ),
