@@ -10,3 +10,12 @@ class PostData{
       this.postBody,
       );
 }
+class PostDataProfile{
+  String? avatarUrlPostProfile;
+  String? postUserNameProfile;
+  PostDataProfile(
+      this.avatarUrlPostProfile,
+      this.postUserNameProfile,
+      );
+}
+

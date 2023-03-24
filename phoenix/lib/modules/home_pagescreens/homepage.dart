@@ -2,9 +2,10 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/modules/posts/post.dart';
 import 'package:phoenix/modules/posts/postdata.dart';
+import 'package:phoenix/modules/posts/write_post.dart';
 import 'package:phoenix/modules/stories/storydata.dart';
 import 'package:phoenix/shared/components/component.dart';
-import 'package:phoenix/shared/components/story.dart';
+import 'package:phoenix/modules/stories/story.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -111,6 +112,7 @@ class _HomePageState extends State<HomePage> {
                       width: 320,
                       height: 70,
                       child: TextFormField(
+                        onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const WritePost())),
                         decoration: InputDecoration(
                           hintText:'What\'s on your mind ?',
                           hintStyle:TextStyle(
@@ -119,7 +121,6 @@ class _HomePageState extends State<HomePage> {
                             fontSize:16,
                             fontWeight:FontWeight.normal,
                           ),
-
                         ),
                       ),
                     ),
@@ -158,26 +159,26 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       alignment: Alignment.center,
-                     child: Row(
-                       children: [
-                         IconButton(
-                           onPressed:(){},
-                           iconSize: 16,
-                           icon:Icon(Icons.add_a_photo),
-                           color:Colour('#505050'),
-                         ),
-                         Text(
-                           'Photo/video',
-                           style: TextStyle(
-                             textBaseline:TextBaseline.alphabetic,
-                             fontFamily:'Segoe UI',
-                             fontSize:12,
-                             color: Colour('#505050'),
-                             fontWeight:FontWeight.w500,
-                           ),
-                         ),
-                       ],
-                     ),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed:(){},
+                            iconSize: 16,
+                            icon:Icon(Icons.add_a_photo),
+                            color:Colour('#505050'),
+                          ),
+                          Text(
+                            'Photo/video',
+                            style: TextStyle(
+                              textBaseline:TextBaseline.alphabetic,
+                              fontFamily:'Segoe UI',
+                              fontSize:12,
+                              color: Colour('#505050'),
+                              fontWeight:FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       width:MediaQuery.of(context).size.width*0.04,

@@ -404,3 +404,33 @@ Widget postVideos(PostData postData,BuildContext context){
     ),
   );
 }
+
+
+Widget writePost(PostDataProfile postDataProfile,BuildContext context){
+  return  Row(
+    children: [
+      Container(
+        width:40,
+        height: 40,
+        decoration: BoxDecoration(
+          borderRadius:BorderRadius.circular(50),
+          image: DecorationImage(
+            image:AssetImage('${postDataProfile.avatarUrlPostProfile}'),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+     const SizedBox(
+        width: 9,
+      ),
+      Text('${postDataProfile.postUserNameProfile}',
+        style:TextStyle(
+          fontFamily:'Segoe UI',
+          fontSize: 18,
+          fontWeight:FontWeight.w600,
+          color:Colour('#505050'),
+        ),
+      ),
+    ],
+  );
+}

@@ -51,7 +51,7 @@ class _WatchVideosState extends State<WatchVideos> {
           ),
           leading:IconButton(
             color:Colour('#000000').withOpacity(0.5),
-            onPressed:(){},
+            onPressed:()=>Navigator.pop(context),
             icon:Icon(Icons.arrow_back_ios_new_rounded),
           ),
         ),
