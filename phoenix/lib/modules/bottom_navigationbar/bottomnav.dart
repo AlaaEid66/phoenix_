@@ -48,6 +48,13 @@ class _BottomNavState extends State<BottomNav> {
           Icon(Icons.perm_identity_rounded,color:Colors.grey)
         ],
       ),
+      floatingActionButton:FloatingActionButton(
+        backgroundColor: Colour('#008894'),
+        onPressed: (){},
+        child:const Icon(
+          Icons.smart_toy_outlined,
+        ),
+      ),
     );
   }
 }

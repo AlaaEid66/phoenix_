@@ -14,7 +14,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  bool ?passwordVisible = false;
+  bool ?passwordVisible = true;
   var email;
   var password;
   var emailController=TextEditingController();
@@ -57,52 +57,62 @@ class _SignInState extends State<SignIn> {
   }
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body:SingleChildScrollView(
-          child: Form(
-            key: formstate,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 140,
-                    left: 140,
-                    top: 88,
-                    bottom: 16,
-                  ),
-                  child: Container(
-                    width: 120,
-                    height: 120,
-                    child:const CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: Image(
-                        image:AssetImage('assets/images/logo.jpg'),
-                      ),
+    final MediaQueryData mediaQueryData=MediaQuery.of(context);
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body:SingleChildScrollView(
+        padding: mediaQueryData.viewInsets ,
+        physics: const BouncingScrollPhysics(),
+        reverse: true,
+        child: Form(
+          key: formstate,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  right: 140,
+                  left: 140,
+                  top: 90,
+                  bottom: 8,
+                ),
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  child:const CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Image(
+                      image:AssetImage('assets/images/logo.jpg'),
                     ),
                   ),
                 ),
-                Padding(
+              ),
+              Center(
+                child: Padding(
                   padding: const EdgeInsets.only(
-                    bottom: 80,
-                    left: 135,
-                    right: 135,
+                    bottom: 70,
                   ),
-                  child:Text(
+                  child: Text(
                     'Sign In',
                     style:TextStyle(
                       color: Colour("#008894"),
-                      fontSize: 40,
-                      fontWeight:FontWeight.w900,
+                      fontSize: 32,
+                      fontWeight:FontWeight.bold,
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 36,
-                    right: 35,
-                    bottom: 12,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 36,
+                  right: 35,
+                  bottom: 12,
+                ),
+                child: Container(
+                  width: 304,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color:Colour('#EFEFEF'),
+                    borderRadius:BorderRadius.circular(10),
                   ),
                   child: TextFormField(
                     validator: (val) {
@@ -118,15 +128,17 @@ class _SignInState extends State<SignIn> {
                       return null;
                     },
                     controller:emailController,
-
                     keyboardType:TextInputType.emailAddress,
                     decoration:InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'Password',
+                      labelText: 'Email',
                       labelStyle: TextStyle(
-                        color: Colour('#000000').withOpacity(0.04),
+                        fontSize: 18,
+                        fontFamily: 'Segoe UI',
+                        fontWeight: FontWeight.normal,
+                        color: Colour('#000000').withOpacity(0.4),
                       ),
                       prefixIcon:const Icon(
                         Icons.email,
@@ -134,142 +146,153 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 36,
-                    right: 35,
-                  ),
-                  child: Container(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 36,
+                  right: 35,
+                ),
+                child: Container(
+                  width: 304,
+                  height: 48,
+                  decoration: BoxDecoration(
                     color:Colour('#EFEFEF'),
-                    child: TextFormField(
-                      validator: (val) {
-                        if(val!.isEmpty){
-                          return("please enter your password");
-                        }
-                        if (val.length > 100) {
-                          return "Password can't to be larger than 100 letter";
-                        }
-                        if (val.length < 4) {
-                          return "Password can't to be less than 4 letter";
-                        }
-                        return null;
-                      },
-
-                      obscureText: passwordVisible!,
-                      decoration:InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText: 'Password',
-                        labelStyle: TextStyle(
-                          color: Colour('#000000').withOpacity(0.04),
-                        ),
-                        prefixIcon:const Icon(
-                          Icons.lock_outline_sharp,
-                        ),
-                      ),
-                    ),
+                    borderRadius:BorderRadius.circular(10),
                   ),
-                ),
-
-
-
-
-
-
-
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 226,
-                    top: 6,
-                    right: 41,
-                  ),
-                  child: TextButton(
-                    child:Text(
-                      'Forget Password?',
-                      style:TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color:Colour('#505050'),
-                      ),
-                    ),
-                    onPressed:(){},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 36,
-                    right: 35,
-                    top: 48,
-                    bottom: 16,
-                  ),
-                  child: defButton(
-                    backgroundColor: Colour('#008894'),
-                    fontSize: 18,
-                    text: 'Sign In',
-                    pressed: ()async{
-                      if(formstate.currentState!.validate()){
-                        Navigator.push(context,MaterialPageRoute(builder:(_)=>BottomNav()));
-
+                  child: TextFormField(
+                    validator: (val) {
+                      if(val!.isEmpty){
+                        return("please enter your password");
                       }
-                      UserCredential ?response = await signIn();
-                      if(response != null){
-                        print("Login Done");
-
-                      }else{
-                        print('Sign Up Failed');
+                      if (val.length > 100) {
+                        return "Password can't to be larger than 100 letter";
                       }
+                      if (val.length < 4) {
+                        return "Password can't to be less than 4 letter";
+                      }
+                      return null;
                     },
-                  ),
-                ),
-                Container(
-                  width: 370,
-                  height: 50,
-                  color:Colors.white60,
-                  child: Material(
-                    borderRadius:BorderRadius.circular(16),
-                    child: MaterialButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 5,
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 30,
-                              child:const Image(
-                                image:AssetImage('assets/images/pic2.png'),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal:18,
-                              ),
-                              child: Text(
-                                'Sign In with Google',
-                                style:TextStyle(
-                                  fontSize: 20,
-                                  color: Colour('#505050'),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+
+                    obscureText: passwordVisible!,
+                    decoration:InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius:BorderRadius.circular(10),
+                      ),
+                      labelText: 'Password',
+                      labelStyle: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Segoe UI',
+                        fontWeight: FontWeight.normal,
+                        color: Colour('#000000').withOpacity(0.4),
+                      ),
+                      prefixIcon:const Icon(
+                        Icons.lock_outline_sharp,
                       ),
                     ),
                   ),
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 226,
+                  top: 3,
+                  right: 41,
+                ),
+                child: TextButton(
+                  child:Text(
+                    'Forget Password?',
+                    style:TextStyle(
+                      fontFamily: 'Segoe UI',
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                  onPressed:(){},
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 36,
+                  right: 35,
+                  top: 40,
+                  bottom: 16,
+                ),
+                child: defButton(
+                  width: 304,
+                  backgroundColor: Colour('#008894'),
+                  fontSize: 18,
+                  text: 'Sign In',
+                  pressed: ()async{
+                    if(formstate.currentState!.validate()){
+                      Navigator.push(context,MaterialPageRoute(builder:(_)=>BottomNav()));
 
-                Row(
+                    }
+                    UserCredential ?response = await signIn();
+                    if(response != null){
+                      print("Login Done");
+
+                    }else{
+                      print('Sign Up Failed');
+                    }
+                  },
+                ),
+              ),
+              Container(
+                width: 304,
+                height: 48,
+                color:Colors.white60,
+                child: Material(
+                  borderRadius:BorderRadius.circular(16),
+                  child: MaterialButton(
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 5,
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 28,
+                            height: 28,
+                            child:const Image(
+                              image:AssetImage('assets/images/pic2.png'),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal:18,
+                            ),
+                            child: Text(
+                              'Sign In with Google',
+                              style:TextStyle(
+                                fontFamily: 'Segoe UI',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colour('#505050'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 16,
+                ),
+                child: Row(
                   mainAxisAlignment:MainAxisAlignment.center,
                   children: [
                     const Text(
                       'Don\'t have an account?',
                       style:TextStyle(
-                        fontSize:17,
-                        fontWeight:FontWeight.w400,
+                        fontSize:14,
+                        fontWeight:FontWeight.normal,
+                        fontFamily: 'Segoe UI'
                       ),
                     ),
                     TextButton(
@@ -277,16 +300,22 @@ class _SignInState extends State<SignIn> {
                       child:Text(
                         'sign up',
                         style:TextStyle(
-                          fontSize:19,
-                          fontWeight:FontWeight.w800,
+                          fontSize:14,
+                          fontFamily: 'Segoe UI',
+                          fontWeight:FontWeight.bold,
                           color:Colour('#008894'),
                         ),
                       ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Padding(
+                padding:EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+              ),
+            ],
           ),
         ),
       ),

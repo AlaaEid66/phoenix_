@@ -5,6 +5,7 @@ import 'package:phoenix/modules/posts/post.dart';
 import 'package:phoenix/modules/posts/postdata.dart';
 import 'package:phoenix/modules/profile_screens/profiledata.dart';
 import 'package:phoenix/modules/save_items/saved_items.dart';
+import 'package:phoenix/modules/settings/setting_page.dart';
 import 'package:phoenix/shared/components/component.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -235,7 +236,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              padding: const EdgeInsets.only(
                                left: 18,
                              ),
-                             child: Icon(Icons.medication,
+                             child: Icon(Icons.medication_liquid_sharp,
                                color: Colour('#505050'),
                                size: 24,
                              ),
@@ -368,7 +369,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              width:MediaQuery.of(context).size.width*0.57,
                            ),
                            IconButton(
-                             onPressed:(){},
+                             onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const Setting())),
                              icon:const Icon(Icons.arrow_forward_ios_rounded),
                              color:Colour('#505050'),
                              iconSize: 24,
@@ -397,17 +398,20 @@ class _ProfilePageState extends State<ProfilePage> {
                        const SizedBox(
                          width: 4,
                        ),
-                       Text(
-                         'Logout',
-                         style:TextStyle(
-                           color: Colour('#505050'),
-                           fontWeight: FontWeight.bold,
-                           fontFamily: 'Segoe UI',
-                           fontSize:18,
+                       TextButton(
+                         onPressed: (){},
+                         child: Text(
+                           'Logout',
+                           style:TextStyle(
+                             color: Colour('#505050'),
+                             fontWeight: FontWeight.bold,
+                             fontFamily: 'Segoe UI',
+                             fontSize:18,
+                           ),
                          ),
                        ),
                        SizedBox(
-                         width:MediaQuery.of(context).size.width*0.56,
+                         width:MediaQuery.of(context).size.width*0.53,
                        ),
                        IconButton(
                          onPressed:(){},
@@ -417,6 +421,9 @@ class _ProfilePageState extends State<ProfilePage> {
                        ),
                      ],
                    ),
+                 ),
+                const SizedBox(
+                   height: 55,
                  ),
                ],
              ),

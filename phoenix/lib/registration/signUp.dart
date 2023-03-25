@@ -23,7 +23,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
 
   var password , email,phoneNum,gender,dateOfBirth;
-  bool? passwordVisible = false;
+  bool? passwordVisible = true;
   GlobalKey<FormState>formState = GlobalKey<FormState>();
   String? selectGender ;
   TextEditingController genderSelected= TextEditingController();
@@ -74,8 +74,10 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor:Colors.white,
         body: SingleChildScrollView(
+          reverse: true,
           child: Form(
             key: formState,
             child: Column(
@@ -105,8 +107,8 @@ class _SignUpState extends State<SignUp> {
                     'Sign Up',
                     style:TextStyle(
                       color:Colour('#008894'),
-                      fontSize: 40,
-                      fontWeight:FontWeight.w900,
+                      fontSize: 32,
+                      fontWeight:FontWeight.bold,
                     ),
                   ),
                 ),
@@ -140,7 +142,7 @@ class _SignUpState extends State<SignUp> {
                         border: OutlineInputBorder(
                           borderRadius:BorderRadius.circular(10),
                         ),
-                        labelText: 'E-mail',
+                        labelText: 'Email',
                         labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
@@ -209,7 +211,6 @@ class _SignUpState extends State<SignUp> {
                         }
                         return null;
                       },
-
                       obscureText: passwordVisible!,
                       decoration:InputDecoration(
                         border: OutlineInputBorder(
@@ -433,6 +434,11 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                   ],
+                ),
+                Padding(
+                  padding:EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
                 ),
            ],
             ),
