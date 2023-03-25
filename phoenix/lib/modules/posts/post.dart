@@ -1,5 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/shared/components/consts.dart';
 import 'postdata.dart';
 
 Widget postWritten(PostData postData,BuildContext context){
@@ -366,8 +367,10 @@ Widget postVideos(PostData postData,BuildContext context){
                   icon:const Icon(Icons.thumb_up_alt_rounded,
                     size: 20,
                   ),
-                  color: Colour('#505050'),
-                  onPressed:(){} ,
+                  color: isLikedButtonClicked?Colors.blue:Colour('#505050'),
+                  onPressed:(){
+                    isLikedButtonClicked=!isLikedButtonClicked;
+                  } ,
                 ),
                 Text('Like',
                   style: TextStyle(
@@ -419,7 +422,6 @@ Widget postVideos(PostData postData,BuildContext context){
     ),
   );
 }
-
 
 Widget writePost(PostDataProfile postDataProfile,BuildContext context){
   return  Row(

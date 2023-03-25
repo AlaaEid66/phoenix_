@@ -127,7 +127,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                         TextButton(
                           onPressed: () {
                             _controller.jumpTo(0);
-                            // _controller.jumpToPage(2);
+
                           },
                           style: TextButton.styleFrom(
                             elevation: 0,
@@ -156,7 +156,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                             child: MaterialButton(
                               onPressed: () {
                                 _controller.nextPage(
-                                  duration: const Duration(milliseconds: 200),
+                                  duration: const Duration(milliseconds: 2),
                                   curve: Curves.easeIn,
                                 );
                               },

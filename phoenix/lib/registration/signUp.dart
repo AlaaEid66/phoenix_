@@ -290,7 +290,14 @@ class _SignUpState extends State<SignUp> {
                                   genderSelected.text=(genderList[index]).toString();
                                 });
                               },
-                              title:Text(genderList[index]),
+                              title:Text(genderList[index],
+                                style:TextStyle(
+                                  fontFamily: 'Segoe UI',
+                                  fontSize:18,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colour('#000000').withOpacity(0.4),
+                                ),
+                              ),
                             );
                           }),
                         ),
