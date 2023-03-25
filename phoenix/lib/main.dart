@@ -13,8 +13,6 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    // double screenWidth= MediaQuery.of(context).size.width;
-    // double screenHeight= MediaQuery.of(context).size.height;
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,

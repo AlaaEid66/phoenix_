@@ -80,14 +80,14 @@ Widget notifyLikeNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                 const  SizedBox(
-                    width: 50,
+                 const SizedBox(
+                    width: 34,
                   ),
                   IconButton(
                       onPressed:(){},
                       icon:const Icon(Icons.close),
                     color: Colour('#505050'),
-                    iconSize: 15,
+                    iconSize: 20,
                   ),
                 ],
               ),
@@ -189,14 +189,14 @@ Widget notifyCommentNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  const  SizedBox(
-                    width: 47,
+                  const SizedBox(
+                    width: 27,
                   ),
                   IconButton(
                     onPressed:(){},
                     icon:const Icon(Icons.close),
                     color: Colour('#505050'),
-                    iconSize: 15,
+                    iconSize: 20,
                   ),
                 ],
               ),
@@ -305,13 +305,13 @@ Widget notifyAddFriendNew(NotifyData notifyData,BuildContext context){
                     ),
                   ),
                   const  SizedBox(
-                    width: 80,
+                    width: 54,
                   ),
                   IconButton(
                     onPressed:(){},
                     icon:const Icon(Icons.close),
                     color: Colour('#505050'),
-                    iconSize: 15,
+                    iconSize: 20,
                   ),
                 ],
               ),
@@ -416,13 +416,13 @@ Widget notifyLikeEarlier(NotifyData notifyData,BuildContext context){
                     ),
                   ),
                   const  SizedBox(
-                    width: 50,
+                    width: 35,
                   ),
                   IconButton(
                     onPressed:(){},
                     icon:const Icon(Icons.close),
                     color: Colour('#505050'),
-                    iconSize: 15,
+                    iconSize: 20,
                   ),
                 ],
               ),
@@ -525,13 +525,13 @@ Widget notifyCommentEarlier(NotifyData notifyData,BuildContext context){
                     ),
                   ),
                   const  SizedBox(
-                    width: 47,
+                    width: 30,
                   ),
                   IconButton(
                     onPressed:(){},
                     icon:const Icon(Icons.close),
                     color: Colour('#505050'),
-                    iconSize: 15,
+                    iconSize: 20,
                   ),
                 ],
               ),
@@ -640,13 +640,13 @@ Widget notifyAddFriendEarlier(NotifyData notifyData,BuildContext context){
                     ),
                   ),
                   const  SizedBox(
-                    width: 80,
+                    width: 60,
                   ),
                   IconButton(
                     onPressed:(){},
                     icon:const Icon(Icons.close),
                     color: Colour('#505050'),
-                    iconSize: 15,
+                    iconSize: 20,
                   ),
                 ],
               ),

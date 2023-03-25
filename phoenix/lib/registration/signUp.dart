@@ -1,13 +1,14 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
-
 import 'package:colour/colour.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:dropdownfield2/dropdownfield2.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:phoenix/login/signIn.dart';
-import 'package:phoenix/modules/home_pagescreens/homepage.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/shared/components/component.dart';
+
 
 
 class SignUp extends StatefulWidget {
@@ -20,13 +21,21 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+
   var password , email,phoneNum,gender,dateOfBirth;
   bool? passwordVisible = false;
-  GlobalKey<FormState>formstate = GlobalKey<FormState>();
+  GlobalKey<FormState>formState = GlobalKey<FormState>();
+  String? selectGender ;
+  TextEditingController genderSelected= TextEditingController();
+  List<String> genderList=[
+    'Male',
+    'Female',
+  ];
+  bool displayGenderList=false;
 
   signUp()async{
 
-    var formdata =formstate.currentState;
+    var formdata =formState.currentState;
     if (formdata!.validate()){
       print('Valid');
       formdata.save();
@@ -68,13 +77,12 @@ class _SignUpState extends State<SignUp> {
         backgroundColor:Colors.white,
         body: SingleChildScrollView(
           child: Form(
-            key: formstate,
+            key: formState,
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 100,
-                    vertical: 20,
+                  padding: const EdgeInsets.only(
+                     top: 40,
                   ),
                   child: Center(
                     child: Container(
@@ -105,11 +113,11 @@ class _SignUpState extends State<SignUp> {
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
-                    vertical: 10,
                   ),
                   child: Container(
                     color:Colour('#EFEFEF'),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       onSaved: (val){
                         email = val;
                       },
@@ -133,8 +141,16 @@ class _SignUpState extends State<SignUp> {
                           borderRadius:BorderRadius.circular(10),
                         ),
                         labelText: 'E-mail',
-                        prefixIcon:const Icon(
+                        labelStyle: TextStyle(
+                          fontFamily: 'Segoe UI',
+                          fontSize:18,
+                          fontWeight: FontWeight.normal,
+                          color: Colour('#000000').withOpacity(0.4),
+                        ),
+                        prefixIcon:Icon(
                           Icons.mail,
+                          size: 26,
+                          color: Colour('#000000').withOpacity(0.4),
                         ),
                       ),
                     ),
@@ -148,14 +164,23 @@ class _SignUpState extends State<SignUp> {
                   child: Container(
                     color:Colour('#EFEFEF'),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       keyboardType:TextInputType.phone,
                       decoration:InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius:BorderRadius.circular(10),
                         ),
                         labelText: 'Phone Number',
-                        prefixIcon:const Icon(
+                        labelStyle: TextStyle(
+                          fontFamily: 'Segoe UI',
+                          fontSize:18,
+                          fontWeight: FontWeight.normal,
+                          color: Colour('#000000').withOpacity(0.4),
+                        ),
+                        prefixIcon:Icon(
                           Icons.phone_iphone_rounded,
+                          size: 26,
+                          color: Colour('#000000').withOpacity(0.4),
                         ),
                       ),
                     ),
@@ -168,6 +193,7 @@ class _SignUpState extends State<SignUp> {
                   child: Container(
                     color:Colour('#EFEFEF'),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       onSaved: (val){
                         password = val;
                       },
@@ -190,8 +216,16 @@ class _SignUpState extends State<SignUp> {
                           borderRadius:BorderRadius.circular(10),
                         ),
                         labelText: 'Password',
-                        prefixIcon:const Icon(
+                        labelStyle: TextStyle(
+                          fontFamily: 'Segoe UI',
+                          fontSize:18,
+                          fontWeight: FontWeight.normal,
+                          color: Colour('#000000').withOpacity(0.4),
+                        ),
+                        prefixIcon: Icon(
                           Icons.lock_outline_sharp,
+                          size: 26,
+                          color: Colour('#000000').withOpacity(0.4),
                         ),
                       ),
                     ),
@@ -202,72 +236,111 @@ class _SignUpState extends State<SignUp> {
                     horizontal: 36,
                     vertical: 10,
                   ),
-                  child: Container(
-                    color:Colour('#EFEFEF'),
-                    child: TextFormField(
-                      decoration:InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText:'Gender',
-                        prefixIcon:const Icon(
-                          Icons.transgender,
+                  child: Column(
+                    children: [
+                      Container(
+                        color:Colour('#EFEFEF'),
+                        child: TextFormField(
+                          controller: genderSelected,
+                          textInputAction: TextInputAction.next,
+                          keyboardType:TextInputType.text,
+                          decoration:InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius:BorderRadius.circular(10),
+                            ),
+                            labelText: 'Gender',
+                            labelStyle: TextStyle(
+                                fontFamily: 'Segoe UI',
+                                fontSize:18,
+                                fontWeight: FontWeight.normal,
+                                color: Colour('#000000').withOpacity(0.4)
+                            ),
+                            suffixIcon:IconButton(
+                              icon: const Icon(Icons.arrow_drop_down_sharp),
+                              onPressed:(){
+                                setState(() {
+                                  displayGenderList=!displayGenderList;
+                                });
+                              },
+                              iconSize:24,
+                              color:Colour('#000000').withOpacity(0.4),
+                            ),
+                            prefixIcon:Icon(
+                              Icons.transgender_sharp,
+                              size: 25,
+                              color: Colour('#000000').withOpacity(0.4),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      displayGenderList?
+                      Container(
+                        height: 100,
+                        width: 400,
+                        decoration: BoxDecoration(
+                          color:Colour('#EFEFEF'),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: ListView.builder(
+                          itemCount: genderList.length,
+                          itemBuilder: ((context,index){
+                            return ListTile(
+                              onTap:(){
+                                setState(() {
+                                  genderSelected.text=(genderList[index]).toString();
+                                });
+                              },
+                              title:Text(genderList[index]),
+                            );
+                          }),
+                        ),
+                      ):SizedBox(),
+                    ],
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
-                    vertical: 10,
                   ),
                   child: Container(
                     color:Colour('#EFEFEF'),
                     child: TextFormField(
+                      textInputAction: TextInputAction.done,
                       keyboardType:TextInputType.number,
                       decoration:InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius:BorderRadius.circular(10),
                         ),
                         labelText: 'Date of birth',
-                        prefixIcon:const Icon(
-                          Icons.date_range_rounded ,
+                        labelStyle: TextStyle(
+                          fontFamily: 'Segoe UI',
+                          fontSize:18,
+                          fontWeight: FontWeight.normal,
+                          color: Colour('#000000').withOpacity(0.4)
+                        ),
+                        prefixIcon:Icon(
+                          Icons.calendar_month_outlined,
+                          size: 25,
+                          color: Colour('#000000').withOpacity(0.4),
                         ),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                defButton(
-                  text: 'Sign Up',
-                  pressed: ()async{
-                    if(formstate.currentState!.validate()){
-                      print("Hiii");
-                    }
-                    UserCredential response = await signUp();
-                    if(response != null){
-                      Navigator.push(context,MaterialPageRoute(builder:(_)=>HomePage()));
-                    }else{
-                      print('Sign Up Failed');
-                    }
-                  },
-                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     left: 36,
                     right: 35,
-                    top: 10,
-                    bottom: 10,
+                    top: 20,
+                    bottom: 5,
                   ),
                   child: defButton(
+                    border:10,
                     backgroundColor: Colour('#008894'),
                     fontSize: 18,
                     text: 'Sign Up',
                     pressed: ()async{
-                      if(formstate.currentState!.validate()){
+                      if(formState.currentState!.validate()){
                         Navigator.push(context,MaterialPageRoute(builder:(_)=>BottomNav()));
 
                       }
@@ -281,12 +354,11 @@ class _SignUpState extends State<SignUp> {
                     },
                   ),
                 ),
-
                 const SizedBox(
-                  height: 8,
+                  height: 4,
                 ),
                 Container(
-                  width: 370,
+                  width: 304,
                   height: 50,
                   color:Colors.white60,
                   child: Material(
@@ -301,7 +373,8 @@ class _SignUpState extends State<SignUp> {
                         child: Row(
                           children: [
                             Container(
-                              height: 30,
+                              height: 28,
+                              width: 28,
                               child:const Image(
                                 image:AssetImage('assets/images/pic2.png'),
                               ),
@@ -313,8 +386,10 @@ class _SignUpState extends State<SignUp> {
                               child: Text(
                                 'Sign In with Google',
                                 style:TextStyle(
-                                    fontSize: 20,
-                                    color: Colour('#505050')
+                                    fontSize: 16,
+                                    color: Colour('#505050'),
+                                  fontFamily: 'Segoe UI',
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
@@ -325,32 +400,34 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 const SizedBox(
-                  height: 1,
+                  height: 5,
                 ),
                 Row(
                   mainAxisAlignment:MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Don\'t have an account?',
+                      'Already have an account?',
                       style:TextStyle(
-                        fontSize:17,
-                        fontWeight:FontWeight.w400,
+                        fontFamily: 'Segoe UI',
+                        fontSize:14,
+                        fontWeight:FontWeight.normal,
                       ),
                     ),
                     TextButton(
                       onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>SignIn())),
                       child:Text(
-                        'sign In',
+                        'signIn',
                         style:TextStyle(
-                          fontSize:19,
-                          fontWeight:FontWeight.w800,
+                          fontSize:14,
+                          fontWeight:FontWeight.bold,
                           color:Colour('#008894'),
+                          fontFamily: 'Segoe UI',
                         ),
                       ),
                     ),
                   ],
                 ),
-              ],
+           ],
             ),
           ),
         ),

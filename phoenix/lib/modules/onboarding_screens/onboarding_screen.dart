@@ -1,7 +1,5 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/login/signIn.dart';
-import 'package:phoenix/modules/onboarding_screens/onboarding_contents.dart';
 import 'package:phoenix/registration/signUp.dart';
 import 'package:phoenix/shared/components/size_config.dart';
 import 'onboarding1.dart';
@@ -16,6 +14,11 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen>{
+  List contents = [
+    const  OnBoarding1(),
+    const  OnBoarding2(),
+    const OnBoarding3(),
+  ];
   late PageController _controller;
 
   @override
@@ -46,16 +49,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    double width = SizeConfig.screenW!;
-    double height = SizeConfig.screenH!;
-
     return Scaffold(
       backgroundColor: Colour('#FFFFFF'),
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Center(
                 child: PageView(
                   physics: const BouncingScrollPhysics(),
@@ -89,17 +89,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                       top: 67,
                       right: 128,
                       left: 128,
-                      bottom: 120,
+                      bottom: 50,
                     ),
                     child: Container(
                       width: 119,
                       height: 37,
                       decoration: BoxDecoration(
-                        borderRadius:BorderRadius.circular(90),
+                        color:Colour('#008894'),
+                        borderRadius:BorderRadius.circular(10),
                       ),
                       child: MaterialButton(
                         onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const SignUp())),
-                        color:Colour('#008894'),
+
                         elevation: 1,
                         child:const Text("Start now!",
                           style:TextStyle(
@@ -112,12 +113,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
 
                       ),
                     ),
-
                   )
                       : Padding(
                     padding: const EdgeInsets.only(
                       right: 39,
-                      left: 57,
+                      left: 30,
                       top: 54,
                       bottom: 68,
                     ),
@@ -144,13 +144,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: 163,
+                            left: 166,
                           ),
                           child: Container(
                             width: 80,
                             height: 40,
                             decoration: BoxDecoration(
-                              borderRadius:BorderRadius.circular(90),
+                              color:Colour('#008894'),
+                              borderRadius:BorderRadius.circular(10),
                             ),
                             child: MaterialButton(
                               onPressed: () {
@@ -159,7 +160,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                                   curve: Curves.easeIn,
                                 );
                               },
-                              color:Colour('#008894'),
                               elevation: 1,
                               child:const Text("Next",
                                 style:TextStyle(
@@ -175,7 +175,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

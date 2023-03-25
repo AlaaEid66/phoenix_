@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phoenix/modules/posts/post.dart';
 import 'package:phoenix/modules/posts/postdata.dart';
 import 'package:phoenix/modules/profile_screens/profiledata.dart';
+import 'package:phoenix/modules/save_items/saved_items.dart';
 import 'package:phoenix/shared/components/component.dart';
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -85,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.mail_sharp,
                                color: Colour('#505050'),
@@ -93,7 +94,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 8,
                            ),
                            Text(
                              'Messages',
@@ -119,7 +120,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.photo_size_select_large,
                                color: Colour('#505050'),
@@ -127,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 4,
                            ),
                            Text(
                              'Degree of burn',
@@ -153,7 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.group,
                                color: Colour('#505050'),
@@ -187,7 +188,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.groups,
                                color: Colour('#505050'),
@@ -195,7 +196,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 4,
                            ),
                            Text(
                              'Communities(Groups)',
@@ -231,15 +232,15 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
-                             child: Icon(Icons.abc,
+                             child: Icon(Icons.medication,
                                color: Colour('#505050'),
                                size: 24,
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 4,
                            ),
                            Text(
                              'Doctors',
@@ -265,7 +266,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.calendar_month_outlined,
                                color: Colour('#505050'),
@@ -273,7 +274,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 4,
                            ),
                            Text(
                              'My appointments',
@@ -309,7 +310,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.bookmark,
                                color: Colour('#505050'),
@@ -317,7 +318,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 4,
                            ),
                            Text(
                              'Saved items',
@@ -332,7 +333,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              width:MediaQuery.of(context).size.width*0.47,
                            ),
                            IconButton(
-                             onPressed:(){},
+                             onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const SavedItems())),
                              icon:const Icon(Icons.arrow_forward_ios_rounded),
                              color:Colour('#505050'),
                              iconSize: 24,
@@ -343,7 +344,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          children: [
                            Padding(
                              padding: const EdgeInsets.only(
-                               left: 24,
+                               left: 18,
                              ),
                              child: Icon(Icons.settings,
                                color: Colour('#505050'),
@@ -351,7 +352,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            const SizedBox(
-                             width: 10,
+                             width: 4,
                            ),
                            Text(
                              'Setting',
@@ -381,41 +382,37 @@ class _ProfilePageState extends State<ProfilePage> {
                  ),
                  Card(
                    color: Colour('#EFEFEF'),
-                   child: Column(
+                   child: Row(
                      children: [
-                       Row(
-                         children: [
-                           Padding(
-                             padding: const EdgeInsets.only(
-                               left: 24,
-                             ),
-                             child: Icon(Icons.exit_to_app,
-                               color: Colour('#505050'),
-                               size: 24,
-                             ),
-                           ),
-                           const SizedBox(
-                             width: 10,
-                           ),
-                           Text(
-                             'Logout',
-                             style:TextStyle(
-                               color: Colour('#505050'),
-                               fontWeight: FontWeight.bold,
-                               fontFamily: 'Segoe UI',
-                               fontSize:18,
-                             ),
-                           ),
-                           SizedBox(
-                             width:MediaQuery.of(context).size.width*0.56,
-                           ),
-                           IconButton(
-                             onPressed:(){},
-                             icon:const Icon(Icons.arrow_forward_ios_rounded),
-                             color:Colour('#505050'),
-                             iconSize: 24,
-                           ),
-                         ],
+                       Padding(
+                         padding: const EdgeInsets.only(
+                           left: 18,
+                         ),
+                         child: Icon(Icons.exit_to_app,
+                           color: Colour('#505050'),
+                           size: 24,
+                         ),
+                       ),
+                       const SizedBox(
+                         width: 4,
+                       ),
+                       Text(
+                         'Logout',
+                         style:TextStyle(
+                           color: Colour('#505050'),
+                           fontWeight: FontWeight.bold,
+                           fontFamily: 'Segoe UI',
+                           fontSize:18,
+                         ),
+                       ),
+                       SizedBox(
+                         width:MediaQuery.of(context).size.width*0.56,
+                       ),
+                       IconButton(
+                         onPressed:(){},
+                         icon:const Icon(Icons.arrow_forward_ios_rounded),
+                         color:Colour('#505050'),
+                         iconSize: 24,
                        ),
                      ],
                    ),

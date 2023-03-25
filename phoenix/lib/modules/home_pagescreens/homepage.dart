@@ -88,136 +88,168 @@ class _HomePageState extends State<HomePage> {
                    ),
                  ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.029,
+                  height: MediaQuery.of(context).size.height*0.04,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width:40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        borderRadius:BorderRadius.circular(50),
-                        image: const DecorationImage(
-                          image:AssetImage('assets/images/s1.jpg'),
-                          fit: BoxFit.cover,
-                        ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 8,
+                    right: 8,
+                  ),
+                  child: Container(
+                    width: 440,
+                    height: 133,
+                    decoration:BoxDecoration(
+                      border:Border.all(color:Colour('#008894'),width:2),
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 4,
                       ),
-                    ),
-                    SizedBox(
-                      width:MediaQuery.sizeOf(context).width*0.052,
-                    ),
-                    SizedBox(
-                      width: 320,
-                      height: 70,
-                      child: TextFormField(
-                        onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const WritePost())),
-                        decoration: InputDecoration(
-                          hintText:'What\'s on your mind ?',
-                          hintStyle:TextStyle(
-                            color:Colour('#505050') ,
-                            fontFamily:'Segoe UI',
-                            fontSize:16,
-                            fontWeight:FontWeight.normal,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 8,
+                                  bottom: 10,
+                                ),
+                                child: Container(
+                                  width:40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    borderRadius:BorderRadius.circular(50),
+                                    image: const DecorationImage(
+                                      image:AssetImage('assets/images/s1.jpg'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width:MediaQuery.sizeOf(context).width*0.03,
+                              ),
+                              SizedBox(
+                                width: 200,
+                                height: 70,
+                                child: TextFormField(
+                                  onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const WritePost())),
+                                  decoration: InputDecoration(
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colour('#FFFFFF'),
+                                        width: 0,
+                                      ),
+                                    ),
+                                    hintText:'What\'s on your mind ?',
+                                    hintStyle:TextStyle(
+                                      color:Colour('#505050') ,
+                                      fontFamily:'Segoe UI',
+                                      fontSize:16,
+                                      fontWeight:FontWeight.normal,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                          Row(
+                            mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                alignment: Alignment.center,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      iconSize:18,
+                                      onPressed:(){},
+                                      icon: Icon(Icons.videocam_outlined,color:Colour('#707070')),
+                                    ),
+                                    Text(
+                                      'Live',
+                                      style: TextStyle(
+                                        textBaseline:TextBaseline.alphabetic,
+                                        fontFamily:'Segoe UI',
+                                        fontSize:12,
+                                        color: Colour('#505050'),
+                                        fontWeight:FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width:MediaQuery.of(context).size.width*0.01,
+                              ),
+                              Container(
+                                alignment: Alignment.center,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed:(){},
+                                      iconSize: 16,
+                                      icon:Icon(Icons.add_a_photo),
+                                      color:Colour('#505050'),
+                                    ),
+                                    Text(
+                                      'Photo/video',
+                                      style: TextStyle(
+                                        textBaseline:TextBaseline.alphabetic,
+                                        fontFamily:'Segoe UI',
+                                        fontSize:12,
+                                        color: Colour('#505050'),
+                                        fontWeight:FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width:MediaQuery.of(context).size.width*0.01,
+                              ),
+                              Container(
+                                alignment: Alignment.center,
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed:(){},
+                                      iconSize: 16,
+                                      icon:Icon(Icons.mood),
+                                      color:Colour('#505050'),
+                                    ),
+                                    Text(
+                                      'feeling',
+                                      style: TextStyle(
+                                        textBaseline:TextBaseline.alphabetic,
+                                        fontFamily:'Segoe UI',
+                                        fontSize:12,
+                                        color: Colour('#505050'),
+                                        fontWeight:FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width:MediaQuery.of(context).size.width*0.012,
+                              ),
+                              defButton(
+                                border:8,
+                                backgroundColor:Colour('#008894'),
+                                pressed:(){},
+                                text:'post',
+                                height: 26,
+                                width:60,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.027,
-                ),
-                Row(
-                  mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          IconButton(
-                            iconSize:18,
-                            onPressed:(){},
-                            icon: Icon(Icons.videocam_outlined,color:Colour('#707070')),
-                          ),
-                          Text(
-                            'Live',
-                            style: TextStyle(
-                              textBaseline:TextBaseline.alphabetic,
-                              fontFamily:'Segoe UI',
-                              fontSize:12,
-                              color: Colour('#505050'),
-                              fontWeight:FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width:MediaQuery.of(context).size.width*0.04,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed:(){},
-                            iconSize: 16,
-                            icon:Icon(Icons.add_a_photo),
-                            color:Colour('#505050'),
-                          ),
-                          Text(
-                            'Photo/video',
-                            style: TextStyle(
-                              textBaseline:TextBaseline.alphabetic,
-                              fontFamily:'Segoe UI',
-                              fontSize:12,
-                              color: Colour('#505050'),
-                              fontWeight:FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width:MediaQuery.of(context).size.width*0.04,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed:(){},
-                            iconSize: 16,
-                            icon:Icon(Icons.mood),
-                            color:Colour('#505050'),
-                          ),
-                          Text(
-                            'feeling',
-                            style: TextStyle(
-                              textBaseline:TextBaseline.alphabetic,
-                              fontFamily:'Segoe UI',
-                              fontSize:12,
-                              color: Colour('#505050'),
-                              fontWeight:FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width:MediaQuery.of(context).size.width*0.05,
-                    ),
-                    defButton(
-                      border:8,
-                      backgroundColor:Colour('#008894'),
-                      pressed:(){},
-                      text:'post',
-                      height: 26,
-                      width:60,
-                    ),
-                  ],
+                  height: MediaQuery.of(context).size.height*0.04,
                 ),
                 postWritten(post[0], context),
                 SizedBox(

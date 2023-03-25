@@ -28,25 +28,30 @@ Widget postWritten(PostData postData,BuildContext context){
               children: [
                 Text('${postData.postUserName}'),
                 SizedBox(
-                  height:MediaQuery.of(context).size.height*0.0001,
+                  height:MediaQuery.of(context).size.height*0.001,
                 ),
                 Text('${postData.postDate}'),
               ],
             ),
-            const SizedBox(
-              width:148,
+            SizedBox(
+              width:MediaQuery.of(context).size.width*0.3,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconButton(
-                  onPressed:(){},
-                  color: Colour('#505050'),
-                  icon:  const Icon(Icons.more_horiz),
-                  iconSize: 18,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 12,
+                  ),
+                  child: IconButton(
+                    onPressed:(){},
+                    color: Colour('#505050'),
+                    icon:  const Icon(Icons.more_horiz),
+                    iconSize: 24,
+                  ),
                 ),
                 IconButton(
-                  iconSize: 10,
+                  iconSize: 20,
                   color: Colour('#505050'),
                   onPressed:(){},
                   icon:const Icon(Icons.close,
@@ -168,25 +173,30 @@ Widget postImage(PostData postData,BuildContext context){
               children: [
                 Text('${postData.postUserName}'),
                 SizedBox(
-                  height:MediaQuery.of(context).size.height*0.0001,
+                  height:MediaQuery.of(context).size.height*0.001,
                 ),
                 Text('${postData.postDate}'),
               ],
             ),
-            const SizedBox(
-              width:140,
+            SizedBox(
+              width:MediaQuery.of(context).size.width*0.29,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconButton(
-                  onPressed:(){},
-                  color: Colour('#505050'),
-                  icon:  const Icon(Icons.more_horiz),
-                  iconSize: 18,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 9,
+                  ),
+                  child: IconButton(
+                    onPressed:(){},
+                    color: Colour('#505050'),
+                    icon:  const Icon(Icons.more_horiz),
+                    iconSize: 24,
+                  ),
                 ),
                 IconButton(
-                  iconSize: 10,
+                  iconSize: 20,
                   color: Colour('#505050'),
                   onPressed:(){},
                   icon:const Icon(Icons.close,
@@ -304,20 +314,25 @@ Widget postVideos(PostData postData,BuildContext context){
                 Text('${postData.postDate}'),
               ],
             ),
-            const SizedBox(
-              width:140,
+            SizedBox(
+              width:MediaQuery.of(context).size.width*0.3,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconButton(
-                  onPressed:(){},
-                  color: Colour('#505050'),
-                  icon:  const Icon(Icons.more_horiz),
-                  iconSize: 18,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left:12,
+                  ),
+                  child: IconButton(
+                    onPressed:(){},
+                    color: Colour('#505050'),
+                    icon:  const Icon(Icons.more_horiz),
+                    iconSize: 24,
+                  ),
                 ),
                 IconButton(
-                  iconSize: 10,
+                  iconSize: 20,
                   color: Colour('#505050'),
                   onPressed:(){},
                   icon:const Icon(Icons.close,

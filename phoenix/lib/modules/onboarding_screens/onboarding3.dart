@@ -28,16 +28,18 @@ class _OnBoarding3State extends State<OnBoarding3> {
               padding: const EdgeInsets.only(
                 right: 85,
                 left: 86,
-                bottom: 98,
-                top: 8,
+                bottom: 20,
+                top: 50,
               ),
-              child: Text('Together until recovery !',
-                textAlign:TextAlign.center,
-                style:TextStyle(
-                  fontFamily: 'Segoe UI.ttf',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color:Colour('#505050'),
+              child: Center(
+                child: Text('Together until recovery !',
+                  textAlign:TextAlign.center,
+                  style:TextStyle(
+                    fontFamily: 'Segoe UI.ttf',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color:Colour('#505050'),
+                  ),
                 ),
               ),
             ),

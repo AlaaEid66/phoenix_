@@ -30,6 +30,7 @@ class _OnBoarding2State extends State<OnBoarding2> {
               right: 48,
               left: 49,
               bottom: 99,
+              top: 8,
             ),
             child: RichText(
               textAlign:TextAlign.center,
