@@ -1,14 +1,14 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/shared/components/component.dart';
-class EditPass extends StatefulWidget {
-  const EditPass({Key? key}) : super(key: key);
+class EditMail extends StatefulWidget {
+  const EditMail({Key? key}) : super(key: key);
 
   @override
-  State<EditPass> createState() => _EditPassState();
+  State<EditMail> createState() => _EditMailState();
 }
 
-class _EditPassState extends State<EditPass> {
+class _EditMailState extends State<EditMail> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,9 +39,9 @@ class _EditPassState extends State<EditPass> {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(
-              left: 36,
-              right: 35,
-              top: 70
+                left: 36,
+                right: 35,
+                top: 70
             ),
             child: Column(
               children: [
@@ -58,17 +58,12 @@ class _EditPassState extends State<EditPass> {
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'Old password',
+                      labelText: 'Old Email',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
                           fontWeight: FontWeight.normal,
                           color: Colour('#000000').withOpacity(0.3)
-                      ),
-                      prefixIcon:Icon(
-                        Icons.lock_outlined,
-                        size: 20,
-                        color: Colour('#000000').withOpacity(0.3),
                       ),
                     ),
                   ),
@@ -89,48 +84,12 @@ class _EditPassState extends State<EditPass> {
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'New password',
+                      labelText: 'New Email',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
                           fontWeight: FontWeight.normal,
                           color: Colour('#000000').withOpacity(0.3)
-                      ),
-                      prefixIcon:Icon(
-                        Icons.lock_outlined,
-                        size: 20,
-                        color: Colour('#000000').withOpacity(0.3),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Container(
-                  width: 304,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color:Colour('#EFEFEF'),
-                  ),
-                  child: TextFormField(
-                    textInputAction: TextInputAction.next,
-                    decoration:InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius:BorderRadius.circular(10),
-                      ),
-                      labelText: 'Confirm new password',
-                      labelStyle: TextStyle(
-                          fontFamily: 'Segoe UI',
-                          fontSize:18,
-                          fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.3)
-                      ),
-                      prefixIcon:Icon(
-                        Icons.lock_outlined,
-                        size: 20,
-                        color: Colour('#000000').withOpacity(0.3),
                       ),
                     ),
                   ),
@@ -140,11 +99,11 @@ class _EditPassState extends State<EditPass> {
                 ),
                 defButton(
                   border: 10,
-                    backgroundColor: Colour('#008894'),
-                    pressed:(){},
-                    text:'Edit',
-                    width: 304,
-                    height: 48,
+                  backgroundColor: Colour('#008894'),
+                  pressed:(){},
+                  text:'Edit',
+                  width: 304,
+                  height: 48,
 
                 ),
               ],

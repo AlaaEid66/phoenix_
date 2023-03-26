@@ -1,6 +1,9 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/modules/settings/edit_mail.dart';
 import 'package:phoenix/modules/settings/edit_pass.dart';
+import 'package:phoenix/modules/settings/rate.dart';
+import 'package:phoenix/modules/settings/share_app.dart';
 class Setting extends StatefulWidget {
   const Setting({Key? key}) : super(key: key);
 
@@ -64,7 +67,7 @@ class _SettingState extends State<Setting> {
                         width:MediaQuery.of(context).size.width*0.54,
                       ),
                       IconButton(
-                        onPressed:(){},
+                        onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const EditMail())),
                         icon:const Icon(Icons.arrow_forward_ios_rounded),
                         color:Colour('#505050'),
                         iconSize: 22,
@@ -132,7 +135,7 @@ class _SettingState extends State<Setting> {
                         width:MediaQuery.of(context).size.width*0.55,
                       ),
                       IconButton(
-                        onPressed:(){},
+                        onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const RateApp())),
                         icon:const Icon(Icons.arrow_forward_ios_rounded),
                         color:Colour('#505050'),
                         iconSize: 22,
@@ -166,7 +169,7 @@ class _SettingState extends State<Setting> {
                         width:MediaQuery.of(context).size.width*0.52,
                       ),
                       IconButton(
-                        onPressed:(){},
+                        onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const ShareApp())),
                         icon:const Icon(Icons.arrow_forward_ios_rounded),
                         color:Colour('#505050'),
                         iconSize: 22,

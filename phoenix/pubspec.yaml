@@ -44,6 +44,7 @@ dependencies:
   modal_progress_hud_nsn:
   flutter_screenutil:
   colour:
+  font_awesome_flutter:
   device_preview:
   firebase_auth:
   smooth_page_indicator:

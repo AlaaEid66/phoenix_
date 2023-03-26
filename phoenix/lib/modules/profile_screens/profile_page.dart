@@ -1,5 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/modules/groups/group.dart';
 import 'package:phoenix/modules/posts/post.dart';
 import 'package:phoenix/modules/posts/postdata.dart';
@@ -236,13 +237,13 @@ class _ProfilePageState extends State<ProfilePage> {
                              padding: const EdgeInsets.only(
                                left: 18,
                              ),
-                             child: Icon(Icons.medication_liquid_sharp,
+                             child: Icon(FontAwesomeIcons.stethoscope,
                                color: Colour('#505050'),
                                size: 24,
                              ),
                            ),
                            const SizedBox(
-                             width: 4,
+                             width: 5,
                            ),
                            Text(
                              'Doctors',
@@ -390,7 +391,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          padding: const EdgeInsets.only(
                            left: 18,
                          ),
-                         child: Icon(Icons.exit_to_app,
+                         child: Icon(Icons.logout,
                            color: Colour('#505050'),
                            size: 24,
                          ),

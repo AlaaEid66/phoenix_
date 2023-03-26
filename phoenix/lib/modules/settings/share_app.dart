@@ -1,14 +1,16 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/shared/components/component.dart';
-class EditPass extends StatefulWidget {
-  const EditPass({Key? key}) : super(key: key);
+
+class ShareApp extends StatefulWidget {
+  const ShareApp({Key? key}) : super(key: key);
 
   @override
-  State<EditPass> createState() => _EditPassState();
+  State<ShareApp> createState() => _ShareAppState();
 }
 
-class _EditPassState extends State<EditPass> {
+class _ShareAppState extends State<ShareApp> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +24,7 @@ class _EditPassState extends State<EditPass> {
           backgroundColor:Colour('#FFFFFF') ,
           centerTitle:true,
           title:Text(
-            'Edit Password',
+            'Share App',
             style:TextStyle(
               color: Colour('#505050'),
               fontFamily: 'Segoe UI',
@@ -39,9 +41,9 @@ class _EditPassState extends State<EditPass> {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(
-              left: 36,
-              right: 35,
-              top: 70
+                left: 36,
+                right: 35,
+                top: 64,
             ),
             child: Column(
               children: [
@@ -58,94 +60,114 @@ class _EditPassState extends State<EditPass> {
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'Old password',
+                      labelText: 'Via Facebook',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
                           fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.3)
+                          color: Colour('#505050')
                       ),
                       prefixIcon:Icon(
-                        Icons.lock_outlined,
-                        size: 20,
-                        color: Colour('#000000').withOpacity(0.3),
+                         FontAwesomeIcons.facebookF,
+                        size: 26,
+                        color: Colour('#505050'),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 24,
                 ),
                 Container(
-                  width: 304,
-                  height: 48,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color:Colour('#EFEFEF'),
                   ),
+                  width: 304,
+                  height: 48,
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     decoration:InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'New password',
+                      labelText: 'Via Twitter',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
                           fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.3)
+                          color: Colour('#505050')
                       ),
                       prefixIcon:Icon(
-                        Icons.lock_outlined,
-                        size: 20,
-                        color: Colour('#000000').withOpacity(0.3),
+                        FontAwesomeIcons.twitter,
+                        size: 26,
+                        color: Colour('#505050'),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 24,
                 ),
                 Container(
-                  width: 304,
-                  height: 48,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color:Colour('#EFEFEF'),
                   ),
+                  width: 304,
+                  height: 48,
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     decoration:InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'Confirm new password',
+                      labelText: 'Via Instagram',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
                           fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.3)
+                          color: Colour('#505050')
                       ),
                       prefixIcon:Icon(
-                        Icons.lock_outlined,
-                        size: 20,
-                        color: Colour('#000000').withOpacity(0.3),
+                        FontAwesomeIcons.instagram,
+                        size: 36,
+                        color: Colour('#505050'),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 56,
+                  height: 24,
                 ),
-                defButton(
-                  border: 10,
-                    backgroundColor: Colour('#008894'),
-                    pressed:(){},
-                    text:'Edit',
-                    width: 304,
-                    height: 48,
-
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color:Colour('#EFEFEF'),
+                  ),
+                  width: 304,
+                  height: 48,
+                  child: TextFormField(
+                    textInputAction: TextInputAction.next,
+                    decoration:InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius:BorderRadius.circular(10),
+                      ),
+                      labelText: 'Copy link',
+                      labelStyle: TextStyle(
+                          fontFamily: 'Segoe UI',
+                          fontSize:18,
+                          fontWeight: FontWeight.normal,
+                          color: Colour('#505050')
+                      ),
+                      prefixIcon:Icon(
+                        Icons.file_copy,
+                        // FontAwesomeIcons.c,
+                        size: 26,
+                        color: Colour('#505050'),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
