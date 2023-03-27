@@ -1,7 +1,8 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:phoenix/registration/signUp.dart';
+import 'package:phoenix/registration/signUp_doctor.dart';
+import 'package:phoenix/registration/signUp_user.dart';
 class Interface extends StatefulWidget {
   const Interface({Key? key}) : super(key: key);
 
@@ -33,7 +34,7 @@ class _InterfaceState extends State<Interface> {
                   child: IconButton(
                     iconSize: 40,
                     icon: const Icon(FontAwesomeIcons.stethoscope),
-                    onPressed: (){},
+                    onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const SignUpDoctor())),
                     color: Colour('#008894'),
                   ),
                 ),
@@ -64,7 +65,7 @@ class _InterfaceState extends State<Interface> {
                   child: IconButton(
                     iconSize: 60,
                     icon:const Icon(Icons.person),
-                    onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const SignUp())),
+                    onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const SignUpUser())),
                     color: Colour('#008894'),
                   ),
                 ),

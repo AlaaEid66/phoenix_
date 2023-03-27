@@ -65,7 +65,7 @@ class _SearchState extends State<Search> {
             actions: [
               IconButton(
                 onPressed:(){},
-                icon:const Icon(Icons.line_style),
+                icon:const Icon(Icons.file_copy),
               ),
             ],
           ),

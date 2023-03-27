@@ -1,7 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/interface.dart';
-import 'package:phoenix/registration/signUp.dart';
+import 'package:phoenix/registration/signUp_user.dart';
 import 'package:phoenix/shared/components/size_config.dart';
 import 'onboarding1.dart';
 import 'onboarding2.dart';

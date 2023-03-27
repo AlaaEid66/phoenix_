@@ -5,22 +5,22 @@ import 'package:dropdownfield2/dropdownfield2.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:phoenix/login/signIn.dart';
+import 'package:phoenix/login/signIn_user.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/shared/components/component.dart';
 
 
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class SignUpUser extends StatefulWidget {
+  const SignUpUser({super.key});
 
 
 
   @override
-  _SignUpState createState() => _SignUpState();
+  _SignUpUserState createState() => _SignUpUserState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignUpUserState extends State<SignUpUser> {
 
   var password , email,phoneNum,gender,dateOfBirth;
   bool? passwordVisible = true;
@@ -84,12 +84,12 @@ class _SignUpState extends State<SignUp> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                     top: 40,
+                     top: 50,
                   ),
                   child: Center(
                     child: Container(
-                      width: 120,
-                      height: 120,
+                      width: 95,
+                      height: 88,
                       child:const CircleAvatar(
                         backgroundColor: Colors.white,
                         child: Image(
@@ -106,6 +106,7 @@ class _SignUpState extends State<SignUp> {
                   child: Text(
                     'Sign Up',
                     style:TextStyle(
+                      fontFamily: 'Segoe UI',
                       color:Colour('#008894'),
                       fontSize: 32,
                       fontWeight:FontWeight.bold,
@@ -422,7 +423,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     TextButton(
-                      onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>SignIn())),
+                      onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>SignInUser())),
                       child:Text(
                         'signIn',
                         style:TextStyle(

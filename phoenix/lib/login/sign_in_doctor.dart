@@ -4,16 +4,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:colour/colour.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
-import 'package:phoenix/registration/signUp.dart';
+import 'package:phoenix/registration/signUp_user.dart';
 import 'package:phoenix/shared/components/component.dart';
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class SignInDoctor extends StatefulWidget {
+  const SignInDoctor({super.key});
 
   @override
-  _SignInState createState() => _SignInState();
+  _SignInDoctorState createState() => _SignInDoctorState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignInDoctorState extends State<SignInDoctor> {
   bool ?passwordVisible = true;
   var email;
   var password;
@@ -21,7 +21,7 @@ class _SignInState extends State<SignIn> {
   var passwordController=TextEditingController();
   GlobalKey<FormState>formstate = GlobalKey<FormState>();
 
-  signIn()async{
+  signInDoctor()async{
     var formdata =formstate.currentState;
     formdata!.save();
     if (formdata.validate()){
@@ -228,7 +228,7 @@ class _SignInState extends State<SignIn> {
                       Navigator.push(context,MaterialPageRoute(builder:(_)=>BottomNav()));
 
                     }
-                    UserCredential ?response = await signIn();
+                    UserCredential ?response = await signInDoctor();
                     if(response != null){
                       print("Login Done");
 
@@ -290,13 +290,13 @@ class _SignInState extends State<SignIn> {
                     const Text(
                       'Don\'t have an account?',
                       style:TextStyle(
-                        fontSize:14,
-                        fontWeight:FontWeight.normal,
-                        fontFamily: 'Segoe UI'
+                          fontSize:14,
+                          fontWeight:FontWeight.normal,
+                          fontFamily: 'Segoe UI'
                       ),
                     ),
                     TextButton(
-                      onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>SignUp())),
+                      onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>SignUpUser())),
                       child:Text(
                         'sign up',
                         style:TextStyle(

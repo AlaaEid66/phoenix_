@@ -9,6 +9,7 @@ Widget defButton({
   Color textColor =Colors.white,
   double border=15,
   double ?fontSize,
+  FontWeight? fontWeight,
 }){
   return Container(
     width: width,
@@ -24,6 +25,7 @@ Widget defButton({
         style:TextStyle(
           color:textColor,
           fontSize: fontSize,
+          fontWeight: fontWeight,
         ),
       ),
 
