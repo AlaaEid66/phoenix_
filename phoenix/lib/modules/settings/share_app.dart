@@ -67,10 +67,26 @@ class _ShareAppState extends State<ShareApp> {
                           fontWeight: FontWeight.normal,
                           color: Colour('#505050')
                       ),
-                      prefixIcon:Icon(
-                         FontAwesomeIcons.facebookF,
-                        size: 26,
-                        color: Colour('#505050'),
+                      prefixIcon:Padding(
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          bottom: 8,
+                          left: 16,
+                          right: 8,
+                        ),
+                        child: Container(
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color:Colour('#5B5E60'),width:2)
+                          ),
+                          child: Icon(
+                             FontAwesomeIcons.facebookF,
+                            size: 20,
+                            color: Colour('#505050'),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -98,10 +114,26 @@ class _ShareAppState extends State<ShareApp> {
                           fontWeight: FontWeight.normal,
                           color: Colour('#505050')
                       ),
-                      prefixIcon:Icon(
-                        FontAwesomeIcons.twitter,
-                        size: 26,
-                        color: Colour('#505050'),
+                      prefixIcon:Padding(
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          bottom: 8,
+                          left: 16,
+                          right: 8,
+                        ),
+                        child: Container(
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color:Colour('#5B5E60'),width:2)
+                          ),
+                          child: Icon(
+                            FontAwesomeIcons.twitter,
+                            size: 20,
+                            color: Colour('#505050'),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -129,10 +161,18 @@ class _ShareAppState extends State<ShareApp> {
                           fontWeight: FontWeight.normal,
                           color: Colour('#505050')
                       ),
-                      prefixIcon:Icon(
-                        FontAwesomeIcons.instagram,
-                        size: 36,
-                        color: Colour('#505050'),
+                      prefixIcon:Padding(
+                        padding: const EdgeInsets.only(
+                          top: 4,
+                          bottom: 16,
+                          left: 16,
+                          right: 8,
+                        ),
+                        child: Icon(
+                          FontAwesomeIcons.instagram,
+                          size: 40,
+                          color: Colour('#505050'),
+                        ),
                       ),
                     ),
                   ),
@@ -160,11 +200,19 @@ class _ShareAppState extends State<ShareApp> {
                           fontWeight: FontWeight.normal,
                           color: Colour('#505050')
                       ),
-                      prefixIcon:Icon(
-                        Icons.file_copy,
-                        // FontAwesomeIcons.c,
-                        size: 26,
-                        color: Colour('#505050'),
+                      prefixIcon:Padding(
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          bottom: 16,
+                          left: 16,
+                          right: 16,
+                        ),
+                        child: Icon(
+                          Icons.file_copy,
+                          // FontAwesomeIcons.c,
+                          size: 30,
+                          color: Colour('#505050'),
+                        ),
                       ),
                     ),
                   ),
