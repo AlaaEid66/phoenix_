@@ -191,40 +191,6 @@ class _SettingState extends State<Setting> {
                         width:28,
                       ),
                       Text(
-                        'Privacy policy',
-                        style:TextStyle(
-                          color: Colour('#505050'),
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Segoe UI',
-                          fontSize:18,
-                        ),
-                      ),
-                      SizedBox(
-                        width:MediaQuery.of(context).size.width*0.45,
-                      ),
-                      IconButton(
-                        onPressed:(){},
-                        icon:const Icon(Icons.arrow_forward_ios_rounded),
-                        color:Colour('#505050'),
-                        iconSize: 22,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 8,
-                ),
-                child: Card(
-                  elevation: 5,
-                  color: Colour('#FFFFFF'),
-                  child: Row(
-                    children: [
-                      const SizedBox(
-                        width:28,
-                      ),
-                      Text(
                         'About Us',
                         style:TextStyle(
                           color: Colour('#505050'),

@@ -2,6 +2,7 @@
 import 'package:colour/colour.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:dropdownfield2/dropdownfield2.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
@@ -23,6 +24,7 @@ class SignUpDoctor extends StatefulWidget {
 }
 
 class _SignUpDoctorState extends State<SignUpDoctor> {
+
 
   var password , email,phoneNum,gender,dateOfBirth;
   bool? passwordVisible = true;
@@ -284,7 +286,9 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                             width: 10,
                           ),
                           TextButton(
-                            onPressed:(){},
+                            onPressed:(){
+                              
+                            },
                             child:Text(
                               'Upload CV',
                               style: TextStyle(
@@ -327,7 +331,6 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                       },
                     ),
                   ),
-
                   const SizedBox(
                     height: 4,
                   ),

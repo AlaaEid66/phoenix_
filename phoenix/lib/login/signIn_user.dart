@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:colour/colour.dart';
+import 'package:phoenix/login/forget_password.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/registration/signUp_user.dart';
 import 'package:phoenix/shared/components/component.dart';
@@ -208,7 +209,7 @@ class _SignInUserState extends State<SignInUser> {
                       color:Colour('#505050'),
                     ),
                   ),
-                  onPressed:(){},
+                  onPressed:()=> Navigator.push(context,MaterialPageRoute(builder:(_)=>const ForgetPass())),
                 ),
               ),
               Padding(
