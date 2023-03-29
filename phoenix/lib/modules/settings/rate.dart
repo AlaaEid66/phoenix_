@@ -1,5 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/shared/components/component.dart';
 
 
 class RateApp extends StatefulWidget {
@@ -44,39 +45,47 @@ class _RateAppState extends State<RateApp> {
             ),
             child: Column(
               children: [
-                Column(
-                  children: [
-                    Text(
-                      'Rate this app',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                          color: Colour('#505050'),
-                          fontFamily: 'Segoe UI',
-                          fontSize: 16,
-                          fontWeight:FontWeight.w500
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      'Tell others what you think',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 222,
+                    left: 53,
+                  ),
+                  child: Text(
+                    'Rate this app',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
                         color: Colour('#505050'),
                         fontFamily: 'Segoe UI',
-                        fontSize: 12,
-                        fontWeight:FontWeight.normal,
-                      ),
+                        fontSize: 16,
+                        fontWeight:FontWeight.w600
                     ),
-                  ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 160,
+                    left: 53,
+                  ),
+                  child: Text(
+                    'Tell others what you think',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: Colour('#505050'),
+                      fontFamily: 'Segoe UI',
+                      fontSize: 14,
+                      fontWeight:FontWeight.normal,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 24,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                    left: 98,
+                    left: 70,
                   ),
                   child: Row(
                     children: [
@@ -84,10 +93,75 @@ class _RateAppState extends State<RateApp> {
                         onPressed:(){},
                         icon: const Icon(Icons.star_border_rounded),
                         color: Colour('#FFC107'),
-                        iconSize: 40,
+                        iconSize: 45,
+                      ),
+                      IconButton(
+                        onPressed:(){},
+                        icon: const Icon(Icons.star_border_rounded),
+                        color: Colour('#FFC107'),
+                        iconSize: 45,
+                      ),
+                      IconButton(
+                        onPressed:(){},
+                        icon: const Icon(Icons.star_border_rounded),
+                        color: Colour('#FFC107'),
+                        iconSize: 45,
+                      ),
+                      IconButton(
+                        onPressed:(){},
+                        icon: const Icon(Icons.star_border_rounded),
+                        color: Colour('#FFC107'),
+                        iconSize: 45,
+                      ),
+                      IconButton(
+                        onPressed:(){},
+                        icon: const Icon(Icons.star_border_rounded),
+                        color: Colour('#FFC107'),
+                        iconSize: 45,
                       ),
                     ],
                   ),
+                ),
+                const SizedBox(
+                  height: 224,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color:Colour('#FFFFFF'),
+                    border:Border.all(color:Colour('#008894'),width:2),
+                  ),
+                  width: 304,
+                  height: 110,
+                  child: TextFormField(
+                    textInputAction: TextInputAction.next,
+                    decoration:InputDecoration(
+                      focusColor: Colour('#FFFFFF'),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colour('#FFFFFF'),
+                          width: 0,
+                        ),
+                      ),
+                      hintText: 'Write..',
+                      hintStyle: TextStyle(
+                        fontFamily: 'Segoe UI',
+                        fontSize:16,
+                        fontWeight: FontWeight.normal,
+                        color: Colour('#505050'),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                defButton(
+                  border: 10,
+                  backgroundColor: Colour('#008894'),
+                  pressed:(){},
+                  text:'Send',
+                  width: 92,
+                  height: 32,
                 ),
               ],
             ),

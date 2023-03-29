@@ -52,6 +52,10 @@ dependencies:
   firebase_auth:
   smooth_page_indicator:
   awesome_dialog:
+  table_calendar:
+  dio:
+  shared_preferences:
+  provider:
 
 
 dev_dependencies:

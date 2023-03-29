@@ -1,5 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/modules/settings/about_us.dart';
+import 'package:phoenix/modules/settings/contact_us.dart';
 import 'package:phoenix/modules/settings/edit_mail.dart';
 import 'package:phoenix/modules/settings/edit_pass.dart';
 import 'package:phoenix/modules/settings/rate.dart';
@@ -203,7 +205,7 @@ class _SettingState extends State<Setting> {
                         width:MediaQuery.of(context).size.width*0.53,
                       ),
                       IconButton(
-                        onPressed:(){},
+                        onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const AboutUs())),
                         icon:const Icon(Icons.arrow_forward_ios_rounded),
                         color:Colour('#505050'),
                         iconSize: 22,
@@ -237,7 +239,7 @@ class _SettingState extends State<Setting> {
                         width:MediaQuery.of(context).size.width*0.49,
                       ),
                       IconButton(
-                        onPressed:(){},
+                        onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const ContactUs())),
                         icon:const Icon(Icons.arrow_forward_ios_rounded),
                         color:Colour('#505050'),
                         iconSize: 22,
