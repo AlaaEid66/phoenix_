@@ -133,6 +133,7 @@ class _AppointmentState extends State<Appointment> {
                       alignment: _alignment,
                       duration: const Duration(milliseconds: 200),
                       child: Container(
+                        color: Colour(''),
                         width:68,
                         height: 19,
                         child: Center(

@@ -2,6 +2,7 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/modules/appointments_screens/appointments.dart';
+import 'package:phoenix/modules/friends_screens/your_friends.dart';
 import 'package:phoenix/modules/groups/group.dart';
 import 'package:phoenix/modules/photo_detection/upload_image.dart';
 import 'package:phoenix/modules/posts/post.dart';
@@ -182,7 +183,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              width:MediaQuery.of(context).size.width*0.56,
                            ),
                            IconButton(
-                             onPressed:(){},
+                             onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const FriendsPage())),
                              icon:const Icon(Icons.arrow_forward_ios_rounded),
                              color:Colour('#505050'),
                              iconSize: 24,

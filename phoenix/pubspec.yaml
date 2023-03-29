@@ -53,6 +53,8 @@ dependencies:
   smooth_page_indicator:
   awesome_dialog:
   table_calendar:
+  buttons_tabbar:
+  flutter_rating_bar: ^4.0.1
   dio:
   shared_preferences:
   provider:

@@ -4,7 +4,7 @@ Widget defButton({
   double height = 48,
   Color? backgroundColor,
   double width = 304,
-  required void Function()?pressed,
+  required Function()?pressed,
   required String? text,
   Color textColor =Colors.white,
   double border=15,

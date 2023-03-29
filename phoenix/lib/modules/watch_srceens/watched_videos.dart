@@ -16,18 +16,27 @@ class _WatchVideosState extends State<WatchVideos> {
       'Ali Mahros',
       '10 Oct . 2022',
       'assets/images/v1.jpg',
+      60 ,
+      30,
+      '',
     ),
     PostData(
       'assets/images/s1.jpg',
       'Ali Emam',
       '10 Oct . 2022',
       'assets/images/v2.jpg',
+      60 ,
+      30,
+      '',
     ),
     PostData(
       'assets/images/s1.jpg',
       'Ahmed Mahdy',
       '10 Oct . 2022',
       'assets/images/v3.jpg',
+      60 ,
+      30,
+      '',
     ),
   ];
   @override

@@ -49,7 +49,11 @@ class _HomePageState extends State<HomePage> {
         'assets/images/s1.jpg',
         'Ali Magdy',
         '10 Oct . 2022',
-        'The second degree of burns should be treated\nas soon as possible to reduce the risk of\ninfection and scarring.'),
+        'The second degree of burns should be treated\nas soon as possible to reduce the risk of\ninfection and scarring.',
+        100,
+        450,
+        ''
+    ),
   ];
   List<PostData> posts=[
     PostData(
@@ -57,6 +61,9 @@ class _HomePageState extends State<HomePage> {
         'Ahmed Mahdy',
         '10 Oct . 2022',
         'assets/images/first-aid.jpg',
+        100,
+       450,
+       ''
     ),
   ];
   @override
@@ -136,11 +143,11 @@ class _HomePageState extends State<HomePage> {
                                 child: TextFormField(
                                   onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const WritePost())),
                                   decoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(color: Colour('#FFFFFF'),
-                                        width: 0,
-                                      ),
-                                    ),
+                                    // focusedBorder: OutlineInputBorder(
+                                    //   borderSide: BorderSide(color: Colour('#FFFFFF'),
+                                    //     width: 0,
+                                    //   ),
+                                    // ),
                                     hintText:'What\'s on your mind ?',
                                     hintStyle:TextStyle(
                                       color:Colour('#505050') ,

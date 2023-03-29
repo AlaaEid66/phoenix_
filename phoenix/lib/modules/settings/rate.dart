@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/shared/components/component.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 
 class RateApp extends StatefulWidget {
@@ -83,45 +84,61 @@ class _RateAppState extends State<RateApp> {
                 const SizedBox(
                   height: 24,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 70,
-                  ),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed:(){},
-                        icon: const Icon(Icons.star_border_rounded),
-                        color: Colour('#FFC107'),
-                        iconSize: 45,
-                      ),
-                      IconButton(
-                        onPressed:(){},
-                        icon: const Icon(Icons.star_border_rounded),
-                        color: Colour('#FFC107'),
-                        iconSize: 45,
-                      ),
-                      IconButton(
-                        onPressed:(){},
-                        icon: const Icon(Icons.star_border_rounded),
-                        color: Colour('#FFC107'),
-                        iconSize: 45,
-                      ),
-                      IconButton(
-                        onPressed:(){},
-                        icon: const Icon(Icons.star_border_rounded),
-                        color: Colour('#FFC107'),
-                        iconSize: 45,
-                      ),
-                      IconButton(
-                        onPressed:(){},
-                        icon: const Icon(Icons.star_border_rounded),
-                        color: Colour('#FFC107'),
-                        iconSize: 45,
-                      ),
-                    ],
-                  ),
+                RatingBar.builder(
+                  itemCount: 5,
+                    initialRating: 0 ,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemPadding: const EdgeInsets.only(
+                      right: 16,
+                    ),
+                    itemBuilder:(context,_)=>Icon(Icons.star_border,
+                      color: Colour('#FFC107'),
+                    ),
+                    onRatingUpdate:(rating){
+
+                    },
                 ),
+                // Padding(
+                //   padding: const EdgeInsets.only(
+                //     left: 70,
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       IconButton(
+                //         onPressed:(){},
+                //         icon: const Icon(Icons.star_border_rounded),
+                //         color: Colour('#FFC107'),
+                //         iconSize: 45,
+                //       ),
+                //       IconButton(
+                //         onPressed:(){},
+                //         icon: const Icon(Icons.star_border_rounded),
+                //         color: Colour('#FFC107'),
+                //         iconSize: 45,
+                //       ),
+                //       IconButton(
+                //         onPressed:(){},
+                //         icon: const Icon(Icons.star_border_rounded),
+                //         color: Colour('#FFC107'),
+                //         iconSize: 45,
+                //       ),
+                //       IconButton(
+                //         onPressed:(){},
+                //         icon: const Icon(Icons.star_border_rounded),
+                //         color: Colour('#FFC107'),
+                //         iconSize: 45,
+                //       ),
+                //       IconButton(
+                //         onPressed:(){},
+                //         icon: const Icon(Icons.star_border_rounded),
+                //         color: Colour('#FFC107'),
+                //         iconSize: 45,
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 const SizedBox(
                   height: 224,
                 ),

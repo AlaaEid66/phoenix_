@@ -91,6 +91,7 @@ Widget postWritten(PostData postData,BuildContext context){
           children: [
             Row(
               children: [
+                Text('${postData.postLikes}'),
                 IconButton(
                   icon:const Icon(Icons.thumb_up_alt_rounded,
                     size: 20,
@@ -110,6 +111,7 @@ Widget postWritten(PostData postData,BuildContext context){
             ),
             Row(
               children: [
+                Text('${postData.postComments}'),
                 IconButton(
                   icon:  Icon(Icons.edit_note_rounded,
                     color:Colour('#505050') ,
@@ -227,6 +229,7 @@ Widget postImage(PostData postData,BuildContext context){
           children: [
             Row(
               children: [
+                Text('${postData.postLikes}'),
                 IconButton(
                   icon:const Icon(Icons.thumb_up_alt_rounded,
                     size: 20,
@@ -246,6 +249,7 @@ Widget postImage(PostData postData,BuildContext context){
             ),
             Row(
               children: [
+                Text('${postData.postComments}'),
                 IconButton(
                   icon:  Icon(Icons.edit_note_rounded,
                     color:Colour('#505050') ,
@@ -363,6 +367,7 @@ Widget postVideos(PostData postData,BuildContext context){
           children: [
             Row(
               children: [
+                Text('${postData.postLikes}'),
                 IconButton(
                   icon:const Icon(Icons.thumb_up_alt_rounded,
                     size: 20,
@@ -384,6 +389,7 @@ Widget postVideos(PostData postData,BuildContext context){
             ),
             Row(
               children: [
+                Text('${postData.postLikes}'),
                 IconButton(
                   icon:  Icon(Icons.edit_note_rounded,
                     color:Colour('#505050') ,
