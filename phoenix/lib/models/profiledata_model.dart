@@ -1,6 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/posts/postdata.dart';
+import 'package:phoenix/models/postdata_model.dart';
 
 Widget profileData(PostDataProfile postDataProfile,BuildContext context){
   return Column(

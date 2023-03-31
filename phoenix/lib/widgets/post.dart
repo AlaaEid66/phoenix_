@@ -1,7 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/shared/components/consts.dart';
-import 'postdata.dart';
+import '../models/postdata_model.dart';
 
 Widget postWritten(PostData postData,BuildContext context){
   return SafeArea(
@@ -86,66 +86,7 @@ Widget postWritten(PostData postData,BuildContext context){
           ),
         ),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(
-              children: [
-                Text('${postData.postLikes}'),
-                IconButton(
-                  icon:const Icon(Icons.thumb_up_alt_rounded,
-                    size: 20,
-                  ),
-                  color: Colour('#505050'),
-                  onPressed:(){} ,
-                ),
-                Text('Like',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text('${postData.postComments}'),
-                IconButton(
-                  icon:  Icon(Icons.edit_note_rounded,
-                    color:Colour('#505050') ,
-                  ),
-                  onPressed:(){},),
-                Text('Comment',
-                  style: TextStyle(
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon:  Icon(Icons.share,
-                    color:Colour('#505050') ,
-                  ),
-                  onPressed:(){},),
-                Text('Share',
-                  style: TextStyle(
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+
       ],
     ),
   );
@@ -223,67 +164,6 @@ Widget postImage(PostData postData,BuildContext context){
             color: Colors.blueGrey.shade500,
           ),
         ),
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(
-              children: [
-                Text('${postData.postLikes}'),
-                IconButton(
-                  icon:const Icon(Icons.thumb_up_alt_rounded,
-                    size: 20,
-                  ),
-                  color: Colour('#505050'),
-                  onPressed:(){} ,
-                ),
-                Text('Like',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text('${postData.postComments}'),
-                IconButton(
-                  icon:  Icon(Icons.edit_note_rounded,
-                    color:Colour('#505050') ,
-                  ),
-                  onPressed:(){},),
-                Text('Comment',
-                  style: TextStyle(
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon:  Icon(Icons.share,
-                    color:Colour('#505050') ,
-                  ),
-                  onPressed:(){},),
-                Text('Share',
-                  style: TextStyle(
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
       ],
     ),
   );
@@ -360,69 +240,6 @@ Widget postVideos(PostData postData,BuildContext context){
             height: 1,
             color: Colors.blueGrey.shade500,
           ),
-        ),
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(
-              children: [
-                Text('${postData.postLikes}'),
-                IconButton(
-                  icon:const Icon(Icons.thumb_up_alt_rounded,
-                    size: 20,
-                  ),
-                  color: isLikedButtonClicked?Colors.blue:Colour('#505050'),
-                  onPressed:(){
-                    isLikedButtonClicked=!isLikedButtonClicked;
-                  } ,
-                ),
-                Text('Like',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text('${postData.postLikes}'),
-                IconButton(
-                  icon:  Icon(Icons.edit_note_rounded,
-                    color:Colour('#505050') ,
-                  ),
-                  onPressed:(){},),
-                Text('Comment',
-                  style: TextStyle(
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon:  Icon(Icons.share,
-                    color:Colour('#505050') ,
-                  ),
-                  onPressed:(){},),
-                Text('Share',
-                  style: TextStyle(
-                    color:Colour('#505050'),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Segoe UI',
-                  ),
-                ),
-              ],
-            ),
-          ],
         ),
       ],
     ),

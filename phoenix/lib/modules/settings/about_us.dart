@@ -17,7 +17,7 @@ class _AboutUsState extends State<AboutUs> {
           Padding(
             padding: const EdgeInsets.only(
                 top: 90,
-                bottom: 40
+                bottom: 50,
             ),
             child: Center(
               child: Container(

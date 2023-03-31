@@ -3,9 +3,10 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/modules/home_pagescreens/homepage.dart';
 import 'package:phoenix/modules/notify_screens/notification.dart';
+import 'package:phoenix/modules/posts/watch_srceens/watched_videos.dart';
 import 'package:phoenix/modules/profile_screens/profile_page.dart';
 import 'package:phoenix/modules/search_screens/search.dart';
-import 'package:phoenix/modules/watch_srceens/watched_videos.dart';
+
 
 class BottomNav extends StatefulWidget {
   @override

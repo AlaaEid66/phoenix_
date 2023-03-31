@@ -1,7 +1,6 @@
  import 'package:colour/colour.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/stories/storydata.dart';
+import 'package:phoenix/models/storydata_model.dart';
  Widget storyButton(StoryData storyData,BuildContext context){
    return SafeArea(
      child: Padding(

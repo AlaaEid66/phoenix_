@@ -1,7 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/notify_screens/notification_data.dart';
-import 'package:phoenix/modules/notify_screens/notify.dart';
+import 'package:phoenix/models/notificationdata_model.dart';
+import 'package:phoenix/widgets/notify.dart';
 class Notify extends StatefulWidget {
   const Notify({Key? key}) : super(key: key);
 

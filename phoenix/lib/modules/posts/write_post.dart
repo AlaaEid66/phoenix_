@@ -1,9 +1,8 @@
 import 'dart:ui';
-
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/posts/post.dart';
-import 'package:phoenix/modules/posts/postdata.dart';
+import 'package:phoenix/widgets/post.dart';
+import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/shared/components/component.dart';
 
 class WritePost extends StatefulWidget {
@@ -136,7 +135,7 @@ class _WritePostState extends State<WritePost> {
                 TextFormField(
                   textInputAction: TextInputAction.done,
                   textAlign:TextAlign.center,
-                  maxLines: 20,
+                  maxLines: 16,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colour('#FFFFFF'),

@@ -121,6 +121,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.2"
+  date_picker_timetable:
+    dependency: "direct main"
+    description:
+      name: date_picker_timetable
+      sha256: "0b0335839eeb252aba672714e2041c8513654399ba928c98644c8cd4c6c390ac"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   device_frame:
     dependency: transitive
     description:
@@ -722,6 +730,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.9"
+  table_calendar_null_safe:
+    dependency: "direct main"
+    description:
+      name: table_calendar_null_safe
+      sha256: "0a001044482275776497bbf5305bc95b79ce73029366e4a41da5ff43423cfd8b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   term_glyph:
     dependency: transitive
     description:

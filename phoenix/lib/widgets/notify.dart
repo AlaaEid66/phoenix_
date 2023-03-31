@@ -1,6 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'notification_data.dart';
+import '../models/notificationdata_model.dart';
 
 Widget notifyLikeNew(NotifyData notifyData,BuildContext context){
   return Card(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:colour/colour.dart';
-import 'package:phoenix/shared/components/component.dart';
-import 'friends_data.dart';
+import '../models/friendsdata_model.dart';
 
 Widget friends(FriendsData friendsData,BuildContext context){
   return SafeArea(
@@ -10,7 +9,6 @@ Widget friends(FriendsData friendsData,BuildContext context){
       children: [
         Row(
           children: [
-
             Container(
               width: 56,
               height: 56,

@@ -1,11 +1,12 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/posts/post.dart';
-import 'package:phoenix/modules/posts/postdata.dart';
+import 'package:phoenix/modules/posts/comments.dart';
+import 'package:phoenix/widgets/post.dart';
+import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/modules/posts/write_post.dart';
-import 'package:phoenix/modules/stories/storydata.dart';
+import 'package:phoenix/models/storydata_model.dart';
 import 'package:phoenix/shared/components/component.dart';
-import 'package:phoenix/modules/stories/story.dart';
+import 'package:phoenix/widgets/story.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -16,6 +17,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
+
   List<StoryData> stories=[
     StoryData(
       'Seif',
@@ -76,26 +78,26 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(14),
             child: Column(
               children: [
-                Container(
-                   width: double.infinity,
-                   height:100,
-                   child: ListView(
-                     scrollDirection:Axis.horizontal,
-                     children: [
-                       storyButtonProfile(story[0], context),
-                       storyButton(stories[0], context),
-                       storyButton(stories[1], context),
-                       storyButton(stories[2], context),
-                       storyButton(stories[3], context),
-                       storyButton(stories[4], context),
-                       storyButton(stories[1], context),
-                       storyButton(stories[3], context),
-                       storyButton(stories[0], context),
-                     ],
-                   ),
-                 ),
+                // Container(
+                //    width: double.infinity,
+                //    height:100,
+                //    child: ListView(
+                //      scrollDirection:Axis.horizontal,
+                //      children: [
+                //        storyButtonProfile(story[0], context),
+                //        storyButton(stories[0], context),
+                //        storyButton(stories[1], context),
+                //        storyButton(stories[2], context),
+                //        storyButton(stories[3], context),
+                //        storyButton(stories[4], context),
+                //        storyButton(stories[1], context),
+                //        storyButton(stories[3], context),
+                //        storyButton(stories[0], context),
+                //      ],
+                //    ),
+                //  ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.04,
+                  height: MediaQuery.of(context).size.height*0.05,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -120,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                               Padding(
                                 padding: const EdgeInsets.only(
                                   left: 8,
-                                  bottom: 10,
+                                  bottom: 1,
                                 ),
                                 child: Container(
                                   width:40,
@@ -160,95 +162,98 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                      iconSize:18,
-                                      onPressed:(){},
-                                      icon: Icon(Icons.videocam_outlined,color:Colour('#707070')),
-                                    ),
-                                    Text(
-                                      'Live',
-                                      style: TextStyle(
-                                        textBaseline:TextBaseline.alphabetic,
-                                        fontFamily:'Segoe UI',
-                                        fontSize:12,
-                                        color: Colour('#505050'),
-                                        fontWeight:FontWeight.w500,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 16,
+                            ),
+                            child: Row(
+                              mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(
+                                        width: 4,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                width:MediaQuery.of(context).size.width*0.01,
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                      onPressed:(){},
-                                      iconSize: 16,
-                                      icon:Icon(Icons.add_a_photo),
-                                      color:Colour('#505050'),
-                                    ),
-                                    Text(
-                                      'Photo/video',
-                                      style: TextStyle(
-                                        textBaseline:TextBaseline.alphabetic,
-                                        fontFamily:'Segoe UI',
-                                        fontSize:12,
-                                        color: Colour('#505050'),
-                                        fontWeight:FontWeight.w500,
+                                      Icon(Icons.videocam_outlined,color:Colour('#707070'),size: 18,),
+                                      const SizedBox(
+                                        width: 8,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                width:MediaQuery.of(context).size.width*0.01,
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                      onPressed:(){},
-                                      iconSize: 16,
-                                      icon:Icon(Icons.mood),
-                                      color:Colour('#505050'),
-                                    ),
-                                    Text(
-                                      'feeling',
-                                      style: TextStyle(
-                                        textBaseline:TextBaseline.alphabetic,
-                                        fontFamily:'Segoe UI',
-                                        fontSize:12,
-                                        color: Colour('#505050'),
-                                        fontWeight:FontWeight.w500,
+                                      Text(
+                                        'Live',
+                                        style: TextStyle(
+                                          textBaseline:TextBaseline.alphabetic,
+                                          fontFamily:'Segoe UI',
+                                          fontSize:12,
+                                          color: Colour('#505050'),
+                                          fontWeight:FontWeight.w500,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width:MediaQuery.of(context).size.width*0.012,
-                              ),
-                              defButton(
-                                border:8,
-                                backgroundColor:Colour('#008894'),
-                                pressed:(){},
-                                text:'post',
-                                height: 26,
-                                width:60,
-                              ),
-                            ],
+                                SizedBox(
+                                  width:MediaQuery.of(context).size.width*0.01,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.add_a_photo,color:Colour('#707070'),size: 18,),
+                                      const SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(
+                                        'Photo/video',
+                                        style: TextStyle(
+                                          textBaseline:TextBaseline.alphabetic,
+                                          fontFamily:'Segoe UI',
+                                          fontSize:12,
+                                          color: Colour('#505050'),
+                                          fontWeight:FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width:MediaQuery.of(context).size.width*0.01,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.mood,color:Colour('#707070'),size: 18,),
+                                      const SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(
+                                        'feeling',
+                                        style: TextStyle(
+                                          textBaseline:TextBaseline.alphabetic,
+                                          fontFamily:'Segoe UI',
+                                          fontSize:12,
+                                          color: Colour('#505050'),
+                                          fontWeight:FontWeight.w500,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width:MediaQuery.of(context).size.width*0.012,
+                                ),
+                                defButton(
+                                  border:8,
+                                  backgroundColor:Colour('#008894'),
+                                  pressed:(){},
+                                  text:'post',
+                                  height: 26,
+                                  width:60,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -259,10 +264,132 @@ class _HomePageState extends State<HomePage> {
                   height: MediaQuery.of(context).size.height*0.04,
                 ),
                 postWritten(post[0], context),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Text('50'),
+                        IconButton(
+                          icon:const Icon(Icons.thumb_up_alt_rounded,
+                            size: 20,
+                          ),
+                          color: Colour('#505050'),
+                          onPressed:(){} ,
+                        ),
+                        Text('Like',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Segoe UI',
+                            color:Colour('#505050'),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text('100'),
+                        IconButton(
+                          icon:  Icon(Icons.edit_note_rounded,
+                            color:Colour('#505050') ,
+                          ),
+                          onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const Comments())),
+                        ),
+                        Text('Comment',
+                          style: TextStyle(
+                            color:Colour('#505050'),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Segoe UI',
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon:  Icon(Icons.share,
+                            color:Colour('#505050') ,
+                          ),
+                          onPressed:(){},),
+                        Text('Share',
+                          style: TextStyle(
+                            color:Colour('#505050'),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Segoe UI',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height:MediaQuery.of(context).size.height*0.002,
                 ),
                 postImage(posts[0], context),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Text('50'),
+                        IconButton(
+                          icon:const Icon(Icons.thumb_up_alt_rounded,
+                            size: 20,
+                          ),
+                          color: Colour('#505050'),
+                          onPressed:(){} ,
+                        ),
+                        Text('Like',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Segoe UI',
+                            color:Colour('#505050'),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text('100'),
+                        IconButton(
+                          icon:  Icon(Icons.edit_note_rounded,
+                            color:Colour('#505050') ,
+                          ),
+                          onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const Comments())),
+                        ),
+                        Text('Comment',
+                          style: TextStyle(
+                            color:Colour('#505050'),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Segoe UI',
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          icon:  Icon(Icons.share,
+                            color:Colour('#505050') ,
+                          ),
+                          onPressed:(){},),
+                        Text('Share',
+                          style: TextStyle(
+                            color:Colour('#505050'),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Segoe UI',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

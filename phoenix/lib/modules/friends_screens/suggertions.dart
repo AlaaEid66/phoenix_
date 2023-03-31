@@ -1,7 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/friends_screens/friends_data.dart';
-import 'package:phoenix/modules/friends_screens/friends_page.dart';
+import 'package:phoenix/models/friendsdata_model.dart';
+import 'package:phoenix/widgets/friends_page.dart';
 import 'package:phoenix/shared/components/component.dart';
 class Suggestions extends StatefulWidget {
   const Suggestions({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class Suggestions extends StatefulWidget {
 }
 
 class _SuggestionsState extends State<Suggestions> {
-  List<FriendsData> friendsList=[
+  List<FriendsData> friendsSuggestionList=[
     FriendsData(
       'assets/images/s1.jpg',
       'Nader Amen',
@@ -41,7 +41,7 @@ class _SuggestionsState extends State<Suggestions> {
           elevation: 0,
           child:Column(
             children: [
-              friends(friendsList[0+1], context),
+              friends(friendsSuggestionList[0], context),
               const SizedBox(
                 height: 1,
               ),
@@ -87,7 +87,7 @@ class _SuggestionsState extends State<Suggestions> {
           elevation: 0,
           child:Column(
             children: [
-              friends(friendsList[1], context),
+              friends(friendsSuggestionList[1], context),
               const SizedBox(
                 height: 1,
               ),
@@ -133,7 +133,7 @@ class _SuggestionsState extends State<Suggestions> {
           elevation: 0,
           child:Column(
             children: [
-              friends(friendsList[2], context),
+              friends(friendsSuggestionList[2], context),
               const SizedBox(
                 height: 1,
               ),
@@ -179,7 +179,7 @@ class _SuggestionsState extends State<Suggestions> {
           elevation: 0,
           child:Column(
             children: [
-              friends(friendsList[3], context),
+              friends(friendsSuggestionList[3], context),
               const SizedBox(
                 height: 1,
               ),
@@ -225,7 +225,7 @@ class _SuggestionsState extends State<Suggestions> {
           elevation: 0,
           child:Column(
             children: [
-              friends(friendsList[4], context),
+              friends(friendsSuggestionList[4], context),
               const SizedBox(
                 height: 1,
               ),
@@ -271,7 +271,7 @@ class _SuggestionsState extends State<Suggestions> {
           elevation: 0,
           child:Column(
             children: [
-              friends(friendsList[4], context),
+              friends(friendsSuggestionList[4], context),
               const SizedBox(
                 height: 1,
               ),

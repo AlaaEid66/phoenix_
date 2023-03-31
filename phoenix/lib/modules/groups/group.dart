@@ -1,7 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/groups/group_data.dart';
-import 'package:phoenix/modules/save_items/saved_data.dart';
+import 'package:phoenix/models/groupdata_model.dart';
+import 'package:phoenix/models/saveddata_model.dart';
 class Groups extends StatefulWidget {
   const Groups({Key? key}) : super(key: key);
 
