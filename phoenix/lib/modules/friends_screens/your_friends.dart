@@ -73,19 +73,14 @@ class _FriendsPageState extends State<FriendsPage>
                 ),
                 child: Container(
                   width: 336,
-                  height: 44,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color:Colour('#EFEFEF'),
-                  ),
+                  color:Colour('#EFEFEF'),
                   child: TextFormField(
-
                     decoration:InputDecoration(
                       focusedBorder:OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(40),
                           borderSide:BorderSide(
                             color:Colour('#EFEFEF'),
-                            width: 4,
+                            width: 0,
                           )
                       ),
                       hintText:'Search',
@@ -100,7 +95,7 @@ class _FriendsPageState extends State<FriendsPage>
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   height: MediaQuery.of(context).size.height,
                   child: Column(

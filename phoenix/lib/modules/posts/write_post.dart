@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'dart:ui';
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/shared/components/component.dart';
@@ -13,6 +15,14 @@ class WritePost extends StatefulWidget {
 }
 
 class _WritePostState extends State<WritePost> {
+  File? _image2;
+  final imagePicker= ImagePicker();
+  Future getImage()async{
+    final image = await imagePicker.getImage(source:ImageSource.gallery);
+    setState(() {
+      _image2= File(image!.path);
+    });
+  }
   List<PostDataProfile> write=[
     PostDataProfile(
       'assets/images/s1.jpg',
@@ -79,7 +89,7 @@ class _WritePostState extends State<WritePost> {
                                 bottom: 16,
                               ),
                               child: IconButton(
-                                onPressed:(){},
+                                onPressed:getImage,
                                 icon:const Icon(Icons.add),
                                 color:Colour('#5B5E60'),
                               ),
@@ -132,29 +142,40 @@ class _WritePostState extends State<WritePost> {
                     ],
                   ),
                 ),
-                TextFormField(
-                  textInputAction: TextInputAction.done,
-                  textAlign:TextAlign.center,
-                  maxLines: 16,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colour('#FFFFFF'),
+                Container(
+                  child: _image2==null? TextFormField(
+                    textInputAction: TextInputAction.done,
+                    textAlign:TextAlign.center,
+                    maxLines: 16,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colour('#FFFFFF'),
                           width: 0.4,
+                        ),
                       ),
-                    ),
-                    contentPadding:const EdgeInsets.only(
-                      top: 230,
-                    ),
-                    hintText:'What\'s on your mind ?',
-                    hintStyle:TextStyle(
-                      color:Colour('#505050') ,
-                      fontFamily:'Segoe UI',
-                      fontSize:20,
-                      fontWeight:FontWeight.normal,
-                    ),
+                      contentPadding:const EdgeInsets.only(
+                        top: 230,
+                      ),
+                      hintText:'What\'s on your mind ?',
+                      hintStyle:TextStyle(
+                        color:Colour('#505050') ,
+                        fontFamily:'Segoe UI',
+                        fontSize:20,
+                        fontWeight:FontWeight.normal,
+                      ),
 
+                    ),
+                  ):Padding(
+                    padding: const EdgeInsets.only(
+                      top: 30,
+                      left: 16,
+                      right: 16,
+                      bottom: 40,
+                    ),
+                    child: Image.file(_image2!),
                   ),
                 ),
+               
                 Row(
                   mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                   children: [

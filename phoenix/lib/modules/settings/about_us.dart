@@ -39,71 +39,76 @@ class _AboutUsState extends State<AboutUs> {
           const SizedBox(
             height: 16,
           ),
-          RichText(
-            text:TextSpan(
-              text:'You can enter the world of ',
-              style:TextStyle(
-                color: Colour('#5B5E60'),
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Segoe UI',
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 20
+            ),
+            child: RichText(
+              text:TextSpan(
+                text:'You can enter the world of ',
+                style:TextStyle(
+                  color: Colour('#5B5E60'),
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: 'Segoe UI',
+                ),
+                children:<TextSpan>[
+                  TextSpan(
+                    text:'metavirus',
+                    style:  TextStyle(
+                      fontFamily: 'Segoe UI.ttf',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                  TextSpan(
+                    text: '\n&Using ',
+                    style:TextStyle(
+                      fontFamily: 'Segoe UI.ttf',
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                  TextSpan(
+                    text:'chatbot',
+                    style:  TextStyle(
+                      fontFamily: 'Segoe UI.ttf',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                  TextSpan(
+                    text:' and ',
+                    style:  TextStyle(
+                      fontFamily: 'Segoe UI.ttf',
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                  TextSpan(
+                    text:'photo detection',
+                    style:  TextStyle(
+                      fontFamily: 'Segoe UI.ttf',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                  TextSpan(
+                    text:'\ntechnology that can help you to know\nthe degree of burn and follow-up it\nduring the treatment journey',
+                    style:TextStyle(
+                      fontFamily: 'Segoe UI.ttf',
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                      color:Colour('#505050'),
+                    ),
+                  ),
+                ],
               ),
-              children:<TextSpan>[
-                TextSpan(
-                  text:'metavirus',
-                  style:  TextStyle(
-                    fontFamily: 'Segoe UI.ttf',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color:Colour('#505050'),
-                  ),
-                ),
-                TextSpan(
-                  text: '\n&Using ',
-                  style:TextStyle(
-                    fontFamily: 'Segoe UI.ttf',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                    color:Colour('#505050'),
-                  ),
-                ),
-                TextSpan(
-                  text:'chatbot',
-                  style:  TextStyle(
-                    fontFamily: 'Segoe UI.ttf',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color:Colour('#505050'),
-                  ),
-                ),
-                TextSpan(
-                  text:' and ',
-                  style:  TextStyle(
-                    fontFamily: 'Segoe UI.ttf',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                    color:Colour('#505050'),
-                  ),
-                ),
-                TextSpan(
-                  text:'photo detection',
-                  style:  TextStyle(
-                    fontFamily: 'Segoe UI.ttf',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color:Colour('#505050'),
-                  ),
-                ),
-                TextSpan(
-                  text:'\ntechnology that can help you to know\n the degree of burn and follow-up it\n during the treatment journey',
-                  style:TextStyle(
-                    fontFamily: 'Segoe UI.ttf',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
-                    color:Colour('#505050'),
-                  ),
-                ),
-              ],
             ),
           ),
         ],

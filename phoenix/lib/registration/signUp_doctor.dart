@@ -1,13 +1,16 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
+
+
+import 'dart:io';
+
 import 'package:colour/colour.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:dropdownfield2/dropdownfield2.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:phoenix/login/signIn_user.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:open_file/open_file.dart';
 import 'package:phoenix/login/sign_in_doctor.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/shared/components/component.dart';
@@ -24,7 +27,22 @@ class SignUpDoctor extends StatefulWidget {
 }
 
 class _SignUpDoctorState extends State<SignUpDoctor> {
-
+  File? pdfFile;
+  void _pickerFile()async{
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['jpg','pdf','doc']
+    );
+    if (result != null) {
+      final path = result.files.single.path;
+      setState(() {
+        pdfFile= File(path!);
+      });
+    }
+  }
+  void _openFile(PlatformFile file) {
+    OpenFile.open(file.path);
+  }
 
   var password , email,phoneNum,gender,dateOfBirth;
   bool? passwordVisible = true;
@@ -277,7 +295,8 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                     child: Container(
                       color:Colour('#FFFFFF'),
-                      child:Row(
+                      child: pdfFile==null?
+                      Row(
                         children: [
                           Icon(Icons.file_copy,
                             color: Colour('#008894'),
@@ -286,9 +305,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                             width: 10,
                           ),
                           TextButton(
-                            onPressed:(){
-                              
-                            },
+                            onPressed:_pickerFile,
                             child:Text(
                               'Upload CV',
                               style: TextStyle(
@@ -301,7 +318,10 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
 
                           ),
                         ],
-                      ),
+                      ):
+                          Image.file(
+                            File(pdfFile!.path.toString()),
+                          )
                     ),
                   ),
                   Padding(

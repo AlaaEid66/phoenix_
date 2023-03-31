@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/modules/posts/comments.dart';
+import 'package:phoenix/modules/posts/share_posts.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/modules/posts/write_post.dart';
@@ -312,7 +313,8 @@ class _HomePageState extends State<HomePage> {
                           icon:  Icon(Icons.share,
                             color:Colour('#505050') ,
                           ),
-                          onPressed:(){},),
+                          onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const SharePosts()))
+                        ),
                         Text('Share',
                           style: TextStyle(
                             color:Colour('#505050'),

@@ -79,41 +79,33 @@ class _CommentsState extends State<Comments> {
               const SizedBox(
                 height: 200,
               ),
-              Row(
-                children: [
-                  Container(
-                    width: 180,
-                    height: 40,
-                    decoration:BoxDecoration(
-                      color: Colour('#EFEFEF'),
-                      borderRadius: BorderRadius.circular(20)
+              Container(
+                width: 350,
+                color:Colour('#EFEFEF'),
+                child: TextFormField(
+                  autofocus: false,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius:BorderRadius.circular(10),
                     ),
-                    child: TextFormField(
-                      autofocus: false,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.only(
-                            left: 10,
-                          bottom: 10,
-                        ),
-                        hintText:'Write a comment..',
-                        hintStyle:TextStyle(
-                            color:Colour('#505050'),
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal,
-                            fontFamily: 'Segoe UI'
-                        ),
-                      ),
+                    contentPadding: const EdgeInsets.only(
+                        left: 10,
+                      bottom: 10,
+                    ),
+                    hintText:'Write a comment..',
+                    hintStyle:TextStyle(
+                        color:Colour('#505050'),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        fontFamily: 'Segoe UI'
+                    ),
+                    suffixIcon:   IconButton(
+                      onPressed:(){},
+                      icon:const Icon(Icons.send),
+                      iconSize: 20,
                     ),
                   ),
-                  const SizedBox(
-                    width: 2,
-                  ),
-                  IconButton(
-                    onPressed:(){},
-                    icon:const Icon(Icons.send),
-                    iconSize: 3,
-                  ),
-                ],
+                ),
               ),
             ],
           ),

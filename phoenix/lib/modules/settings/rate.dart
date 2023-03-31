@@ -153,12 +153,19 @@ class _RateAppState extends State<RateApp> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     decoration:InputDecoration(
-                      focusColor: Colour('#FFFFFF'),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colour('#FFFFFF'),
-                          width: 0,
-                        ),
+                      border: OutlineInputBorder(
+                        borderRadius:BorderRadius.circular(10),
                       ),
+                      contentPadding: const EdgeInsets.only(
+                        left: 10,
+                        bottom: 10,
+                      ),
+                      // focusColor: Colour('#FFFFFF'),
+                      // focusedBorder: OutlineInputBorder(
+                      //   borderSide: BorderSide(color: Colour('#FFFFFF'),
+                      //     width: 0,
+                      //   ),
+                      // ),
                       hintText: 'Write..',
                       hintStyle: TextStyle(
                         fontFamily: 'Segoe UI',

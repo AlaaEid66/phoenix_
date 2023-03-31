@@ -57,6 +57,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   table_calendar_null_safe:
   date_picker_timetable:
+  open_file:
   dio:
   shared_preferences:
   provider:
