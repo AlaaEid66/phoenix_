@@ -2,6 +2,7 @@ import 'package:colour/colour.dart';
 import 'package:date_picker_timetable/date_picker_timetable.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/models/doctorsdata_model.dart';
+import 'package:phoenix/widgets/doctors_details.dart';
 class Upcoming extends StatefulWidget {
   const Upcoming({Key? key}) : super(key: key);
 
@@ -77,31 +78,82 @@ class _UpcomingState extends State<Upcoming> {
                top: 64,
              ),
              child: Container(
+               width: 302,
+               height: 200,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(10),
                  color:Colour('#F0FBFC')
                ),
-               width: 302,
-               height: 123,
-               child: Row(
+               child: Column(
+                 mainAxisAlignment: MainAxisAlignment.start,
                  children: [
-                   Container(
-                     width: 96,
-                     height: 123,
-                     child:Image.asset('assets/images/s1.jpg',fit: BoxFit.cover,),
+                   doctor(doctorAppoint[0], context),
+                   Padding(
+                     padding: const EdgeInsets.only(
+                       right: 0,
+                       bottom: 20,
+                     ),
+                     child: Row(
+                       mainAxisAlignment: MainAxisAlignment.end,
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         Padding(
+                           padding: const EdgeInsets.only(
+                             bottom:4
+                           ),
+                           child: Row(
+                             children: [
+                               Icon(
+                                 Icons.calendar_month_outlined,
+                                 size:15,
+                                 color:Colour('#5B5E60'),
+                               ),
+                               const SizedBox(
+                                 width: 4,
+                               ),
+                               Text('${_selectedValue.day}',
+                                 style:TextStyle(
+                                   color: Colour('#5B5E60'),
+                                   fontSize: 12,
+                                   fontWeight: FontWeight.normal,
+                                   fontFamily: 'Segoe UI',
+                                 ),
+                               ),
+                             ],
+                           ),
+                         ),
+                         const SizedBox(
+                           width: 80,
+                         ),
+                         Padding(
+                           padding: const EdgeInsets.only(
+                             right: 24
+                           ),
+                           child: Row(
+                             children: [
+                               Icon(
+                                 Icons.access_time_rounded,
+                                 size:15,
+                                 color:Colour('#5B5E60'),
+                               ),
+                               const SizedBox(
+                                 width: 4,
+                               ),
+                               Text('${_selectedValue.year}',
+                                 style:TextStyle(
+                                   color: Colour('#5B5E60'),
+                                   fontSize: 12,
+                                   fontWeight: FontWeight.normal,
+                                   fontFamily: 'Segoe UI',
+                                 ),
+                               ),
+                             ],
+                           ),
+                         ),
+
+                       ],
+                     ),
                    ),
-                  Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(
-                          top: 16,
-                          left: 16,
-                        ),
-                        child: Text('Therapist'),
-                      ),
-                      Text('${_selectedValue.day}')
-                    ],
-                  ),
                  ],
                ),
              ),

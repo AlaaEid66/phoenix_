@@ -7,7 +7,7 @@ import 'package:phoenix/modules/groups/group.dart';
 import 'package:phoenix/modules/photo_detection/upload_image.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
-import 'package:phoenix/models/profiledata_model.dart';
+import 'package:phoenix/widgets/profile.dart';
 import 'package:phoenix/modules/save_items/saved_items.dart';
 import 'package:phoenix/modules/settings/setting_page.dart';
 import 'package:phoenix/shared/components/component.dart';
