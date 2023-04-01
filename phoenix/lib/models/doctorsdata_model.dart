@@ -11,18 +11,21 @@ class DoctorsData{
       );
 }
 class DoctorsDataProfile{
+  double? doctorRating;
   String? doctorUrlAvatarProfile;
   String? doctorNameProfile;
   String? doctorDescProfile;
-  double? doctorRating;
+
 
   DoctorsDataProfile(
-      this.doctorRating,
-      this.doctorUrlAvatarProfile,
-      this.doctorNameProfile,
-      this.doctorDescProfile,
-      );
+    this.doctorRating,
+    this.doctorUrlAvatarProfile,
+    this.doctorNameProfile,
+    this.doctorDescProfile,
+
+  );
 }
+
 
 
 class DoctorsDataPage{
@@ -43,8 +46,8 @@ class DoctorsDataPage{
       );
 }
 class DoctorsDetails{
-   double? yearExperience;
-   double? numOfHospitals;
+   int? yearExperience;
+   int? numOfHospitals;
    String? placesOfWork;
 
   DoctorsDetails(

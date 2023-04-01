@@ -1,3 +1,4 @@
+import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 class ReviewDoctor extends StatefulWidget {
   const ReviewDoctor({Key? key}) : super(key: key);
@@ -9,6 +10,15 @@ class ReviewDoctor extends StatefulWidget {
 class _ReviewDoctorState extends State<ReviewDoctor> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor:Colour('#FFFFFF') ,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+
+          ],
+        ),
+      ),
+    );
   }
 }
