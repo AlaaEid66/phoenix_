@@ -1,11 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-// import 'package:phoenix/modules/friends_screens/friendsdata_model.dart';
-// import 'package:phoenix/modules/friends_screens/friends_page.dart';
 import 'package:phoenix/modules/friends_screens/my_friends.dart';
 import 'package:phoenix/modules/friends_screens/suggertions.dart';
-// import 'package:phoenix/shared/components/component.dart';
-// import 'package:buttons_tabbar/buttons_tabbar.dart';
 class FriendsPage extends StatefulWidget {
   const FriendsPage({Key? key}) : super(key: key);
 
@@ -76,6 +72,9 @@ class _FriendsPageState extends State<FriendsPage>
                   color:Colour('#EFEFEF'),
                   child: TextFormField(
                     decoration:InputDecoration(
+                      contentPadding: const EdgeInsets.only(
+                        left: 10
+                      ),
                       focusedBorder:OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
                           borderSide:BorderSide(
@@ -100,9 +99,8 @@ class _FriendsPageState extends State<FriendsPage>
                   height: MediaQuery.of(context).size.height,
                   child: Column(
                     children: [
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       Container(
-                        // height: 50,
                         width: MediaQuery.of(context).size.height,
                         decoration: BoxDecoration(
                             color: Colour('#EFEFEF'),
@@ -110,7 +108,7 @@ class _FriendsPageState extends State<FriendsPage>
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: const EdgeInsets.all(5),
                               child: TabBar(
                                 controller: tabController,
                                 unselectedLabelColor: Colour('#505050'),
@@ -145,7 +143,7 @@ class _FriendsPageState extends State<FriendsPage>
                             MyFriends(),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
