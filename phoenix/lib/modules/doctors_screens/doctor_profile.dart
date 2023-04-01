@@ -1,6 +1,9 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/models/doctorsdata_model.dart';
+import 'package:phoenix/modules/doctors_screens/about_doctor.dart';
+import 'package:phoenix/modules/doctors_screens/doctor_schedules.dart';
+import 'package:phoenix/modules/doctors_screens/review_doctor.dart';
 import 'package:phoenix/modules/friends_screens/my_friends.dart';
 import 'package:phoenix/modules/friends_screens/suggertions.dart';
 import 'package:phoenix/modules/search_screens/search.dart';
@@ -18,7 +21,7 @@ class _DoctorPageState extends State<DoctorPage>
 
   @override
   void initState() {
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length:3, vsync: this);
     super.initState();
   }
 
@@ -69,69 +72,71 @@ class _DoctorPageState extends State<DoctorPage>
           ),
         ),
         backgroundColor: Colour('#FFFFFF'),
-        body: Column(
-          children: [
-            doctorsPage(doctorPage[0], context),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 30),
-                    Container(
-                      width: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                          color: Colour('#EFEFEF'),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(5),
-                            child: TabBar(
-                              controller: tabController,
-                              unselectedLabelColor: Colour('#505050'),
-                              labelColor: Colour('#FFFFFF'),
-                              indicatorColor:Colour('#FFFFFF'),
-                              indicatorWeight: 3,
-                              indicator: BoxDecoration(
-                                color: Colour('#008894'),
-                                borderRadius: BorderRadius.circular(20),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              doctorsPage(doctorPage[0], context),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 30),
+                      Container(
+                        width: MediaQuery.of(context).size.height,
+                        decoration: BoxDecoration(
+                            color: Colour('#EFEFEF'),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: TabBar(
+                                controller: tabController,
+                                unselectedLabelColor: Colour('#505050'),
+                                labelColor: Colour('#FFFFFF'),
+                                indicatorColor:Colour('#FFFFFF'),
+                                indicatorWeight: 3,
+                                indicator: BoxDecoration(
+                                  color: Colour('#008894'),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                tabs: const [
+                                  Tab(
+                                    text: 'About',
+                                  ),
+                                  Tab(
+                                    text: 'Reviews',
+                                  ),
+                                  Tab(
+                                    text: 'Schedule',
+                                  ),
+                                ],
                               ),
-                              tabs:const [
-                                Tab(
-                                  text: 'About',
-                                ),
-                                Tab(
-                                  text: 'Reviews',
-                                ),
-                                Tab(
-                                  text: 'Schedule',
-                                ),
-                              ],
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Expanded(
-                      child: TabBarView(
-                        controller: tabController,
-                        children: const [
-                          Suggestions(),
-                          MyFriends(),
-                          Search(),
-                        ],
+                      const SizedBox(
+                        height: 20,
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: TabBarView(
+                          controller: tabController,
+                          children: const [
+                            AboutDoctor(),
+                            ReviewDoctor(),
+                            ScheduleDoctor(),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
 
       ),
