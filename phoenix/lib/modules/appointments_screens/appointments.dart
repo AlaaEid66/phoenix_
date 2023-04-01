@@ -4,7 +4,6 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/modules/appointments_screens/upcoming_appoint.dart';
 import 'package:phoenix/modules/friends_screens/my_friends.dart';
-import 'package:phoenix/modules/friends_screens/suggertions.dart';
 import 'package:phoenix/modules/settings/about_us.dart';
 
 class Appointment extends StatefulWidget {
@@ -30,30 +29,10 @@ class _AppointmentState extends State<Appointment>
     tabController2!.dispose();
     super.dispose();
   }
-  // int current=0;
-  // List<String>labels =['Suggestions','Your friends'];
-  // List<String> items=[
-  //   'Suggestion',
-  //   'Your Friends'
-  // ];
 
 
   @override
   Widget build(BuildContext context) {
-    // List<dynamic> filteredSchedules = schedules.where((var schedule) {
-    //   switch (schedule['status']) {
-    //     case 'upcoming':
-    //       schedule['status'] = FilterStatus.Upcoming;
-    //       break;
-    //     case 'complete':
-    //       schedule['status'] = FilterStatus.Completed;
-    //       break;
-    //     case 'cancel':
-    //       schedule['status'] = FilterStatus.Canceled;
-    //       break;
-    //   }
-    //   return schedule['status'] == status;
-    // }).toList();
     return Padding(
       padding: const EdgeInsets.only(
         top:60,

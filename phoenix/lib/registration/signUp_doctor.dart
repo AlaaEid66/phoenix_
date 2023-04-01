@@ -320,7 +320,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                         ],
                       ):
                           Image.file(
-                            File(pdfFile!.path.toString()),
+                            File(pdfFile!.path),
                           )
                     ),
                   ),

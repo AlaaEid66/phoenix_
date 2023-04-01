@@ -19,7 +19,7 @@ class _UpcomingState extends State<Upcoming> {
     ),
   ];
 
-  DatePickerController _controller = DatePickerController();
+  final DatePickerController _controller = DatePickerController();
   DateTime _selectedValue = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -150,7 +150,6 @@ class _UpcomingState extends State<Upcoming> {
                              ],
                            ),
                          ),
-
                        ],
                      ),
                    ),
