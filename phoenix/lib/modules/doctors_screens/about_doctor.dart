@@ -1,7 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/models/doctorsdata_model.dart';
-import 'package:phoenix/modules/doctors_screens/doctor_profile.dart';
 class AboutDoctor extends StatefulWidget {
   const AboutDoctor({Key? key}) : super(key: key);
 

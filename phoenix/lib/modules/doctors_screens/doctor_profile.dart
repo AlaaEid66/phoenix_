@@ -4,9 +4,7 @@ import 'package:phoenix/models/doctorsdata_model.dart';
 import 'package:phoenix/modules/doctors_screens/about_doctor.dart';
 import 'package:phoenix/modules/doctors_screens/doctor_schedules.dart';
 import 'package:phoenix/modules/doctors_screens/review_doctor.dart';
-import 'package:phoenix/modules/friends_screens/my_friends.dart';
-import 'package:phoenix/modules/friends_screens/suggertions.dart';
-import 'package:phoenix/modules/search_screens/search.dart';
+
 import 'package:phoenix/widgets/doctors_details.dart';
 class DoctorPage extends StatefulWidget {
   const DoctorPage({Key? key}) : super(key: key);

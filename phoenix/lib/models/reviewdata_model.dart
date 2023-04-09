@@ -1,7 +1,7 @@
 class CommentReview{
   String? avatarUrl;
   String? userName;
-  int? dateOfComment;
+  String? dateOfComment;
   String? bodyOfComment;
   int? numOfLikes;
   int? numOfComments;

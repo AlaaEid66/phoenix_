@@ -26,8 +26,8 @@ class _WatchVideosState extends State<WatchVideos> {
       'Ali Emam',
       '10 Oct . 2022',
       'assets/images/v2.jpg',
-      60 ,
-      30,
+      120 ,
+      880,
       '',
     ),
     PostData(
@@ -35,8 +35,8 @@ class _WatchVideosState extends State<WatchVideos> {
       'Ahmed Mahdy',
       '10 Oct . 2022',
       'assets/images/v3.jpg',
-      60 ,
-      30,
+      90 ,
+      100,
       '',
     ),
   ];
@@ -77,7 +77,7 @@ class _WatchVideosState extends State<WatchVideos> {
                   children: [
                     Row(
                       children: [
-                        Text('50'),
+                        Text('${videos[0].postLikes}'),
                         IconButton(
                           icon:const Icon(Icons.thumb_up_alt_rounded,
                             size: 20,
@@ -97,7 +97,7 @@ class _WatchVideosState extends State<WatchVideos> {
                     ),
                     Row(
                       children: [
-                        Text('100'),
+                        Text('${videos[0].postComments}'),
                         IconButton(
                           icon:  Icon(Icons.edit_note_rounded,
                             color:Colour('#505050') ,
@@ -142,7 +142,7 @@ class _WatchVideosState extends State<WatchVideos> {
                   children: [
                     Row(
                       children: [
-                        Text('50'),
+                        Text('${videos[0].postLikes}'),
                         IconButton(
                           icon:const Icon(Icons.thumb_up_alt_rounded,
                             size: 20,
@@ -162,7 +162,7 @@ class _WatchVideosState extends State<WatchVideos> {
                     ),
                     Row(
                       children: [
-                        Text('100'),
+                        Text('${videos[0].postComments}'),
                         IconButton(
                           icon:  Icon(Icons.edit_note_rounded,
                             color:Colour('#505050') ,
@@ -207,7 +207,7 @@ class _WatchVideosState extends State<WatchVideos> {
                   children: [
                     Row(
                       children: [
-                        Text('50'),
+                        Text('${videos[0].postLikes}'),
                         IconButton(
                           icon:const Icon(Icons.thumb_up_alt_rounded,
                             size: 20,
@@ -227,7 +227,7 @@ class _WatchVideosState extends State<WatchVideos> {
                     ),
                     Row(
                       children: [
-                        Text('100'),
+                        Text('${videos[0].postComments}'),
                         IconButton(
                           icon:  Icon(Icons.edit_note_rounded,
                             color:Colour('#505050') ,

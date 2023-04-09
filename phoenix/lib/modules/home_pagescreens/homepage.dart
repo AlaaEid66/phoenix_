@@ -270,7 +270,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Row(
                       children: [
-                        Text('50'),
+                        Text('${post[0].postLikes}'),
                         IconButton(
                           icon:const Icon(Icons.thumb_up_alt_rounded,
                             size: 20,
@@ -290,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Row(
                       children: [
-                        Text('100'),
+                        Text('${post[0].postComments}'),
                         IconButton(
                           icon:  Icon(Icons.edit_note_rounded,
                             color:Colour('#505050') ,
