@@ -12,7 +12,7 @@ class Messages extends StatefulWidget {
 }
 
 class _MessagesState extends State<Messages> {
-  List<MessagesData> messages=[
+  List<MessagesData> activePeople=[
     MessagesData(
       'assets/images/s1.jpg',
       '',
@@ -53,6 +53,49 @@ class _MessagesState extends State<Messages> {
       '',
       true,
     ),
+  ];
+  List<MessageSentData> contentMessages=[
+    MessageSentData(
+      'assets/images/s1.jpg',
+      'Ahmed Mahdy',
+      false,
+      false,
+      'ahmed called you.',
+      '4 hours ago'
+    ),
+    MessageSentData(
+        'assets/images/s1.jpg',
+        'Emam Ali',
+        true,
+        false,
+        ' what\'s wrong?',
+        'Thu at 3:38 PM'
+    ),
+    MessageSentData(
+        'assets/images/s1.jpg',
+        'Emam Ali',
+        true,
+        true,
+        ' what\'s wrong?',
+        'Thu at 3:38 PM'
+    ),
+    MessageSentData(
+        'assets/images/s1.jpg',
+        'Ahmed Mahdy',
+        true,
+        true,
+        'ahmed called you.',
+        '4 hours ago'
+    ),
+    MessageSentData(
+        'assets/images/s1.jpg',
+        'Ahmed Mahdy',
+        true,
+        true,
+        'ahmed called you.',
+        '4 hours ago'
+    ),
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -144,17 +187,40 @@ class _MessagesState extends State<Messages> {
                        child: ListView(
                          scrollDirection:Axis.horizontal,
                          children: [
-                           messagesButton(messages[0],context),
-                           messagesButton(messages[1],context),
-                           messagesButton(messages[2],context),
-                           messagesButton(messages[3],context),
-                           messagesButton(messages[4],context),
-                           messagesButton(messages[5],context),
-                           messagesButton(messages[6],context),
-                           messagesButton(messages[7],context),
+                           messagesButton(activePeople[0],context),
+                           messagesButton(activePeople[1],context),
+                           messagesButton(activePeople[2],context),
+                           messagesButton(activePeople[3],context),
+                           messagesButton(activePeople[4],context),
+                           messagesButton(activePeople[5],context),
+                           messagesButton(activePeople[6],context),
+                           messagesButton(activePeople[7],context),
                          ],
                        ),
                      ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height*0.0032,
+                    ),
+                    Text(
+                      'Messages',
+                      style:TextStyle(
+                        color: Colour('#505050'),
+                        fontFamily: 'Segoe UI',
+                        fontSize: 12,
+                        fontWeight:FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height*0.0032,
+                    ),
+                    messageCard(contentMessages[0], context),
+                    messageCard(contentMessages[1], context),
+                    messageCard(contentMessages[2], context),
+                    messageCard(contentMessages[3], context),
+                    messageCard(contentMessages[1], context),
+                    messageCard(contentMessages[4], context),
+                    messageCard(contentMessages[0], context),
+
                   ],
                 ),
               ),
