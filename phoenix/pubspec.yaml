@@ -61,6 +61,10 @@ dependencies:
   dio:
   shared_preferences:
   provider:
+  flutter_chat_types:
+  uuid: ^3.0.7
+  mime:
+
 
 
 dev_dependencies:

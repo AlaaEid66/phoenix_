@@ -5,9 +5,9 @@ import 'package:phoenix/modules/posts/share_posts.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/modules/posts/write_post.dart';
-import 'package:phoenix/models/storydata_model.dart';
+import 'package:phoenix/models/messagedata_model.dart';
 import 'package:phoenix/shared/components/component.dart';
-import 'package:phoenix/widgets/story.dart';
+import 'package:phoenix/widgets/message.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -19,34 +19,8 @@ class HomePage extends StatefulWidget {
 }
 class _HomePageState extends State<HomePage> {
 
-  List<StoryData> stories=[
-    StoryData(
-      'Seif',
-      'assets/images/s1.jpg',
-    ),
-    StoryData(
-      'Ali',
-      'assets/images/s1.jpg',
-     ),
-    StoryData(
-      'Youssef',
-      'assets/images/s1.jpg',
-    ),
-    StoryData(
-      'Yehia',
-      'assets/images/s1.jpg',
-    ),
-    StoryData(
-      'Younis',
-       'assets/images/s1.jpg',
-    ),
-  ];
-  List<StoryDataProfile> story=[
-    StoryDataProfile(
-      'Your Story',
-      avatarUrlProfile: 'assets/images/s1.jpg',
-    ),
-  ];
+
+
   List<PostData> post=[
     PostData(
         'assets/images/s1.jpg',

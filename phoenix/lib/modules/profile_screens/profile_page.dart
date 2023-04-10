@@ -5,6 +5,7 @@ import 'package:phoenix/modules/appointments_screens/appointments.dart';
 import 'package:phoenix/modules/doctors_screens/doctors.dart';
 import 'package:phoenix/modules/friends_screens/your_friends.dart';
 import 'package:phoenix/modules/groups/group.dart';
+import 'package:phoenix/modules/messages/messages.dart';
 import 'package:phoenix/modules/photo_detection/upload_image.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
@@ -116,7 +117,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              width:MediaQuery.of(context).size.width*0.51,
                            ),
                            IconButton(
-                             onPressed:(){},
+                             onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const Messages())),
                              icon:const Icon(Icons.arrow_forward_ios_rounded),
                              color:Colour('#505050'),
                              iconSize: 24,

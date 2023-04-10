@@ -2,7 +2,6 @@
 
 
 import 'dart:io';
-
 import 'package:colour/colour.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +13,12 @@ import 'package:open_file/open_file.dart';
 import 'package:phoenix/login/sign_in_doctor.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/shared/components/component.dart';
+
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:mime/mime.dart';
+
+
+import 'package:uuid/uuid.dart';
 
 
 
@@ -27,22 +32,25 @@ class SignUpDoctor extends StatefulWidget {
 }
 
 class _SignUpDoctorState extends State<SignUpDoctor> {
+  File? _file;
+  final List<types.Message> _messages = [];
+  final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
   File? pdfFile;
-  void _pickerFile()async{
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['jpg','pdf','doc']
-    );
-    if (result != null) {
-      final path = result.files.single.path;
-      setState(() {
-        pdfFile= File(path!);
-      });
-    }
-  }
-  void _openFile(PlatformFile file) {
-    OpenFile.open(file.path);
-  }
+
+
+  // void _pickerFile()async{
+  //   final result = await FilePicker.platform.pickFiles(
+  //     type: FileType.custom,
+  //     allowedExtensions: ['jpg','pdf','doc']
+  //   );
+  //   if (result != null) {
+  //     final path = result.files.single.path;
+  //     File? pdfFile;
+  //   }
+  // }
+  // void _openFile(PlatformFile file) {
+  //   OpenFile.open(file.path);
+  // }
 
   var password , email,phoneNum,gender,dateOfBirth;
   bool? passwordVisible = true;
@@ -305,7 +313,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                             width: 10,
                           ),
                           TextButton(
-                            onPressed:_pickerFile,
+                            onPressed:_handleFileSelection,
                             child:Text(
                               'Upload CV',
                               style: TextStyle(
@@ -319,8 +327,9 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                           ),
                         ],
                       ):
-                          Image.file(
-                            File(pdfFile!.path),
+                      Image.file(
+                            _messages as File,
+                            // File(_file!.path),
                           )
                     ),
                   ),
@@ -436,5 +445,30 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
         ),
       ),
     );
+  }
+
+  void _addMessage(types.Message message) {
+    setState(() {
+      _messages.insert(0, message);
+    });
+  }
+  void _handleFileSelection() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.any,
+    );
+
+    if (result != null && result.files.single.path != null) {
+      final path = types.FileMessage(
+        author: _user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: const Uuid().v4(),
+        mimeType: lookupMimeType(result.files.single.path!),
+        name: result.files.single.name,
+        size: result.files.single.size,
+        uri: result.files.single.path!,
+      );
+      _addMessage(_messages as types.Message);
+
+    }
   }
 }

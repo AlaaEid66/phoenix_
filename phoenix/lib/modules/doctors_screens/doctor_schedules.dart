@@ -10,6 +10,7 @@ class ScheduleDoctor extends StatefulWidget {
 }
 
 class _ScheduleDoctorState extends State<ScheduleDoctor> {
+
   int? _currentIndex;
   bool _isWeekend = false;
   bool _timeSelected = false;
@@ -21,25 +22,7 @@ class _ScheduleDoctorState extends State<ScheduleDoctor> {
       body:CustomScrollView(
 
         slivers: <Widget>[
-          // SliverToBoxAdapter(
-          //   child: Column(
-          //     children: <Widget>[
-          //
-          //       const Padding(
-          //         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
-          //         child: Center(
-          //           child: Text(
-          //             'Select Consultation Time',
-          //             style: TextStyle(
-          //               fontWeight: FontWeight.bold,
-          //               fontSize: 20,
-          //             ),
-          //           ),
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
+
           _isWeekend
               ? SliverToBoxAdapter(
             child: Container(
