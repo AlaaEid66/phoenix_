@@ -80,8 +80,8 @@ Widget notifyLikeNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                 const SizedBox(
-                    width: 34,
+                 SizedBox(
+                    width: MediaQuery.of(context).size.width*0.096,
                   ),
                   IconButton(
                       onPressed:(){},
@@ -160,7 +160,7 @@ Widget notifyCommentNew(NotifyData notifyData,BuildContext context){
                 ),
               ),
               SizedBox(
-                width:MediaQuery.of(context).size.width*0.03,
+                width:MediaQuery.of(context).size.width*0.04,
               ),
               Row(
                 children: [
@@ -232,6 +232,7 @@ Widget notifyAddFriendNew(NotifyData notifyData,BuildContext context){
         bottom: 6,
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -304,8 +305,8 @@ Widget notifyAddFriendNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  const  SizedBox(
-                    width: 54,
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width*0.16,
                   ),
                   IconButton(
                     onPressed:(){},
@@ -343,6 +344,7 @@ Widget notifyLikeEarlier(NotifyData notifyData,BuildContext context){
     child: Padding(
       padding: const EdgeInsets.all(6),
       child: Column(
+         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -452,6 +454,7 @@ Widget notifyCommentEarlier(NotifyData notifyData,BuildContext context){
     child: Padding(
       padding: const EdgeInsets.all(6),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -495,7 +498,7 @@ Widget notifyCommentEarlier(NotifyData notifyData,BuildContext context){
                 ),
               ),
               SizedBox(
-                width:MediaQuery.of(context).size.width*0.03,
+                width:MediaQuery.of(context).size.width*0.02,
               ),
               Row(
                 children: [
@@ -539,7 +542,7 @@ Widget notifyCommentEarlier(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 170,
+              right: 150,
               top: 0,
             ),
             child: Text('${notifyData.notifyDate}',

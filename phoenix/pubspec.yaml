@@ -40,6 +40,10 @@ dependencies:
   image_picker:
   file_picker:
   dropdownfield2:
+  firebase_core:
+  firebase_messaging:
+  firebase_database:
+  keyboard_actions: ^4.2.0
   dropdown_button2:
   story_view:
   dashed_circle:
@@ -63,6 +67,11 @@ dependencies:
   provider:
   flutter_chat_types:
   uuid: ^3.0.7
+  rethink_db_ns: ^0.0.4
+  flutter_io_socket:
+  socket_io_client:
+  intl: ^0.18.0
+  lottie:
   mime:
 
 
@@ -92,6 +101,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/animation/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

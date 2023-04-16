@@ -8,12 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:open_file/open_file.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 import 'package:phoenix/login/sign_in_doctor.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
-import 'package:phoenix/shared/components/component.dart';
-
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:mime/mime.dart';
 

@@ -1,3 +1,4 @@
+// ignore: file_names
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,7 +7,7 @@ import 'package:colour/colour.dart';
 import 'package:phoenix/login/forget_password.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/registration/signUp_user.dart';
-import 'package:phoenix/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 class SignInUser extends StatefulWidget {
   const SignInUser({super.key});
 

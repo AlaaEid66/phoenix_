@@ -13,4 +13,5 @@ class CommentsData{
       this.numOfReact,
 
       );
+
 }

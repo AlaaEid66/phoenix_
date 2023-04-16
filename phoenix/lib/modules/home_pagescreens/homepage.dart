@@ -5,9 +5,7 @@ import 'package:phoenix/modules/posts/share_posts.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/modules/posts/write_post.dart';
-import 'package:phoenix/models/messagedata_model.dart';
-import 'package:phoenix/shared/components/component.dart';
-import 'package:phoenix/widgets/message.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 
 
 class HomePage extends StatefulWidget {

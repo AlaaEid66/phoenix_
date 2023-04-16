@@ -1,6 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 class EditMail extends StatefulWidget {
   const EditMail({Key? key}) : super(key: key);
 

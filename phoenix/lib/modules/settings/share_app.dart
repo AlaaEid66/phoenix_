@@ -1,7 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:phoenix/shared/components/component.dart';
+
 
 class ShareApp extends StatefulWidget {
   const ShareApp({Key? key}) : super(key: key);

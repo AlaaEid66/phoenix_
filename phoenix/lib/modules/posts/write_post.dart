@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
-import 'package:phoenix/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 
 class WritePost extends StatefulWidget {
   const WritePost({Key? key}) : super(key: key);

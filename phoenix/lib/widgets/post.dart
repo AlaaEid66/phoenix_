@@ -1,6 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/shared/components/consts.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 import '../models/postdata_model.dart';
 
 Widget postWritten(PostData postData,BuildContext context){

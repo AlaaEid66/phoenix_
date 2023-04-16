@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.18"
+  archive:
+    dependency: transitive
+    description:
+      name: archive
+      sha256: "0c8368c9b3f0abbc193b9d6133649a614204b528982bebc7026372d61677ce3a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.7"
   async:
     dependency: transitive
     description:
@@ -73,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      sha256: "0f08b14755d163f6e2134cb58222dd25ea2a2ee8a195e53983d57c075324d592"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
   cross_file:
     dependency: transitive
     description:
@@ -234,7 +250,7 @@ packages:
     source: hosted
     version: "5.2.2"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: "75f747cafd7cbd6c00b908e3a7aa59fc31593d46ba8165d9ee8a79e69464a394"
@@ -257,6 +273,62 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
+  firebase_database:
+    dependency: "direct main"
+    description:
+      name: firebase_database
+      sha256: b42f08b1e58dc022c83b8f4e0f7dcaf689b8ed7058255a059fbe07f22563be6e
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.0.16"
+  firebase_database_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_database_platform_interface
+      sha256: d9b78598713f29f2b0d3c119ba10ca89e2a201a8de5973d6376a395787f23017
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2+23"
+  firebase_database_web:
+    dependency: transitive
+    description:
+      name: firebase_database_web
+      sha256: c7d53bdb7feeb846390d2e09931b8146dcefbc2588793ee143f48652fc17e51e
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1+25"
+  firebase_messaging:
+    dependency: "direct main"
+    description:
+      name: firebase_messaging
+      sha256: e82c99bcccf707db4d82ac3fb07be629a392c4cc2a6756aaf1a74c009114846f
+      url: "https://pub.dev"
+    source: hosted
+    version: "14.3.0"
+  firebase_messaging_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_messaging_platform_interface
+      sha256: "710bb139ff6e27fe47a0684ba88df4b7517a44d814dc6b7f54a2537568a82fcf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.16"
+  firebase_messaging_web:
+    dependency: transitive
+    description:
+      name: firebase_messaging_web
+      sha256: "66ece031cb17fb771cda4b3328858395fa48aa4c3b3e6a5d1bcaff928086cacd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.17"
+  fixnum:
+    dependency: transitive
+    description:
+      name: fixnum
+      sha256: "25517a4deb0c03aa0f32fd12db525856438902d9c16536311e76cdc57b31d7d1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -278,6 +350,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.0"
+  flutter_io_socket:
+    dependency: "direct main"
+    description:
+      name: flutter_io_socket
+      sha256: f93299490fdb0d8ea82f797d2455100440434f49cae7c31135d2689c8853b35a
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -414,7 +494,7 @@ packages:
     source: hosted
     version: "2.6.3"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
@@ -437,6 +517,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.0"
+  keyboard_actions:
+    dependency: "direct main"
+    description:
+      name: keyboard_actions
+      sha256: "31e0ab2a706ac8f58887efa60efc1f19aecdf37d8ab0f665a0f156d1fbeab650"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.0"
   lints:
     dependency: transitive
     description:
@@ -445,6 +533,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "04094f2eb032cbb06c6f6e8d3607edcfcb0455e2bb6cbc010cb01171dcb64e6d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
+  lottie:
+    dependency: "direct main"
+    description:
+      name: lottie
+      sha256: "23522951540d20a57a60202ed7022e6376bed206a4eee1c347a91f58bd57eb9f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.2"
   matcher:
     dependency: transitive
     description:
@@ -557,6 +661,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.7"
+  pbkdf2ns:
+    dependency: transitive
+    description:
+      name: pbkdf2ns
+      sha256: "395eb73e1859cd0864de14d97e07b70392eda7f7fd6f0ed7537dd7062dc0650c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   pedantic:
     dependency: transitive
     description:
@@ -581,6 +693,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  pointycastle:
+    dependency: transitive
+    description:
+      name: pointycastle
+      sha256: c3120a968135aead39699267f4c74bc9a08e4e909e86bc1b0af5bfd78691123c
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.7.2"
   process:
     dependency: transitive
     description:
@@ -589,6 +709,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.4"
+  protobuf:
+    dependency: transitive
+    description:
+      name: protobuf
+      sha256: "01dd9bd0fa02548bf2ceee13545d4a0ec6046459d847b6b061d8a27237108a08"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   provider:
     dependency: "direct main"
     description:
@@ -597,6 +725,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
+  rethink_db_ns:
+    dependency: "direct main"
+    description:
+      name: rethink_db_ns
+      sha256: dac14016cd8a40dfcaed63ac956b11bc8a7a0328f52e35f8a5f8abc644f0ab87
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   rive:
     dependency: transitive
     description:
@@ -690,6 +826,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  socket_io_client:
+    dependency: "direct main"
+    description:
+      name: socket_io_client
+      sha256: a9c589d3fe2658506be38ddb36f23348daab73a00ff1645533669d07a5111cfc
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
+  socket_io_common:
+    dependency: transitive
+    description:
+      name: socket_io_common
+      sha256: "5a218a784df4d1927ae713e17af619caa736cb2ebac287c59e4e24228b22da29"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2"
   source_span:
     dependency: transitive
     description:

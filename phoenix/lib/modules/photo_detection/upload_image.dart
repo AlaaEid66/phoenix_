@@ -2,7 +2,7 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
-import 'package:phoenix/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 class UploadImage extends StatefulWidget {
   const UploadImage({Key? key}) : super(key: key);
 

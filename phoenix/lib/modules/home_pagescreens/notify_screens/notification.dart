@@ -84,7 +84,6 @@ class _NotifyState extends State<Notify> {
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment:CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.only(

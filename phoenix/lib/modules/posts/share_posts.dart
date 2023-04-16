@@ -1,8 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 import 'package:phoenix/models/postdata_model.dart';
-import 'package:phoenix/shared/components/component.dart';
 import 'package:phoenix/widgets/post.dart';
 class SharePosts extends StatefulWidget {
   const SharePosts({Key? key}) : super(key: key);

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:colour/colour.dart';
 import 'package:phoenix/models/messagedata_model.dart';
 import 'package:phoenix/widgets/message.dart';
+
+
  
 
 class Messages extends StatefulWidget {
@@ -12,43 +14,43 @@ class Messages extends StatefulWidget {
 }
 
 class _MessagesState extends State<Messages> {
-  List<MessagesData> activePeople=[
-    MessagesData(
+  List<OnlineUserData> onlineUsers=[
+    OnlineUserData(
       'assets/images/s1.jpg',
       '',
       true,
     ),
-    MessagesData(
+     OnlineUserData(
       'assets/images/s1.jpg',
       '',
       false,
     ),
-    MessagesData(
+    OnlineUserData(
       'assets/images/s1.jpg',
       '',
       true,
     ),
-    MessagesData(
+     OnlineUserData(
       'assets/images/s1.jpg',
       '',
       true,
     ),
-    MessagesData(
+     OnlineUserData(
       'assets/images/s1.jpg',
       '',
       true,
     ),
-    MessagesData(
+    OnlineUserData(
       'assets/images/s1.jpg',
       '',
       false,
     ),
-    MessagesData(
+    OnlineUserData(
       'assets/images/s1.jpg',
       '',
       false,
     ),
-    MessagesData(
+    OnlineUserData(
       'assets/images/s1.jpg',
       '',
       true,
@@ -187,14 +189,14 @@ class _MessagesState extends State<Messages> {
                        child: ListView(
                          scrollDirection:Axis.horizontal,
                          children: [
-                           messagesButton(activePeople[0],context),
-                           messagesButton(activePeople[1],context),
-                           messagesButton(activePeople[2],context),
-                           messagesButton(activePeople[3],context),
-                           messagesButton(activePeople[4],context),
-                           messagesButton(activePeople[5],context),
-                           messagesButton(activePeople[6],context),
-                           messagesButton(activePeople[7],context),
+                           onLineUserButton(onlineUsers[0],context),
+                            onLineUserButton(onlineUsers[1],context),
+                           onLineUserButton(onlineUsers[2],context),
+                           onLineUserButton(onlineUsers[3],context),
+                           onLineUserButton(onlineUsers[4],context),
+                           onLineUserButton(onlineUsers[5],context),
+                           onLineUserButton(onlineUsers[6],context),
+                           onLineUserButton(onlineUsers[7],context),
                          ],
                        ),
                      ),
@@ -217,7 +219,7 @@ class _MessagesState extends State<Messages> {
                     messageCard(contentMessages[1], context),
                     messageCard(contentMessages[2], context),
                     messageCard(contentMessages[3], context),
-                    messageCard(contentMessages[1], context),
+                    messageCard(contentMessages[0], context),
                     messageCard(contentMessages[4], context),
                     messageCard(contentMessages[0], context),
 

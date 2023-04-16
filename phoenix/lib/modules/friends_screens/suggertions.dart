@@ -2,7 +2,7 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/models/friendsdata_model.dart';
 import 'package:phoenix/widgets/friends_page.dart';
-import 'package:phoenix/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 class Suggestions extends StatefulWidget {
   const Suggestions({Key? key}) : super(key: key);
 

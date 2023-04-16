@@ -1,13 +1,11 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:colour/colour.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:dropdownfield2/dropdownfield2.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:phoenix/login/signIn_user.dart';
 import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
-import 'package:phoenix/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/component.dart';
 
 
 
