@@ -64,7 +64,9 @@ class _DoctorsState extends State<Doctors> {
                     decoration:InputDecoration(
                       contentPadding: const EdgeInsets.only(
                         left: 16,
+                        bottom: 10
                       ),
+                      border: InputBorder.none,
                       focusedBorder:OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
                           borderSide:BorderSide(

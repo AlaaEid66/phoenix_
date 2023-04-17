@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/models/messagedata_model.dart';
+import 'package:phoenix/modules/messages/chat_screen.dart';
 
 
 
@@ -78,7 +79,7 @@ Widget messageCard(MessageSentData messageSentData,BuildContext context){
       ),
       child: InkWell(
         focusColor: Colour('#EFEFEF'),
-        onTap: (){},
+        onTap: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const ChatScreen())),
         child: Card(
           color: Colour('#EFEFEF'),
           child: Row(
@@ -165,15 +166,17 @@ Widget messageCard(MessageSentData messageSentData,BuildContext context){
                       fontWeight: messageSentData.read==true?FontWeight.normal:FontWeight.bold,
                       fontSize: 10,
                     ),
-                  )
+                  ),
                 ],
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width*0.282,
-              ),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.width*0.282,
+              // ),
+
               Padding(
-                padding: const EdgeInsets.only(
+                padding: EdgeInsetsDirectional.only(
                   bottom: 30,
+                  start: messageSentData.userName==11? 90:100,
                 ),
                 child: IconButton(
                   onPressed:(){},

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:colour/colour.dart';
-import 'package:phoenix/modules/bottom_navigationbar/bottomnav.dart';
+import 'package:phoenix/layout/bottom_navigationbar/bottomnav.dart';
+
 import 'package:phoenix/widgets/shared/components/component.dart';
 
 import 'forget_password.dart';

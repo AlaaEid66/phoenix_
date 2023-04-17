@@ -153,9 +153,7 @@ class _RateAppState extends State<RateApp> {
                   child: TextFormField(
                     textInputAction: TextInputAction.next,
                     decoration:InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius:BorderRadius.circular(10),
-                      ),
+                      border: InputBorder.none,
                       contentPadding: const EdgeInsets.only(
                         left: 10,
                         bottom: 10,

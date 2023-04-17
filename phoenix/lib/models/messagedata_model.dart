@@ -101,3 +101,11 @@ class MessageSentData{
       this.timeOfMessages
       );
 }
+class ChatUser{
+  String? avatarUrl;
+  String? userName;
+  ChatUser(
+      this.avatarUrl,
+      this.userName,
+      );
+}

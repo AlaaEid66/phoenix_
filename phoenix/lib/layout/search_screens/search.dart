@@ -44,6 +44,7 @@ class _SearchState extends State<Search> {
                   ),
                   child: TextFormField(
                     decoration:InputDecoration(
+                      border: InputBorder.none,
                       focusedBorder:OutlineInputBorder(
                         borderSide:BorderSide(
                           color:Colour('#FFFFFF'),

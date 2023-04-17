@@ -92,12 +92,16 @@ class _ContactUsState extends State<ContactUs> {
             child: TextFormField(
               textInputAction: TextInputAction.next,
               decoration:InputDecoration(
+                contentPadding: const EdgeInsets.only(
+                  left: 10
+                ),
                 focusColor: Colour('#FFFFFF'),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colour('#FFFFFF'),
                     width: 0,
                   ),
                 ),
+                border: InputBorder.none,
                 hintText: 'Write..',
                 hintStyle: TextStyle(
                     fontFamily: 'Segoe UI',

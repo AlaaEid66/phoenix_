@@ -1,11 +1,12 @@
 import 'package:colour/colour.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/modules/home_pagescreens/homepage.dart';
-import 'package:phoenix/modules/home_pagescreens/notify_screens/notification.dart';
-import 'package:phoenix/modules/home_pagescreens/search_screens/search.dart';
+import 'package:phoenix/layout/homepage.dart';
+import 'package:phoenix/layout/notify_screens/notification.dart';
+import 'package:phoenix/layout/profile_screens/profile_page.dart';
+import 'package:phoenix/layout/search_screens/search.dart';
 import 'package:phoenix/modules/posts/watch_srceens/watched_videos.dart';
-import 'package:phoenix/modules/profile_screens/profile_page.dart';
+
 
 
 class BottomNav extends StatefulWidget {

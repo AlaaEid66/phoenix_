@@ -75,6 +75,7 @@ class _FriendsPageState extends State<FriendsPage>
                       contentPadding: const EdgeInsets.only(
                         left: 10
                       ),
+                      border: InputBorder.none,
                       focusedBorder:OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
                           borderSide:BorderSide(

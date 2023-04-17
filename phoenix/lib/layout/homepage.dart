@@ -123,6 +123,7 @@ class _HomePageState extends State<HomePage> {
                                     //     width: 0,
                                     //   ),
                                     // ),
+                                    border: InputBorder.none,
                                     hintText:'What\'s on your mind ?',
                                     hintStyle:TextStyle(
                                       color:Colour('#505050') ,

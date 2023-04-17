@@ -150,16 +150,10 @@ class _MessagesState extends State<Messages> {
                         ),
                         child: TextFormField(
                           decoration:InputDecoration(
-                            contentPadding: const EdgeInsets.only(
-                                left: 10
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 10
                             ),
-                            focusedBorder:OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(40),
-                                borderSide:BorderSide(
-                                  color:Colour('#EFEFEF'),
-                                  width: 0,
-                                )
-                            ),
+                            border: InputBorder.none,
                             hintText:'Search..',
                             hintStyle:TextStyle(
                               fontSize: 16,
@@ -190,7 +184,7 @@ class _MessagesState extends State<Messages> {
                          scrollDirection:Axis.horizontal,
                          children: [
                            onLineUserButton(onlineUsers[0],context),
-                            onLineUserButton(onlineUsers[1],context),
+                           onLineUserButton(onlineUsers[1],context),
                            onLineUserButton(onlineUsers[2],context),
                            onLineUserButton(onlineUsers[3],context),
                            onLineUserButton(onlineUsers[4],context),
@@ -215,6 +209,15 @@ class _MessagesState extends State<Messages> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height*0.0032,
                     ),
+                    // ListView.separated(
+                    //   itemCount: contentMessages.length,
+                    //   itemBuilder: (context,index)=> messageCard(contentMessages[index], context),
+                    //   scrollDirection:Axis.horizontal,
+                    //   separatorBuilder: (context,index)=> const SizedBox(
+                    //     height: 20,
+                    //   ),
+                    // ),
+
                     messageCard(contentMessages[0], context),
                     messageCard(contentMessages[1], context),
                     messageCard(contentMessages[2], context),
