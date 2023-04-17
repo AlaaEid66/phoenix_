@@ -2,6 +2,8 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/models/messagedata_model.dart';
+import 'package:phoenix/modules/messages/receive_screen.dart';
+import 'package:phoenix/modules/messages/sender_screen.dart';
 import 'package:phoenix/widgets/message.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -85,13 +87,30 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           body: Column(
             children: [
-              Expanded(child: Container()),
+              const SizedBox(
+                height: 16,
+              ),
+              Expanded(
+                child: ListView.separated(
+                  physics: BouncingScrollPhysics(),
+                  itemBuilder: (context,index){
+                    if(index % 2==0){
+                      return const Sender();
+                    }else{
+                      return const Receiver();
+                    }
+                  },
+                  separatorBuilder: (context,index)=> const SizedBox(
+                    height: 16,
+                  ),
+                  itemCount:20,
+                ),
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.only(
-                  start: 16,
+                  start: 2,
                   bottom: 44,
-                  end: 16,
-
+                  end: 2,
                 ),
                 child: Row(
                   children: [
@@ -106,6 +125,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             fontWeight: FontWeight.normal,
                             fontSize: 16,
                           ),
+                          suffixIcon: const Icon(Icons.mood_outlined)
                         ),
                       ),
                     ),
@@ -127,12 +147,22 @@ class _ChatScreenState extends State<ChatScreen> {
                       iconSize: 25,
                       onPressed: ()=>Navigator.pop(context),
                     ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width*0.05,
+                    ),
                     ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateColor.resolveWith((states) =>Colour('#008894')),
                       ),
                         onPressed:(){},
-                        child:Text('send'),
+                        child:Text('send',
+                          style:TextStyle(
+                            fontFamily: 'Segoe UI',
+                            color: Colour('#FFFFFF'),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                          ),
+                        ),
                     ),
                   ],
                 ),

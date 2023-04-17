@@ -237,7 +237,7 @@ class _WritePostState extends State<WritePost> {
                           IconButton(
                             onPressed:(){},
                             iconSize: 16,
-                            icon:Icon(Icons.mood),
+                            icon:const Icon(Icons.mood),
                             color:Colour('#505050'),
                           ),
                           Text(
