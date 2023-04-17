@@ -56,8 +56,8 @@ class _MessagesState extends State<Messages> {
       true,
     ),
   ];
-  List<MessageSentData> contentMessages=[
-    MessageSentData(
+  List<LastMessageData> contentMessages=[
+    LastMessageData(
       'assets/images/s1.jpg',
       'Ahmed Mahdy',
       false,
@@ -65,7 +65,7 @@ class _MessagesState extends State<Messages> {
       'ahmed called you.',
       '4 hours ago'
     ),
-    MessageSentData(
+    LastMessageData(
         'assets/images/s1.jpg',
         'Emam Ali',
         true,
@@ -73,7 +73,7 @@ class _MessagesState extends State<Messages> {
         ' what\'s wrong?',
         'Thu at 3:38 PM'
     ),
-    MessageSentData(
+    LastMessageData(
         'assets/images/s1.jpg',
         'Emam Ali',
         true,
@@ -81,7 +81,7 @@ class _MessagesState extends State<Messages> {
         ' what\'s wrong?',
         'Thu at 3:38 PM'
     ),
-    MessageSentData(
+    LastMessageData(
         'assets/images/s1.jpg',
         'Ahmed Mahdy',
         true,
@@ -89,7 +89,7 @@ class _MessagesState extends State<Messages> {
         'ahmed called you.',
         '4 hours ago'
     ),
-    MessageSentData(
+    LastMessageData(
         'assets/images/s1.jpg',
         'Ahmed Mahdy',
         true,

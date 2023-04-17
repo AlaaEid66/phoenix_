@@ -71,7 +71,7 @@ Widget onLineUserButton(OnlineUserData onlineUserData,BuildContext context){
   );
 }
 
-Widget messageCard(MessageSentData messageSentData,BuildContext context){
+Widget messageCard(LastMessageData lastMessageData,BuildContext context){
   return SafeArea(
     child:Padding(
       padding: const EdgeInsets.only(
@@ -99,7 +99,7 @@ Widget messageCard(MessageSentData messageSentData,BuildContext context){
                       decoration: BoxDecoration(
                         borderRadius:BorderRadius.circular(50),
                         image: DecorationImage(
-                          image:AssetImage('${messageSentData.avatarUrl}'),
+                          image:AssetImage('${lastMessageData.avatarUrl}'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -114,9 +114,9 @@ Widget messageCard(MessageSentData messageSentData,BuildContext context){
                         height: 15,
                         child: FloatingActionButton(
                           mini: true,
-                          backgroundColor:messageSentData.isOnline==true?Colour('#02FF00'):Colour('#EFEFEF'),
+                          backgroundColor:lastMessageData.isOnline==true?Colour('#02FF00'):Colour('#EFEFEF'),
                           onPressed: (){},
-                          child: messageSentData.isOnline==true?  Container(
+                          child: lastMessageData.isOnline==true?  Container(
                             width: 10,
                             height: 10,
                             color:Colour('#02FF00'),
@@ -137,33 +137,33 @@ Widget messageCard(MessageSentData messageSentData,BuildContext context){
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('${messageSentData.userName}',
+                  Text('${lastMessageData.userName}',
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
                       color: Colour('#505050'),
-                      fontWeight: messageSentData.read==true?FontWeight.normal:FontWeight.bold,
+                      fontWeight: lastMessageData.isRead==true?FontWeight.normal:FontWeight.bold,
                       fontSize: 12,
                     ),
                   ),
                   const SizedBox(
                     height: 4,
                   ),
-                  Text('${messageSentData.bodyOfMessages}',
+                  Text('${lastMessageData.bodyOfLastMessage}',
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
                       color: Colour('#505050'),
-                      fontWeight: messageSentData.read==true?FontWeight.normal:FontWeight.bold,
+                      fontWeight: lastMessageData.isRead==true?FontWeight.normal:FontWeight.bold,
                       fontSize: 12,
                     ),
                   ),
                   const SizedBox(
                     height: 7,
                   ),
-                  Text('${messageSentData.timeOfMessages}',
+                  Text('${lastMessageData.timeOfMessage}',
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
                       color: Colour('#505050'),
-                      fontWeight: messageSentData.read==true?FontWeight.normal:FontWeight.bold,
+                      fontWeight: lastMessageData.isRead==true?FontWeight.normal:FontWeight.bold,
                       fontSize: 10,
                     ),
                   ),
@@ -176,7 +176,7 @@ Widget messageCard(MessageSentData messageSentData,BuildContext context){
               Padding(
                 padding: EdgeInsetsDirectional.only(
                   bottom: 30,
-                  start: messageSentData.userName==11? 90:100,
+                  start: lastMessageData.userName==11? 90:100,
                 ),
                 child: IconButton(
                   onPressed:(){},

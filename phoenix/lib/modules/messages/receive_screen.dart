@@ -14,7 +14,6 @@ class _ReceiverState extends State<Receiver> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
-
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 6,

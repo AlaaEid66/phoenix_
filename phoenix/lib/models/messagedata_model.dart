@@ -84,21 +84,21 @@ class OnlineUserData{
       this.isOnline,
       );
 }
-class MessageSentData{
+class LastMessageData{
   String? avatarUrl;
   String? userName;
   bool? isOnline;
-  bool? read;
-  String? bodyOfMessages;
-  String? timeOfMessages;
+  bool? isRead;
+  String? bodyOfLastMessage;
+  String? timeOfMessage;
 
-  MessageSentData(
+  LastMessageData(
       this.avatarUrl,
       this.userName,
       this.isOnline,
-      this.read,
-      this.bodyOfMessages,
-      this.timeOfMessages
+      this.isRead,
+      this.bodyOfLastMessage,
+      this.timeOfMessage,
       );
 }
 class ChatUser{
@@ -107,5 +107,27 @@ class ChatUser{
   ChatUser(
       this.avatarUrl,
       this.userName,
+      );
+}
+class SenderUser{
+  String? bodyOfMessage;
+  String?  avatarUrl;
+  String? time;
+  bool? isReaded;
+  SenderUser(
+      this.bodyOfMessage,
+      this.avatarUrl,
+      this.time,
+      this.isReaded,
+      );
+}
+class ReceiverUser{
+  String? bodyOfMessage;
+  String? time;
+  bool? isReaded;
+  ReceiverUser(
+      this.bodyOfMessage,
+      this.time,
+      this.isReaded,
       );
 }

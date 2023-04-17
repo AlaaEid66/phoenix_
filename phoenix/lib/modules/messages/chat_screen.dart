@@ -92,7 +92,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
               Expanded(
                 child: ListView.separated(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (context,index){
                     if(index % 2==0){
                       return const Sender();
