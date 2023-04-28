@@ -1,9 +1,11 @@
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/models/messagedata_model.dart';
 import 'package:phoenix/modules/messages/receive_screen.dart';
 import 'package:phoenix/modules/messages/sender_screen.dart';
+import 'package:phoenix/modules/messages/videocall_screen.dart';
 import 'package:phoenix/widgets/message.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -79,7 +81,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 IconButton(
                   color: Colour('#000000').withOpacity(0.5),
-                  onPressed:(){},
+                  onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const VideoCallScreen())),
                   icon:const Icon(FontAwesomeIcons.video),
                   iconSize: 25,
                 ),
@@ -133,19 +135,19 @@ class _ChatScreenState extends State<ChatScreen> {
                       icon: const Icon(Icons.mic),
                       color: Colour('#5B5E60'),
                       iconSize: 25,
-                      onPressed: ()=>Navigator.pop(context),
+                      onPressed: (){},
                     ),
                     IconButton(
                       icon: const Icon(Icons.add_photo_alternate),
                       color: Colour('#5B5E60'),
                       iconSize: 25,
-                      onPressed: ()=>Navigator.pop(context),
+                      onPressed: (){},
                     ),
                     IconButton(
                       icon: const Icon(Icons.camera_alt),
                       color: Colour('#5B5E60'),
                       iconSize: 25,
-                      onPressed: ()=>Navigator.pop(context),
+                      onPressed: (){},
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width*0.05,

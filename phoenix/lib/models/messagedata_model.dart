@@ -131,3 +131,11 @@ class ReceiverUser{
       this.isReaded,
       );
 }
+class VideoCallDoc{
+  String? avatarDocUrl;
+  String?avatarPatientUrl;
+  VideoCallDoc(
+      this.avatarDocUrl,
+      this.avatarPatientUrl,
+      );
+}
