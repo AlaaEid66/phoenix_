@@ -148,46 +148,23 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     padding: const EdgeInsets.symmetric(
                       horizontal: 36,
                     ),
-                    child: Container(
-                      color:Colour('#EFEFEF'),
-                      child: TextFormField(
-                        textInputAction: TextInputAction.next,
-                        onSaved: (val){
-                          email = val;
-                        },
-                        keyboardType:TextInputType.emailAddress,
-
-                        validator: (val) {
-                          if(val!.isEmpty){
-                            return("please enter your email");
-                          }
-                          if(val.length > 100) {
-                            return "Email can't to be larger than 100 letter";
-                          }
-                          if (val.length < 2) {
-                            return "Email can't to be less than 2 letter";
-                          }
-                          return null;
-                        },
-                        decoration:InputDecoration(
-                          fillColor:Colors.grey,
-                          border: OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                          labelText: 'Email',
-                          labelStyle: TextStyle(
-                            fontFamily: 'Segoe UI',
-                            fontSize:18,
-                            fontWeight: FontWeight.normal,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                          prefixIcon:Icon(
-                            Icons.mail,
-                            size: 26,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                        ),
-                      ),
+                    child: defaultFormField(
+                      context: context,
+                      keyboardType: TextInputType.emailAddress,
+                      validate: (val) {
+                        if(val!.isEmpty){
+                          return("Not valid.Please try again");
+                        }
+                        if (val.length > 100) {
+                          return "Email can't to be larger than 100 letter";
+                        }
+                        if (val.length < 2) {
+                          return "Email can't to be less than 2 letter";
+                        }
+                        return null;
+                      },
+                      hint: 'Email',
+                      prefix: Icons.email,
                     ),
                   ),
                   Padding(
@@ -195,57 +172,24 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                       horizontal: 36,
                       vertical: 10,
                     ),
-                    child: Container(
-                      color:Colour('#EFEFEF'),
-                      child: TextFormField(
-                        textInputAction: TextInputAction.next,
-                        keyboardType:TextInputType.phone,
-                        decoration:InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                          labelText: 'Phone Number',
-                          labelStyle: TextStyle(
-                            fontFamily: 'Segoe UI',
-                            fontSize:18,
-                            fontWeight: FontWeight.normal,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                          prefixIcon:Icon(
-                            Icons.phone_iphone_rounded,
-                            size: 26,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                        ),
-                      ),
+                    child:defaultFormField(
+                      context: context,
+                      keyboardType: TextInputType.number,
+                      textInputAction: TextInputAction.next,
+                      hint: 'Phone Number',
+                      prefix: Icons.phone_iphone_rounded,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 36,
                     ),
-                    child: Container(
-                      color:Colour('#EFEFEF'),
-                      child: TextFormField(
-                        textInputAction: TextInputAction.next,
-                        decoration:InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                          labelText: ' National ID ',
-                          labelStyle: TextStyle(
-                              fontFamily: 'Segoe UI',
-                              fontSize:18,
-                              fontWeight: FontWeight.normal,
-                              color: Colour('#000000').withOpacity(0.4)
-                          ),
-                          prefixIcon:Icon(
-                            FontAwesomeIcons.solidIdCard,
-                            size: 25,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                        ),
-                      ),
+                    child:defaultFormField(
+                      context: context,
+                      textInputAction: TextInputAction.next,
+                      keyboardType: TextInputType.number,
+                      hint: ' National ID ',
+                      prefix: FontAwesomeIcons.solidIdCard,
                     ),
                   ),
                   Padding(
@@ -253,44 +197,23 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                       horizontal: 36,
                       vertical: 10,
                     ),
-                    child: Container(
-                      color:Colour('#EFEFEF'),
-                      child: TextFormField(
-                        textInputAction: TextInputAction.next,
-                        onSaved: (val){
-                          password = val;
-                        },
-                        validator: (val) {
-                          if(val!.isEmpty){
-                            return("please enter your password");
-                          }
-                          if (val.length > 100) {
-                            return "Password can't to be larger than 100 letter";
-                          }
-                          if (val.length < 4) {
-                            return "Password can't to be less than 4 letter";
-                          }
-                          return null;
-                        },
-                        obscureText: passwordVisible!,
-                        decoration:InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(
-                            fontFamily: 'Segoe UI',
-                            fontSize:18,
-                            fontWeight: FontWeight.normal,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                          prefixIcon: Icon(
-                            Icons.lock_outline_sharp,
-                            size: 26,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                        ),
-                      ),
+                    child: defaultFormField(
+                      context: context,
+                      keyboardType: TextInputType.text,
+                      validate:(val) {
+                        if(val!.isEmpty){
+                          return("please enter your password");
+                        }
+                        if (val.length > 100) {
+                          return "Password can't to be larger than 100 letter";
+                        }
+                        if (val.length < 4) {
+                          return "Password can't to be less than 4 letter";
+                        }
+                        return null;
+                      },
+                      hint: 'Password',
+                      prefix: Icons.lock_outline,
                     ),
                   ),
                   Padding(

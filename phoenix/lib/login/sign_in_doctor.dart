@@ -118,44 +118,24 @@ class _SignInDoctorState extends State<SignInDoctor> {
                       right: 18,
                       bottom: 12,
                     ),
-                    child: Container(
-                      width: 304,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color:Colour('#EFEFEF'),
-                        borderRadius:BorderRadius.circular(10),
-                      ),
-                      child: TextFormField(
-                        validator: (val) {
-                          if(val!.isEmpty){
-                            return("Not valid.Please try again");
-                          }
-                          if (val.length > 100) {
-                            return "Email can't to be larger than 100 letter";
-                          }
-                          if (val.length < 2) {
-                            return "Email can't to be less than 2 letter";
-                          }
-                          return null;
-                        },
-                        controller:emailController,
-                        keyboardType:TextInputType.emailAddress,
-                        decoration:InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                          labelText: 'Email',
-                          labelStyle: TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'Segoe UI',
-                            fontWeight: FontWeight.normal,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                          prefixIcon:const Icon(
-                            Icons.email,
-                          ),
-                        ),
-                      ),
+                    child: defaultFormField(
+                      context: context,
+                      controller: emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      validate: (val) {
+                        if(val!.isEmpty){
+                          return("Not valid.Please try again");
+                        }
+                        if (val.length > 100) {
+                          return "Email can't to be larger than 100 letter";
+                        }
+                        if (val.length < 2) {
+                          return "Email can't to be less than 2 letter";
+                        }
+                        return null;
+                      },
+                      hint: 'Email',
+                      prefix: Icons.email,
                     ),
                   ),
                   Padding(
@@ -163,45 +143,27 @@ class _SignInDoctorState extends State<SignInDoctor> {
                       left: 17,
                       right: 18,
                     ),
-                    child: Container(
-                      width: 304,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color:Colour('#EFEFEF'),
-                        borderRadius:BorderRadius.circular(10),
-                      ),
-                      child: TextFormField(
-                        validator: (val) {
-                          if(val!.isEmpty){
-                            return("please enter your password");
-                          }
-                          if (val.length > 100) {
-                            return "Password can't to be larger than 100 letter";
-                          }
-                          if (val.length < 4) {
-                            return "Password can't to be less than 4 letter";
-                          }
-                          return null;
-                        },
-
-                        obscureText: passwordVisible!,
-                        decoration:InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius:BorderRadius.circular(10),
-                          ),
-                          labelText: 'Password',
-                          labelStyle: TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'Segoe UI',
-                            fontWeight: FontWeight.normal,
-                            color: Colour('#000000').withOpacity(0.4),
-                          ),
-                          prefixIcon:const Icon(
-                            Icons.lock_outline_sharp,
-                          ),
-                        ),
-                      ),
+                    child: defaultFormField(
+                      context: context,
+                      obscureText: passwordVisible!,
+                      controller: passwordController,
+                      keyboardType: TextInputType.text,
+                      validate:(val) {
+                        if(val!.isEmpty){
+                          return("please enter your password");
+                        }
+                        if (val.length > 100) {
+                          return "Password can't to be larger than 100 letter";
+                        }
+                        if (val.length < 4) {
+                          return "Password can't to be less than 4 letter";
+                        }
+                        return null;
+                      },
+                      hint: 'Password',
+                      prefix: Icons.lock_outline,
                     ),
+
                   ),
                   Padding(
                     padding: const EdgeInsets.only(

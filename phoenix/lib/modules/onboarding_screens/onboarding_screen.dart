@@ -1,7 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/interface.dart';
-import 'package:phoenix/widgets/shared/components/size_config.dart';
 import 'onboarding1.dart';
 import 'onboarding2.dart';
 import 'onboarding3.dart';
@@ -48,7 +47,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+
     return Scaffold(
       backgroundColor: Colour('#FFFFFF'),
       body: SafeArea(

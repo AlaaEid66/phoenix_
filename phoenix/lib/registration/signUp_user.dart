@@ -6,6 +6,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:phoenix/login/signIn_user.dart';
 import 'package:phoenix/layout/bottom_navigationbar/bottomnav.dart';
 import 'package:phoenix/widgets/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/size_config.dart';
 
 
 
@@ -115,120 +116,58 @@ class _SignUpUserState extends State<SignUpUser> {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
                   ),
-                  child: Container(
-                    color:Colour('#EFEFEF'),
-                    child: TextFormField(
-                      textInputAction: TextInputAction.next,
-                      onSaved: (val){
-                        email = val;
-                      },
-                      keyboardType:TextInputType.emailAddress,
-
-                      validator: (val) {
-                        if(val!.isEmpty){
-                          return("please enter your email");
-                        }
-                        if(val.length > 100) {
-                          return "Email can't to be larger than 100 letter";
-                        }
-                        if (val.length < 2) {
-                          return "Email can't to be less than 2 letter";
-                        }
-                        return null;
-                      },
-                      decoration:InputDecoration(
-                        fillColor:Colors.grey,
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText: 'Email',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Segoe UI',
-                          fontSize:18,
-                          fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                        prefixIcon:Icon(
-                          Icons.mail,
-                          size: 26,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                      ),
-                    ),
-                  ),
+                   child: defaultFormField(
+                     context: context,
+                     keyboardType: TextInputType.emailAddress,
+                     validate: (val) {
+                       if(val!.isEmpty){
+                         return("Not valid.Please try again");
+                       }
+                       if (val.length > 100) {
+                         return "Email can't to be larger than 100 letter";
+                       }
+                       if (val.length < 2) {
+                         return "Email can't to be less than 2 letter";
+                       }
+                       return null;
+                     },
+                     hint: 'Email',
+                     prefix: Icons.email,
+                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
                     vertical: 10,
                   ),
-                  child: Container(
-                    color:Colour('#EFEFEF'),
-                    child: TextFormField(
-                      textInputAction: TextInputAction.next,
-                      keyboardType:TextInputType.phone,
-                      decoration:InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText: 'Phone Number',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Segoe UI',
-                          fontSize:18,
-                          fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                        prefixIcon:Icon(
-                          Icons.phone_iphone_rounded,
-                          size: 26,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                      ),
-                    ),
-                  ),
+                  child:defaultFormField(
+                  context: context,
+                  keyboardType: TextInputType.number,
+                    hint: 'Phone Number',
+                  prefix: Icons.phone_iphone_rounded,
+                ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
                   ),
-                  child: Container(
-                    color:Colour('#EFEFEF'),
-                    child: TextFormField(
-                      textInputAction: TextInputAction.next,
-                      onSaved: (val){
-                        password = val;
-                      },
-                      validator: (val) {
-                        if(val!.isEmpty){
-                          return("please enter your password");
-                        }
-                        if (val.length > 100) {
-                          return "Password can't to be larger than 100 letter";
-                        }
-                        if (val.length < 4) {
-                          return "Password can't to be less than 4 letter";
-                        }
-                        return null;
-                      },
-                      obscureText: passwordVisible!,
-                      decoration:InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText: 'Password',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Segoe UI',
-                          fontSize:18,
-                          fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                        prefixIcon: Icon(
-                          Icons.lock_outline_sharp,
-                          size: 26,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                      ),
-                    ),
+                  child: defaultFormField(
+                    context: context,
+                    keyboardType: TextInputType.text,
+                    validate:(val) {
+                      if(val!.isEmpty){
+                        return("please enter your password");
+                      }
+                      if (val.length > 100) {
+                        return "Password can't to be larger than 100 letter";
+                      }
+                      if (val.length < 4) {
+                        return "Password can't to be less than 4 letter";
+                      }
+                      return null;
+                    },
+                    hint: 'Password',
+                    prefix: Icons.lock_outline,
                   ),
                 ),
                 Padding(
@@ -239,7 +178,12 @@ class _SignUpUserState extends State<SignUpUser> {
                   child: Column(
                     children: [
                       Container(
-                        color:Colour('#EFEFEF'),
+                        width: width(context, 1.3),
+                        height: height(context, 15),
+                        decoration: BoxDecoration(
+                          color: Colour('#EFEFEF'),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         child: TextFormField(
                           controller: genderSelected,
                           textInputAction: TextInputAction.next,
@@ -275,13 +219,17 @@ class _SignUpUserState extends State<SignUpUser> {
                       ),
                       displayGenderList?
                       Container(
-                        height: 100,
-                        width: 400,
+                        height: height(context,7),
+                        width: width(context,1.3),
                         decoration: BoxDecoration(
                           color:Colour('#EFEFEF'),
-                          borderRadius: BorderRadius.circular(20),
+                          // borderRadius: BorderRadius.circular(20),
                         ),
-                        child: ListView.builder(
+                        child: ListView.separated(
+                          separatorBuilder:(context,index)=>Divider(
+                            height: 1,
+                            color: Colour('#000000').withOpacity(0.4),
+                          ),
                           itemCount: genderList.length,
                           itemBuilder: ((context,index){
                             return ListTile(
@@ -309,29 +257,12 @@ class _SignUpUserState extends State<SignUpUser> {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 36,
                   ),
-                  child: Container(
-                    color:Colour('#EFEFEF'),
-                    child: TextFormField(
-                      textInputAction: TextInputAction.done,
-                      keyboardType:TextInputType.number,
-                      decoration:InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText: 'Date of birth',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Segoe UI',
-                          fontSize:18,
-                          fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.4)
-                        ),
-                        prefixIcon:Icon(
-                          Icons.calendar_month_outlined,
-                          size: 25,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                      ),
-                    ),
+                  child: defaultFormField(
+                  context: context,
+                    textInputAction: TextInputAction.done,
+                  keyboardType: TextInputType.number,
+                    hint: 'Date of birth',
+                  prefix: Icons.calendar_month_outlined,
                   ),
                 ),
                 Padding(
