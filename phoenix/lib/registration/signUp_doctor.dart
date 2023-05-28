@@ -13,6 +13,7 @@ import 'package:phoenix/login/sign_in_doctor.dart';
 import 'package:phoenix/layout/bottom_navigationbar/bottomnav.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:mime/mime.dart';
+import 'package:phoenix/widgets/shared/components/size_config.dart';
 
 
 import 'package:uuid/uuid.dart';
@@ -101,7 +102,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.only(
+        padding: const EdgeInsetsDirectional.only(
           top: 16
         ),
         child: Scaffold(
@@ -114,13 +115,13 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(
+                    padding: const EdgeInsetsDirectional.only(
                       top: 40,
                     ),
                     child: Center(
                       child: Container(
-                        width: 95,
-                        height: 88,
+                        height: height(context, 8),
+                        width: height(context, 7),
                         child:const CircleAvatar(
                           backgroundColor: Colors.white,
                           child: Image(
@@ -131,7 +132,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
+                    padding: const EdgeInsetsDirectional.only(
                       bottom: 56,
                     ),
                     child: Text(
@@ -145,7 +146,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 36,
                     ),
                     child: defaultFormField(
@@ -168,7 +169,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 36,
                       vertical: 10,
                     ),
@@ -181,7 +182,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 36,
                     ),
                     child:defaultFormField(
@@ -193,7 +194,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 36,
                       vertical: 10,
                     ),
@@ -217,11 +218,13 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: const EdgeInsetsDirectional.symmetric(
                        horizontal: 36,
                       vertical: 3
                     ),
                     child: Container(
+                        width: width(context, 1.3),
+                        height: height(context, 15),
                       color:Colour('#FFFFFF'),
                       child: pdfFile==null?
                       Row(
@@ -254,9 +257,9 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 36,
-                      right: 35,
+                    padding: const EdgeInsetsDirectional.only(
+                      start: 36,
+                      end: 35,
                       top: 20,
                       bottom: 5,
                     ),
@@ -284,29 +287,29 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     height: 4,
                   ),
                   Container(
-                    width: 304,
-                    height: 50,
+                    width: width(context, 1.3),
+                    height: height(context, 15),
                     color:Colors.white60,
                     child: Material(
-                      borderRadius:BorderRadius.circular(16),
+                      borderRadius:BorderRadius.circular(10),
                       child: MaterialButton(
                         onPressed: () {},
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
+                          padding: const EdgeInsetsDirectional.symmetric(
                             horizontal: 20,
                             vertical: 5,
                           ),
                           child: Row(
                             children: [
                               Container(
-                                height: 28,
-                                width: 28,
+                                height: height(context, 30),
+                                width: height(context, 16),
                                 child:const Image(
                                   image:AssetImage('assets/images/pic2.png'),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(
+                                padding: const EdgeInsetsDirectional.symmetric(
                                   horizontal:18,
                                 ),
                                 child: Text(
@@ -354,7 +357,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                     ],
                   ),
                   Padding(
-                    padding:EdgeInsets.only(
+                    padding:EdgeInsetsDirectional.only(
                       bottom: MediaQuery.of(context).viewInsets.bottom,
                     ),
                   ),

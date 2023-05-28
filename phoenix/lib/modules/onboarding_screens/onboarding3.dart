@@ -17,17 +17,17 @@ class _OnBoarding3State extends State<OnBoarding3> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                right: 44,
-                left: 44,
+              padding: const EdgeInsetsDirectional.only(
+                end: 44,
+                start: 44,
                 top: 157,
               ),
               child: Image.asset('assets/images/p3.jpg'),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                right: 85,
-                left: 86,
+              padding: const EdgeInsetsDirectional.only(
+                end: 85,
+                start: 86,
                 bottom: 20,
                 top: 50,
               ),

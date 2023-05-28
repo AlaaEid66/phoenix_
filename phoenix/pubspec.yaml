@@ -40,6 +40,7 @@ dependencies:
   image_picker:
   file_picker:
   dropdownfield2:
+  like_button:
   firebase_core:
   firebase_messaging:
   firebase_database:

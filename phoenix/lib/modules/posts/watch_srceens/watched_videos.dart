@@ -1,5 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'package:phoenix/modules/posts/comments.dart';
 import 'package:phoenix/widgets/post.dart';
 import 'package:phoenix/models/postdata_model.dart';
@@ -40,6 +41,7 @@ class _WatchVideosState extends State<WatchVideos> {
       '',
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -77,22 +79,54 @@ class _WatchVideosState extends State<WatchVideos> {
                   children: [
                     Row(
                       children: [
-                        Text('${videos[0].postLikes}'),
-                        IconButton(
-                          icon:const Icon(Icons.thumb_up_alt_rounded,
-                            size: 20,
+                        LikeButton(
+                          size: 20,
+                          circleColor:
+                          CircleColor(start: Colour('#505050'), end: Colour('#0066CC')),
+                          bubblesColor: const BubblesColor(
+                            dotPrimaryColor: Color(0xff33b5e5),
+                            dotSecondaryColor: Color(0xff0099cc),
                           ),
-                          color: Colour('#505050'),
-                          onPressed:(){} ,
+                          likeBuilder: (bool isLiked) {
+                            return Icon(
+                              Icons.thumb_up_alt_outlined,
+                              color: isLiked ?  Colour('#0066CC') : Colour('#505050'),
+                              size: 20,
+                            );
+                          },
+                          likeCount: videos[0].postLikes,
+                          countBuilder: (int? count, bool isLiked, String text) {
+                            var color = isLiked ?  Colour('#0066CC') : Colour('#505050');
+                            Widget result;
+                            if (count == 0) {
+                              result = Text(
+                                "like",
+                                style: TextStyle(color: color),
+                              );
+                            } else {
+                              result = Text(
+                                text,
+                                style: TextStyle(color: color),
+                              );
+                            }
+                            return result;
+                          },
                         ),
-                        Text('Like',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Segoe UI',
-                            color:Colour('#505050'),
-                            fontSize: 14,
-                          ),
-                        ),
+                        // IconButton(
+                        //   icon:const Icon(Icons.thumb_up_alt_rounded,
+                        //     size: 20,
+                        //   ),
+                        //   color: Colour('#505050'),
+                        //   onPressed:(){} ,
+                        // ),
+                        // Text('Like',
+                        //   style: TextStyle(
+                        //     fontWeight: FontWeight.w500,
+                        //     fontFamily: 'Segoe UI',
+                        //     color:Colour('#505050'),
+                        //     fontSize: 14,
+                        //   ),
+                        // ),
                       ],
                     ),
                     Row(
@@ -142,22 +176,54 @@ class _WatchVideosState extends State<WatchVideos> {
                   children: [
                     Row(
                       children: [
-                        Text('${videos[0].postLikes}'),
-                        IconButton(
-                          icon:const Icon(Icons.thumb_up_alt_rounded,
-                            size: 20,
+                        LikeButton(
+                          size: 20,
+                          circleColor:
+                          CircleColor(start: Colour('#505050'), end: Colour('#0066CC')),
+                          bubblesColor: const BubblesColor(
+                            dotPrimaryColor: Color(0xff33b5e5),
+                            dotSecondaryColor: Color(0xff0099cc),
                           ),
-                          color: Colour('#505050'),
-                          onPressed:(){} ,
+                          likeBuilder: (bool isLiked) {
+                            return Icon(
+                              Icons.thumb_up_alt_outlined,
+                              color: isLiked ?  Colour('#0066CC') : Colour('#505050'),
+                              size: 20,
+                            );
+                          },
+                          likeCount: videos[1].postLikes,
+                          countBuilder: (int? count, bool isLiked, String text) {
+                            var color = isLiked ?  Colour('#0066CC') : Colour('#505050');
+                            Widget result;
+                            if (count == 0) {
+                              result = Text(
+                                "like",
+                                style: TextStyle(color: color),
+                              );
+                            } else {
+                              result = Text(
+                                text,
+                                style: TextStyle(color: color),
+                              );
+                            }
+                            return result;
+                          },
                         ),
-                        Text('Like',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Segoe UI',
-                            color:Colour('#505050'),
-                            fontSize: 14,
-                          ),
-                        ),
+                        // IconButton(
+                        //   icon:const Icon(Icons.thumb_up_alt_rounded,
+                        //     size: 20,
+                        //   ),
+                        //   color: Colour('#505050'),
+                        //   onPressed:(){} ,
+                        // ),
+                        // Text('Like',
+                        //   style: TextStyle(
+                        //     fontWeight: FontWeight.w500,
+                        //     fontFamily: 'Segoe UI',
+                        //     color:Colour('#505050'),
+                        //     fontSize: 14,
+                        //   ),
+                        // ),
                       ],
                     ),
                     Row(
@@ -207,27 +273,58 @@ class _WatchVideosState extends State<WatchVideos> {
                   children: [
                     Row(
                       children: [
-                        Text('${videos[0].postLikes}'),
-                        IconButton(
-                          icon:const Icon(Icons.thumb_up_alt_rounded,
-                            size: 20,
+                        LikeButton(
+                          size: 20,
+                          circleColor:
+                          CircleColor(start: Colour('#505050'), end: Colour('#0066CC')),
+                          bubblesColor: const BubblesColor(
+                            dotPrimaryColor: Color(0xff33b5e5),
+                            dotSecondaryColor: Color(0xff0099cc),
                           ),
-                          color: Colour('#505050'),
-                          onPressed:(){} ,
+                          likeBuilder: (bool isLiked) {
+                            return Icon(
+                              Icons.thumb_up_alt_outlined,
+                              color: isLiked ?  Colour('#0066CC') : Colour('#505050'),
+                              size: 20,
+                            );
+                          },
+                          likeCount: videos[2].postLikes,
+                          countBuilder: (int? count, bool isLiked, String text) {
+                            var color = isLiked ?  Colour('#0066CC') : Colour('#505050');
+                            Widget result;
+                            if (count == 0) {
+                              result = Text(
+                                "like",
+                                style: TextStyle(color: color),
+                              );
+                            } else
+                              result = Text(
+                                text,
+                                style: TextStyle(color: color),
+                              );
+                            return result;
+                          },
                         ),
-                        Text('Like',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Segoe UI',
-                            color:Colour('#505050'),
-                            fontSize: 14,
-                          ),
-                        ),
+                        // IconButton(
+                        //   icon:const Icon(Icons.thumb_up_alt_rounded,
+                        //     size: 20,
+                        //   ),
+                        //   color: Colour('#505050'),
+                        //   onPressed:(){} ,
+                        // ),
+                        // Text('Like',
+                        //   style: TextStyle(
+                        //     fontWeight: FontWeight.w500,
+                        //     fontFamily: 'Segoe UI',
+                        //     color:Colour('#505050'),
+                        //     fontSize: 14,
+                        //   ),
+                        // ),
                       ],
                     ),
                     Row(
                       children: [
-                        Text('${videos[0].postComments}'),
+                        Text('${videos[2].postComments}'),
                         IconButton(
                           icon:  Icon(Icons.edit_note_rounded,
                             color:Colour('#505050') ,

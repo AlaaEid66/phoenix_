@@ -95,7 +95,7 @@ Widget notifyLikeNew(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 199,
+              right: 188,
               top: 0,
             ),
             child: Text('${notifyData.notifyDate}',
@@ -204,7 +204,7 @@ Widget notifyCommentNew(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 199,
+              right: 178,
               top: 0,
             ),
             child: Text('${notifyData.notifyDate}',
@@ -320,7 +320,7 @@ Widget notifyAddFriendNew(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 140,
+              right: 130,
               top:00,
             ),
             child: Text('${notifyData.notifyDate}',
@@ -432,7 +432,7 @@ Widget notifyLikeEarlier(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 170,
+              right: 159,
               top: 0,
             ),
             child: Text('${notifyData.notifyDate}',
@@ -542,7 +542,7 @@ Widget notifyCommentEarlier(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 150,
+              right: 160,
               top: 0,
             ),
             child: Text('${notifyData.notifyDate}',
@@ -657,7 +657,7 @@ Widget notifyAddFriendEarlier(NotifyData notifyData,BuildContext context){
           ),
           Padding(
             padding: const EdgeInsets.only(
-              right: 174,
+              right: 160,
               top:00,
             ),
             child: Text('${notifyData.notifyDate}',

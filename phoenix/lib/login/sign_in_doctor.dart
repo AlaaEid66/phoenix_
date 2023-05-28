@@ -6,6 +6,7 @@ import 'package:colour/colour.dart';
 import 'package:phoenix/layout/bottom_navigationbar/bottomnav.dart';
 
 import 'package:phoenix/widgets/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/size_config.dart';
 
 import 'forget_password.dart';
 class SignInDoctor extends StatefulWidget {
@@ -69,14 +70,14 @@ class _SignInDoctorState extends State<SignInDoctor> {
         child: Form(
           key: formstate,
           child: Padding(
-            padding: const EdgeInsets.only(
+            padding: const EdgeInsetsDirectional.only(
               top: 200,
-              left: 26,
-              right: 7,
+              start: 26,
+              end: 20,
             ),
             child: Container(
-              width: 340,
-              height: 423,
+              height: height(context, 1.7),
+              width: height(context, 2),
               decoration: BoxDecoration(
                 color:Colour('#F0FBFC'),
                 borderRadius: BorderRadius.circular(10),
@@ -84,20 +85,20 @@ class _SignInDoctorState extends State<SignInDoctor> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 41,
+                    padding: const EdgeInsetsDirectional.only(
+                      top: 30,
                     ),
                     child: Container(
-                      width: 48,
-                      height: 48,
+                      height: height(context, 16),
+                      width: height(context, 16),
                       child:const Image(
                         image:AssetImage('assets/images/pic2.png'),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 16,
+                    padding: const EdgeInsetsDirectional.only(
+                      top: 10,
                     ),
                     child: Text(
                       'Sign In with Google',
@@ -113,9 +114,9 @@ class _SignInDoctorState extends State<SignInDoctor> {
                     height: 40,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 17,
-                      right: 18,
+                    padding: const EdgeInsetsDirectional.only(
+                      start: 17,
+                      end: 18,
                       bottom: 12,
                     ),
                     child: defaultFormField(
@@ -139,9 +140,9 @@ class _SignInDoctorState extends State<SignInDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 17,
-                      right: 18,
+                    padding: const EdgeInsetsDirectional.only(
+                      end: 18,
+                      start: 17,
                     ),
                     child: defaultFormField(
                       context: context,
@@ -166,10 +167,10 @@ class _SignInDoctorState extends State<SignInDoctor> {
 
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 190,
+                    padding: const EdgeInsetsDirectional.only(
+                      start: 190,
                       top: 3,
-                      right: 24,
+                      end: 24,
                     ),
                     child: TextButton(
                       child:Text(
@@ -185,14 +186,13 @@ class _SignInDoctorState extends State<SignInDoctor> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      left: 17,
-                      right: 18,
+                    padding: const EdgeInsetsDirectional.only(
+                      start: 17,
+                      end: 18,
                       top: 18,
                       bottom: 30,
                     ),
                     child: defButton(
-                      width: 304,
                       backgroundColor: Colour('#008894'),
                       fontSize: 18,
                       text: 'Sign In',

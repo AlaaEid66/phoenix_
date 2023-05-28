@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/interface.dart';
+import 'package:phoenix/widgets/shared/components/size_config.dart';
 import 'onboarding1.dart';
 import 'onboarding2.dart';
 import 'onboarding3.dart';
@@ -38,7 +39,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
         ),
         color:_currentPage==index?Colour('#008894'):Colour('#000000').withOpacity(0.16),
       ),
-      margin: const EdgeInsets.only(right: 5),
+      margin: const EdgeInsetsDirectional.only(end: 5),
       height: 14,
       curve: Curves.easeIn,
       width: 14,
@@ -84,15 +85,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                   ),
                   _currentPage + 1 == contents.length
                       ? Padding(
-                    padding: const EdgeInsets.only(
+                    padding: const EdgeInsetsDirectional.only(
                       top: 67,
-                      right: 128,
-                      left: 128,
+                      end: 128,
+                      start: 128,
                       bottom: 50,
                     ),
                     child: Container(
-                      width: 119,
-                      height: 37,
+                      width: width(context, 1),
+                      height: height(context, 16),
                       decoration: BoxDecoration(
                         color:Colour('#008894'),
                         borderRadius:BorderRadius.circular(10),
@@ -114,9 +115,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                     ),
                   )
                       : Padding(
-                    padding: const EdgeInsets.only(
-                      right: 39,
-                      left: 30,
+                    padding: const EdgeInsetsDirectional.only(
+                      end: 39,
+                      start: 30,
                       top: 54,
                       bottom: 68,
                     ),
@@ -142,12 +143,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>{
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(
-                            left: 166,
+                          padding: const EdgeInsetsDirectional.only(
+                            start: 120,
                           ),
                           child: Container(
-                            width: 80,
-                            height: 40,
+                            width: width(context, 4),
+                            height: height(context, 16),
                             decoration: BoxDecoration(
                               color:Colour('#008894'),
                               borderRadius:BorderRadius.circular(10),

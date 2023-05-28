@@ -82,13 +82,13 @@ class _SignUpUserState extends State<SignUpUser> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
+                  padding: const EdgeInsetsDirectional.only(
                      top: 50,
                   ),
                   child: Center(
                     child: Container(
-                      width: 95,
-                      height: 88,
+                      height: height(context, 8),
+                      width: height(context, 7),
                       child:const CircleAvatar(
                         backgroundColor: Colors.white,
                         child: Image(
@@ -99,7 +99,7 @@ class _SignUpUserState extends State<SignUpUser> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
+                  padding: const EdgeInsetsDirectional.only(
                     bottom: 30,
                   ),
                   child: Text(
@@ -113,7 +113,7 @@ class _SignUpUserState extends State<SignUpUser> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 36,
                   ),
                    child: defaultFormField(
@@ -136,7 +136,7 @@ class _SignUpUserState extends State<SignUpUser> {
                    ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 36,
                     vertical: 10,
                   ),
@@ -148,7 +148,7 @@ class _SignUpUserState extends State<SignUpUser> {
                 ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 36,
                   ),
                   child: defaultFormField(
@@ -171,7 +171,7 @@ class _SignUpUserState extends State<SignUpUser> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 36,
                     vertical: 10,
                   ),
@@ -220,7 +220,7 @@ class _SignUpUserState extends State<SignUpUser> {
                       displayGenderList?
                       Container(
                         height: height(context,7),
-                        width: width(context,1.3),
+                        width: width(context,1.4),
                         decoration: BoxDecoration(
                           color:Colour('#EFEFEF'),
                           // borderRadius: BorderRadius.circular(20),
@@ -254,7 +254,7 @@ class _SignUpUserState extends State<SignUpUser> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding: const EdgeInsetsDirectional.symmetric(
                     horizontal: 36,
                   ),
                   child: defaultFormField(
@@ -266,9 +266,9 @@ class _SignUpUserState extends State<SignUpUser> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 36,
-                    right: 35,
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 36,
+                    end: 35,
                     top: 20,
                     bottom: 5,
                   ),
@@ -296,29 +296,29 @@ class _SignUpUserState extends State<SignUpUser> {
                   height: 4,
                 ),
                 Container(
-                  width: 304,
-                  height: 50,
+                  width: width(context, 1.3),
+                  height: height(context, 15),
                   color:Colors.white60,
                   child: Material(
                     borderRadius:BorderRadius.circular(16),
                     child: MaterialButton(
                       onPressed: () {},
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                        padding: const EdgeInsetsDirectional.symmetric(
                           horizontal: 20,
                           vertical: 5,
                         ),
                         child: Row(
                           children: [
                             Container(
-                              height: 28,
-                              width: 28,
+                              height: height(context, 30),
+                              width: height(context, 16),
                               child:const Image(
                                 image:AssetImage('assets/images/pic2.png'),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(
+                              padding: const EdgeInsetsDirectional.symmetric(
                                 horizontal:18,
                               ),
                               child: Text(

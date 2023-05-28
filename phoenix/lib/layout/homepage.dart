@@ -1,5 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'package:phoenix/modules/posts/comments.dart';
 import 'package:phoenix/modules/posts/share_posts.dart';
 import 'package:phoenix/widgets/post.dart';
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
         '10 Oct . 2022',
         'assets/images/first-aid.jpg',
         100,
-       450,
+       50,
        ''
     ),
   ];
@@ -243,22 +244,53 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Row(
                       children: [
-                        Text('${post[0].postLikes}'),
-                        IconButton(
-                          icon:const Icon(Icons.thumb_up_alt_rounded,
-                            size: 20,
+                        LikeButton(
+                          size: 20,
+                          circleColor:
+                          CircleColor(start: Colour('#505050'), end: Colour('#0066CC')),
+                          bubblesColor: const BubblesColor(
+                            dotPrimaryColor: Color(0xff33b5e5),
+                            dotSecondaryColor: Color(0xff0099cc),
                           ),
-                          color: Colour('#505050'),
-                          onPressed:(){} ,
+                          likeBuilder: (bool isLiked) {
+                            return Icon(
+                              Icons.thumb_up_alt_outlined,
+                              color: isLiked ?  Colour('#0066CC') : Colour('#505050'),
+                              size: 20,
+                            );
+                          },
+                          likeCount: post[0].postLikes,
+                          countBuilder: (int? count, bool isLiked, String text) {
+                            var color = isLiked ?  Colour('#0066CC') : Colour('#505050');
+                            Widget result;
+                            if (count == 0) {
+                              result = Text(
+                                "like",
+                                style: TextStyle(color: color),
+                              );
+                            } else
+                              result = Text(
+                                text,
+                                style: TextStyle(color: color),
+                              );
+                            return result;
+                          },
                         ),
-                        Text('Like',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Segoe UI',
-                            color:Colour('#505050'),
-                            fontSize: 14,
-                          ),
-                        ),
+                        // IconButton(
+                        //   icon:const Icon(Icons.thumb_up_alt_rounded,
+                        //     size: 20,
+                        //   ),
+                        //   color: Colour('#505050'),
+                        //   onPressed:(){} ,
+                        // ),
+                        // Text('Like',
+                        //   style: TextStyle(
+                        //     fontWeight: FontWeight.w500,
+                        //     fontFamily: 'Segoe UI',
+                        //     color:Colour('#505050'),
+                        //     fontSize: 14,
+                        //   ),
+                        // ),
                       ],
                     ),
                     Row(
@@ -309,27 +341,44 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Row(
                       children: [
-                        Text('50'),
-                        IconButton(
-                          icon:const Icon(Icons.thumb_up_alt_rounded,
-                            size: 20,
+                        LikeButton(
+                          size: 20,
+                          circleColor:
+                          CircleColor(start: Colour('#505050'), end: Colour('#0066CC')),
+                          bubblesColor: const BubblesColor(
+                            dotPrimaryColor: Color(0xff33b5e5),
+                            dotSecondaryColor: Color(0xff0099cc),
                           ),
-                          color: Colour('#505050'),
-                          onPressed:(){} ,
-                        ),
-                        Text('Like',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Segoe UI',
-                            color:Colour('#505050'),
-                            fontSize: 14,
-                          ),
+                          likeBuilder: (bool isLiked) {
+                            return Icon(
+                              Icons.thumb_up_alt_outlined,
+                              color: isLiked ?  Colour('#0066CC') : Colour('#505050'),
+                              size: 20,
+                            );
+                          },
+                          likeCount: posts[0].postLikes,
+                          countBuilder: (int? count, bool isLiked, String text) {
+                            var color = isLiked ?  Colour('#0066CC') : Colour('#505050');
+                            Widget result;
+                            if (count == 0) {
+                              result = Text(
+                                "like",
+                                style: TextStyle(color: color),
+                              );
+                            } else {
+                              result = Text(
+                                text,
+                                style: TextStyle(color: color),
+                              );
+                            }
+                            return result;
+                          },
                         ),
                       ],
                     ),
                     Row(
                       children: [
-                        Text('100'),
+                        Text( '${post[0].postComments}'),
                         IconButton(
                           icon:  Icon(Icons.edit_note_rounded,
                             color:Colour('#505050') ,

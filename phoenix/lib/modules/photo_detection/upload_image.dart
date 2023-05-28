@@ -94,6 +94,7 @@ class _UploadImageState extends State<UploadImage> {
   //camera method
   Future openGallery() async {
     final picture = await imagePicker.getImage(source: ImageSource.gallery);
+
     setState(() {
       _loading= true;
       _image = File(picture!.path);
@@ -122,21 +123,12 @@ class _UploadImageState extends State<UploadImage> {
     });
   }
 
-  // Future getImage()async{
-  //   final image = await imagePicker.getImage(source:ImageSource.gallery);
-  //   setState(() {
-  //     _loading= true;
-  //     _image= File(image!.path);
-  //     // _image= File(image2!.path);
-  //   });
-  //   classifyImage(_image!);
-  // }
 
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
+      padding: const EdgeInsetsDirectional.only(
         top: 60,
       ),
       child: Scaffold(

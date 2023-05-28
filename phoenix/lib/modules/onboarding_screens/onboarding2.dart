@@ -17,18 +17,18 @@ class _OnBoarding2State extends State<OnBoarding2> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              right: 44,
-              left: 44,
+            padding: const EdgeInsetsDirectional.only(
+              end: 44,
+              start: 44,
               bottom: 8,
               top:157,
             ),
             child: Image.asset('assets/images/p2.jpg'),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              right: 48,
-              left: 49,
+            padding: const EdgeInsetsDirectional.only(
+              end: 48,
+              start: 49,
               bottom: 99,
               top: 8,
             ),

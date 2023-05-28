@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/widgets/shared/components/component.dart';
+import 'package:phoenix/widgets/shared/components/size_config.dart';
 class ForgetPass extends StatefulWidget {
   const ForgetPass({Key? key}) : super(key: key);
 
@@ -13,9 +14,9 @@ class _ForgetPassState extends State<ForgetPass> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
+      padding: const EdgeInsetsDirectional.only(
         top:40,
-        left: 10,
+        start: 10,
       ),
       child: Scaffold(
         backgroundColor: Colour('#FFFFFF'),
@@ -30,15 +31,15 @@ class _ForgetPassState extends State<ForgetPass> {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(
-              left: 2,
-              right: 20,
+            padding: const EdgeInsetsDirectional.only(
+              start: 2,
+              end: 20,
             ),
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                    right: 140
+                  padding: const EdgeInsetsDirectional.only(
+                    end: 140
                   ),
                   child: Text(
                     'Forget Password',
@@ -51,8 +52,8 @@ class _ForgetPassState extends State<ForgetPass> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    right: 60,
+                  padding: const EdgeInsetsDirectional.only(
+                    end: 60,
                     bottom: 32,
                     top: 8,
                   ),
@@ -67,59 +68,37 @@ class _ForgetPassState extends State<ForgetPass> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-
+                  padding: const EdgeInsetsDirectional.only(
                     bottom: 12,
                   ),
-                  child: Container(
-                    width: 304,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color:Colour('#EFEFEF'),
-                      borderRadius:BorderRadius.circular(10),
-                    ),
-                    child: TextFormField(
-                      validator: (val) {
-                        if(val!.isEmpty){
-                          return("Not valid.Please try again");
-                        }
-                        if (val.length > 100) {
-                          return "Email can't to be larger than 100 letter";
-                        }
-                        if (val.length < 2) {
-                          return "Email can't to be less than 2 letter";
-                        }
-                        return null;
-                      },
-                      controller:emailController,
-                      keyboardType:TextInputType.emailAddress,
-                      decoration:InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius:BorderRadius.circular(10),
-                        ),
-                        labelText: 'Email',
-                        labelStyle: TextStyle(
-                          fontSize: 18,
-                          fontFamily: 'Segoe UI',
-                          fontWeight: FontWeight.normal,
-                          color: Colour('#000000').withOpacity(0.4),
-                        ),
-                        prefixIcon:const Icon(
-                          Icons.email,
-                        ),
-                      ),
-                    ),
+                  child: defaultFormField(
+                    context: context,
+                    keyboardType: TextInputType.emailAddress,
+                    validate: (val) {
+                      if(val!.isEmpty){
+                        return("Not valid.Please try again");
+                      }
+                      if (val.length > 100) {
+                        return "Email can't to be larger than 100 letter";
+                      }
+                      if (val.length < 2) {
+                        return "Email can't to be less than 2 letter";
+                      }
+                      return null;
+                    },
+                    hint: 'Email',
+                    prefix: Icons.email,
                   ),
+
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 17,
-                    right: 18,
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 17,
+                    end: 18,
                     top: 18,
                     bottom: 30,
                   ),
                   child: defButton(
-                    width: 304,
                     backgroundColor: Colour('#008894'),
                     fontSize: 18,
                     text: 'Send',
