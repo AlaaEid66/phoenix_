@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
-
 
 import 'dart:io';
 import 'package:colour/colour.dart';
@@ -8,14 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:path_provider_ex2/path_provider_ex2.dart';
 import 'package:phoenix/widgets/shared/components/component.dart';
 import 'package:phoenix/login/sign_in_doctor.dart';
 import 'package:phoenix/layout/bottom_navigationbar/bottomnav.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:mime/mime.dart';
 import 'package:phoenix/widgets/shared/components/size_config.dart';
-
-
 import 'package:uuid/uuid.dart';
 
 
@@ -30,22 +27,24 @@ class SignUpDoctor extends StatefulWidget {
 }
 
 class _SignUpDoctorState extends State<SignUpDoctor> {
-  File? _file;
   final List<types.Message> _messages = [];
   final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
   File? pdfFile;
 
 
-  // void _pickerFile()async{
-  //   final result = await FilePicker.platform.pickFiles(
-  //     type: FileType.custom,
-  //     allowedExtensions: ['jpg','pdf','doc']
-  //   );
-  //   if (result != null) {
-  //     final path = result.files.single.path;
-  //     File? pdfFile;
-  //   }
-  // }
+
+  void _pickerFile()async{
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['jpg','pdf','doc']
+    );
+    if (result != null) {
+      final path = result.files.single.path;
+     setState(() {
+       pdfFile= File(path!);
+     });
+    }
+  }
   // void _openFile(PlatformFile file) {
   //   OpenFile.open(file.path);
   // }
@@ -219,41 +218,40 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.symmetric(
-                       horizontal: 36,
-                      vertical: 3
+                        horizontal: 36,
+                        vertical: 3
                     ),
                     child: Container(
                         width: width(context, 1.3),
                         height: height(context, 15),
-                      color:Colour('#FFFFFF'),
-                      child: pdfFile==null?
-                      Row(
-                        children: [
-                          Icon(Icons.file_copy,
-                            color: Colour('#008894'),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          TextButton(
-                            onPressed:_handleFileSelection,
-                            child:Text(
-                              'Upload CV',
-                              style: TextStyle(
-                                color: Colour('#008894'),
-                                fontWeight:FontWeight.w600,
-                                fontSize: 16,
-                                fontFamily: 'Segoe UI',
-                              ),
+                        color:Colour('#FFFFFF'),
+                        child: pdfFile==null?
+                        Row(
+                          children: [
+                            Icon(Icons.file_copy,
+                              color: Colour('#008894'),
                             ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            TextButton(
+                              onPressed:_pickerFile,
+                              child:Text(
+                                'Upload CV',
+                                style: TextStyle(
+                                  color: Colour('#008894'),
+                                  fontWeight:FontWeight.w600,
+                                  fontSize: 16,
+                                  fontFamily: 'Segoe UI',
+                                ),
+                              ),
 
-                          ),
-                        ],
-                      ):
-                      Image.file(
-                            _messages as File,
-                            // File(_file!.path),
-                          )
+                            ),
+                          ],
+                        ):
+                        Image.file(
+                          File(pdfFile!.path)
+                        )
                     ),
                   ),
                   Padding(
@@ -369,6 +367,8 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
       ),
     );
   }
+
+
 
   void _addMessage(types.Message message) {
     setState(() {

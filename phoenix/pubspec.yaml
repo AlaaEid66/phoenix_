@@ -39,6 +39,10 @@ dependencies:
   path_provider:
   image_picker:
   file_picker:
+  path:
+  path_provider_ex2:
+  flutter_full_pdf_viewer_null_safe:
+  file_manager:
   dropdownfield2:
   like_button:
   firebase_core:
