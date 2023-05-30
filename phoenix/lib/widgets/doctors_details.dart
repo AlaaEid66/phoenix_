@@ -5,34 +5,65 @@ import 'package:flutter/material.dart';
 Widget doctor(DoctorsData doctorsData,BuildContext context){
   return SafeArea(
     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                top: 30,
-                right: 20,
+              padding: const EdgeInsetsDirectional.only(
+                top: 10,
+                end: 20,
               ),
               child: Container(
-                width: 96,
-                height: 130,
-                child:Image.asset('${doctorsData.doctorUrlAvatar}',fit: BoxFit.cover,),
+                width: 90,
+                height: 140,
+                child:Image.asset('${doctorsData.doctorUrlAvatar}',fit: BoxFit.fitHeight,),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                right: 40,
-                bottom: 1,
+              padding: const EdgeInsetsDirectional.only(
+                end: 40,
+                bottom: 50,
               ),
               child: Column(
                 children: [
-                  Text('${doctorsData.doctorName}'),
+                  Text(
+                    '${doctorsData.doctorName}',
+                    style: TextStyle(
+                      color: Colour('#505050'),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      fontFamily:'Segoe UI'
+                    ),
+                  ),
                   SizedBox(
                     height:MediaQuery.of(context).size.height*0.0001,
                   ),
-                  Text('${doctorsData.doctorDesc}'),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(
+                      end: 22
+                    ),
+                    child: Text('${doctorsData.doctorDesc}',
+                      style: TextStyle(
+                          color: Colour('#008894'),
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal,
+                          fontFamily:'Segoe UI'
+                      ),
+                    ),
+                  ),
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(
+                bottom: 90,
+                start: 14
+              ),
+              child: IconButton(
+                  onPressed:(){},
+                  icon:Icon(Icons.more_vert),
+                color: Colour('#5B5E60'),
               ),
             ),
           ],

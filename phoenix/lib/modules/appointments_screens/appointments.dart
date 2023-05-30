@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
+import 'package:phoenix/modules/appointments_screens/cancled_appoint.dart';
+import 'package:phoenix/modules/appointments_screens/completed_appoint.dart';
 import 'package:phoenix/modules/appointments_screens/upcoming_appoint.dart';
 import 'package:phoenix/modules/friends_screens/my_friends.dart';
 import 'package:phoenix/modules/settings/about_us.dart';
@@ -38,20 +40,8 @@ class _AppointmentState extends State<Appointment>
         top:60,
       ),
       child: Scaffold(
-        backgroundColor: Colour('#FFFFFF'),
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor:Colour('#FFFFFF') ,
-          centerTitle:true,
-          title:Text(
-            'My appointment',
-            style:TextStyle(
-              color: Colour('#505050'),
-              fontFamily: 'Segoe UI',
-              fontSize: 18,
-              fontWeight:FontWeight.bold,
-            ),
-          ),
+          title:const Text('My appointment',),
           leading:IconButton(
             color:Colour('#000000').withOpacity(0.5),
             onPressed:()=>Navigator.pop(context),
@@ -112,8 +102,8 @@ class _AppointmentState extends State<Appointment>
                           controller: tabController2,
                           children: const [
                             Upcoming(),
-                            MyFriends(),
-                            AboutUs(),
+                            Completed(),
+                            Canceled(),
                           ],
                         ),
                       )

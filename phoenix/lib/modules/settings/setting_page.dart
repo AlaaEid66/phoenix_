@@ -21,20 +21,8 @@ class _SettingState extends State<Setting> {
         top: 50,
       ),
       child: Scaffold(
-        backgroundColor: Colour('#FFFFFF'),
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor:Colour('#FFFFFF') ,
-          centerTitle:true,
-          title:Text(
-            'Setting',
-            style:TextStyle(
-              color: Colour('#505050'),
-              fontFamily: 'Segoe UI',
-              fontSize: 18,
-              fontWeight:FontWeight.bold,
-            ),
-          ),
+          title:const Text('Setting',),
           leading:IconButton(
             color:Colour('#000000').withOpacity(0.5),
             onPressed:()=>Navigator.pop(context),

@@ -108,17 +108,8 @@ class _MessagesState extends State<Messages> {
           ),
           child: Scaffold(
             appBar: AppBar(
-              elevation: 0,
-              backgroundColor:Colour('#FFFFFF') ,
-              centerTitle:true,
-              title:Text(
+              title:const Text(
                 'Messages',
-                style:TextStyle(
-                  color: Colour('#505050'),
-                  fontFamily: 'Segoe UI',
-                  fontSize: 18,
-                  fontWeight:FontWeight.bold,
-                ),
               ),
               leading:IconButton(
                 color:Colour('#000000').withOpacity(0.5),
@@ -209,15 +200,6 @@ class _MessagesState extends State<Messages> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height*0.0032,
                     ),
-                    // ListView.separated(
-                    //   itemCount: contentMessages.length,
-                    //   itemBuilder: (context,index)=> messageCard(contentMessages[index], context),
-                    //   scrollDirection:Axis.horizontal,
-                    //   separatorBuilder: (context,index)=> const SizedBox(
-                    //     height: 20,
-                    //   ),
-                    // ),
-
                     messageCard(contentMessages[0], context),
                     messageCard(contentMessages[1], context),
                     messageCard(contentMessages[2], context),

@@ -18,7 +18,21 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context,child){
-        return const MaterialApp(
+        return MaterialApp(
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colour('#FFFFFF'),
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colour('#FFFFFF'),
+              elevation: 0.0,
+              centerTitle: true,
+              titleTextStyle: TextStyle(
+                color: Colour('#505050'),
+                fontFamily: 'Segoe UI',
+                fontSize: 18,
+                fontWeight:FontWeight.bold,
+              )
+            ),
+          ),
           builder:DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           home: SplashScreen(),);

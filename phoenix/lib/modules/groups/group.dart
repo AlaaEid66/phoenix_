@@ -47,18 +47,7 @@ class _GroupsState extends State<Groups> {
         child: Scaffold(
           backgroundColor: Colour('#FFFFFF'),
           appBar: AppBar(
-            elevation: 0,
-            backgroundColor:Colour('#FFFFFF') ,
-            centerTitle:true,
-            title:Text(
-              'Groups',
-              style:TextStyle(
-                color: Colour('#505050'),
-                fontFamily: 'Segoe UI',
-                fontSize: 18,
-                fontWeight:FontWeight.bold,
-              ),
-            ),
+            title:const Text('Groups',),
             leading:IconButton(
               color:Colour('#000000').withOpacity(0.5),
               onPressed:()=>Navigator.pop(context),

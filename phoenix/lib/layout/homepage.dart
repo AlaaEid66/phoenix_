@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colour('#FFFFFF'),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(14),
+            padding: const EdgeInsetsDirectional.all(14),
             child: Column(
               children: [
                 // Container(
@@ -86,8 +86,8 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(10)
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        right: 4,
+                      padding: const EdgeInsetsDirectional.only(
+                        end: 4,
                       ),
                       child: Column(
                         children: [
@@ -104,7 +104,9 @@ class _HomePageState extends State<HomePage> {
                                   decoration: BoxDecoration(
                                     borderRadius:BorderRadius.circular(50),
                                     image: const DecorationImage(
-                                      image:AssetImage('assets/images/s1.jpg'),
+                                      image:
+                                      AssetImage('assets/images/s1.jpg'
+                                      ),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -119,11 +121,6 @@ class _HomePageState extends State<HomePage> {
                                 child: TextFormField(
                                   onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const WritePost())),
                                   decoration: InputDecoration(
-                                    // focusedBorder: OutlineInputBorder(
-                                    //   borderSide: BorderSide(color: Colour('#FFFFFF'),
-                                    //     width: 0,
-                                    //   ),
-                                    // ),
                                     border: InputBorder.none,
                                     hintText:'What\'s on your mind ?',
                                     hintStyle:TextStyle(
@@ -138,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(
+                            padding: const EdgeInsetsDirectional.only(
                               top: 16,
                             ),
                             child: Row(

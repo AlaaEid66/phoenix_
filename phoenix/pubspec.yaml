@@ -39,10 +39,7 @@ dependencies:
   path_provider:
   image_picker:
   file_picker:
-  path:
-  path_provider_ex2:
-  flutter_full_pdf_viewer_null_safe:
-  file_manager:
+  syncfusion_flutter_pdfviewer:
   dropdownfield2:
   like_button:
   firebase_core:
@@ -54,7 +51,6 @@ dependencies:
   meta:
   keyboard_actions: ^4.2.0
   dropdown_button2:
-  story_view:
   dashed_circle:
   http:
   modal_progress_hud_nsn:
@@ -66,11 +62,11 @@ dependencies:
   smooth_page_indicator:
   awesome_dialog:
   table_calendar:
+  open_file:
   buttons_tabbar:
   flutter_rating_bar: ^4.0.1
   table_calendar_null_safe:
   date_picker_timetable:
-  open_file:
   dio:
   shared_preferences:
   provider:

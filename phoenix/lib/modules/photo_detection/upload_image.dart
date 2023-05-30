@@ -132,20 +132,8 @@ class _UploadImageState extends State<UploadImage> {
         top: 60,
       ),
       child: Scaffold(
-        backgroundColor: Colour('#FFFFFF'),
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colour('#FFFFFF'),
-          centerTitle: true,
-          title: Text(
-            'Identify the degree of burn',
-            style: TextStyle(
-              color: Colour('#505050'),
-              fontFamily: 'Segoe UI',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          title: const Text('Identify the degree of burn',),
           leading: IconButton(
             color: Colour('#000000').withOpacity(0.5),
             onPressed: () => Navigator.pop(context),

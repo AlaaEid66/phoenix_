@@ -80,6 +80,14 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
       child: InkWell(
         focusColor: Colour('#EFEFEF'),
         onTap: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const ChatScreen())),
+        onLongPress: (){
+          AlertDialog(
+            backgroundColor: Colour('#EFEFEF'),
+            content: Text(
+              'Delete',
+            ),
+          );
+        },
         child: Card(
           color: Colour('#EFEFEF'),
           child: Row(
@@ -169,22 +177,19 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
                   ),
                 ],
               ),
-              // SizedBox(
-              //   width: MediaQuery.of(context).size.width*0.282,
-              // ),
 
-              Padding(
-                padding: EdgeInsetsDirectional.only(
-                  bottom: 30,
-                  start: lastMessageData.userName==11? 90:100,
-                ),
-                child: IconButton(
-                  onPressed:(){},
-                  icon:const Icon(Icons.close),
-                  color: Colour('#505050'),
-                  iconSize: 20,
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsetsDirectional.only(
+              //     bottom: 30,
+              //     end: lastMessageData.userName==15? 90:100,
+              //   ),
+              //   child: IconButton(
+              //     onPressed:(){},
+              //     icon:const Icon(Icons.close),
+              //     color: Colour('#505050'),
+              //     iconSize: 20,
+              //   ),
+              // ),
             ],
           ),
         ),

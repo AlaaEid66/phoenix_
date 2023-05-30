@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:path_provider_ex2/path_provider_ex2.dart';
+import 'package:open_file/open_file.dart';
+import 'package:phoenix/widgets/shared/components/consts.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:phoenix/widgets/shared/components/component.dart';
 import 'package:phoenix/login/sign_in_doctor.dart';
 import 'package:phoenix/layout/bottom_navigationbar/bottomnav.dart';
@@ -29,22 +31,44 @@ class SignUpDoctor extends StatefulWidget {
 class _SignUpDoctorState extends State<SignUpDoctor> {
   final List<types.Message> _messages = [];
   final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
-  File? pdfFile;
+  File? pickedFile;
+  String? size;
 
-
-
-  void _pickerFile()async{
-    final result = await FilePicker.platform.pickFiles(
+  Future<File?> pickFile() async{
+    final pickedFile = await FilePicker.platform.pickFiles(
+      allowMultiple: false,
       type: FileType.custom,
-      allowedExtensions: ['jpg','pdf','doc']
+      allowedExtensions: ['pdf', 'PDF'],
     );
-    if (result != null) {
-      final path = result.files.single.path;
-     setState(() {
-       pdfFile= File(path!);
-     });
-    }
+    if(pickedFile == null || pickedFile.files.isEmpty) return null;
+    this.pickedFile = File(pickedFile.files.first.path!);
+    setState(() {});
+    return this.pickedFile;
   }
+
+  // void _pickerFile()async{
+  //   final result = await FilePicker.platform.pickFiles(
+  //     type: FileType.custom,
+  //     withData: true,
+  //     allowMultiple: false,
+  //     allowedExtensions: ['pdf',''],
+  //
+  //
+  //   );
+  //   if (result != null) {
+  //     final path = result.files.single.path;
+  //     pdfFile == null ? false : OpenAppFile.open(pdfFile!.path.toString());
+  //     final kb = pdfFile!.size/ 1024;
+  //     final mb = kb / 1024;
+  //     final size = (mb >= 1)
+  //         ? '${mb.toStringAsFixed(2)} MB'
+  //         : '${kb.toStringAsFixed(2)} KB';
+  //     this.size = size;
+  //    setState(() {
+  //      pdfFile= File(path!) as PlatformFile?;
+  //    });
+  //   }
+  // }
   // void _openFile(PlatformFile file) {
   //   OpenFile.open(file.path);
   // }
@@ -225,7 +249,7 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                         width: width(context, 1.3),
                         height: height(context, 15),
                         color:Colour('#FFFFFF'),
-                        child: pdfFile==null?
+                        child: pickedFile == null ?
                         Row(
                           children: [
                             Icon(Icons.file_copy,
@@ -235,8 +259,8 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                               width: 10,
                             ),
                             TextButton(
-                              onPressed:_pickerFile,
-                              child:Text(
+                              onPressed: pickFile,
+                              child: Text(
                                 'Upload CV',
                                 style: TextStyle(
                                   color: Colour('#008894'),
@@ -249,9 +273,23 @@ class _SignUpDoctorState extends State<SignUpDoctor> {
                             ),
                           ],
                         ):
-                        Image.file(
-                          File(pdfFile!.path)
-                        )
+                            Row(
+                              children: [
+                                Expanded(child: Text(
+
+                                  getFileNameFromURL(
+                                    pickedFile!.path,
+                                    '/'
+                                  )
+                                ),
+                                ),
+                                IconButton(onPressed: () {
+                                  pickedFile = null;
+                                  setState(() {});
+                                }, icon: Icon(Icons.close),
+                                ),
+                              ],
+                            ),
                     ),
                   ),
                   Padding(

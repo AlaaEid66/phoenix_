@@ -63,17 +63,7 @@ class _NotifyState extends State<Notify> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colour('#FFFFFF'),
-          centerTitle: true,
-          title: Text('Notifications',
-            style:TextStyle(
-              color: Colour('#505050'),
-              fontFamily: 'Segoe UI',
-              fontSize: 18,
-              fontWeight:FontWeight.bold,
-            ),
-          ),
+          title: const Text('Notifications',),
           leading:IconButton(
             color:Colour('#000000').withOpacity(0.5),
             onPressed:(){},

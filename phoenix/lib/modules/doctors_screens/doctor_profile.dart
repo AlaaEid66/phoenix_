@@ -46,21 +46,12 @@ class _DoctorPageState extends State<DoctorPage>
       ),
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor:Colour('#FFFFFF') ,
-          centerTitle:true,
           title:Padding(
             padding: const EdgeInsets.only(
               right: 150,
             ),
             child: Text(
               '${doctorPage[0].doctorNameProfile}',
-              style:TextStyle(
-                color: Colour('#505050'),
-                fontFamily: 'Segoe UI',
-                fontSize: 16,
-                fontWeight:FontWeight.bold,
-              ),
             ),
           ),
           leading:IconButton(
