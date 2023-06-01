@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:phoenix/interface.dart';
 import 'package:phoenix/modules/appointments_screens/appointments.dart';
 import 'package:phoenix/modules/doctors_screens/doctors.dart';
 import 'package:phoenix/modules/friends_screens/your_friends.dart';
@@ -403,7 +404,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          width: 4,
                        ),
                        TextButton(
-                         onPressed: (){},
+                         onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const Interface())),
                          child: Text(
                            'Logout',
                            style:TextStyle(

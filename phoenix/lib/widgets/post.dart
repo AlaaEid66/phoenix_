@@ -1,6 +1,6 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
-import 'package:phoenix/widgets/shared/components/component.dart';
+
 import '../models/postdata_model.dart';
 
 Widget postWritten(PostData postData,BuildContext context){
@@ -41,8 +41,8 @@ Widget postWritten(PostData postData,BuildContext context){
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 12,
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 10
                   ),
                   child: IconButton(
                     onPressed:(){},

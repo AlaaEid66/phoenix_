@@ -83,11 +83,12 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
         onLongPress: (){
           AlertDialog(
             backgroundColor: Colour('#EFEFEF'),
-            content: Text(
+            content: const Text(
               'Delete',
             ),
           );
         },
+
         child: Card(
           color: Colour('#EFEFEF'),
           child: Row(

@@ -1,6 +1,7 @@
 import 'package:colour/colour.dart';
 import 'package:date_picker_timetable/date_picker_timetable.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:phoenix/models/doctorsdata_model.dart';
 import 'package:phoenix/widgets/doctors_details.dart';
 class Canceled extends StatefulWidget {
@@ -21,6 +22,8 @@ class _CanceledState extends State<Canceled> {
 
   final DatePickerController _controller = DatePickerController();
   DateTime _selectedValue = DateTime.now();
+  var timeController = TextEditingController();
+  var dateController = TextEditingController();
   TimeOfDay selectedTime = const TimeOfDay(hour: 00, minute: 00);
   void _showTimePicker() {
     showTimePicker(
@@ -64,6 +67,7 @@ class _CanceledState extends State<Canceled> {
               // New date selected
               setState(() {
                 _selectedValue = date;
+                dateController.text=DateFormat.MMMd().format(date).toString();
               });
             },
           ),
@@ -93,8 +97,8 @@ class _CanceledState extends State<Canceled> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(
-                                bottom:4
+                            padding: const EdgeInsetsDirectional.only(
+                              start: 100,
                             ),
                             child: Row(
                               children: [
@@ -104,9 +108,20 @@ class _CanceledState extends State<Canceled> {
                                   color:Colour('#5B5E60'),
                                 ),
                                 const SizedBox(
-                                  width: 4,
+                                  width: 2,
                                 ),
-                                Text('${_selectedValue.day}',
+                                // Text('${_selectedValue.day}',
+                                //   style:TextStyle(
+                                //     color: Colour('#5B5E60'),
+                                //     fontSize: 12,
+                                //     fontWeight: FontWeight.normal,
+                                //     fontFamily: 'Segoe UI',
+                                //   ),
+                                // ),
+                                // const SizedBox(
+                                //   width: 4,
+                                // ),
+                                Text('${dateController.text}',
                                   style:TextStyle(
                                     color: Colour('#5B5E60'),
                                     fontSize: 12,
@@ -179,8 +194,8 @@ class _CanceledState extends State<Canceled> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(
-                                bottom:4
+                            padding: const EdgeInsetsDirectional.only(
+                              start: 100,
                             ),
                             child: Row(
                               children: [
@@ -190,9 +205,20 @@ class _CanceledState extends State<Canceled> {
                                   color:Colour('#5B5E60'),
                                 ),
                                 const SizedBox(
-                                  width: 4,
+                                  width: 2,
                                 ),
-                                Text('${_selectedValue.day}',
+                                // Text('${_selectedValue.day}',
+                                //   style:TextStyle(
+                                //     color: Colour('#5B5E60'),
+                                //     fontSize: 12,
+                                //     fontWeight: FontWeight.normal,
+                                //     fontFamily: 'Segoe UI',
+                                //   ),
+                                // ),
+                                // const SizedBox(
+                                //   width: 4,
+                                // ),
+                                Text('${dateController.text}',
                                   style:TextStyle(
                                     color: Colour('#5B5E60'),
                                     fontSize: 12,

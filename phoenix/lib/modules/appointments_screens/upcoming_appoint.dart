@@ -22,6 +22,8 @@ class _UpcomingState extends State<Upcoming> {
 
   final DatePickerController _controller = DatePickerController();
   DateTime _selectedValue = DateTime.now();
+  var timeController = TextEditingController();
+  var dateController = TextEditingController();
   TimeOfDay selectedTime = const TimeOfDay(hour: 00, minute: 00);
   void _showTimePicker() {
     showTimePicker(
@@ -29,7 +31,7 @@ class _UpcomingState extends State<Upcoming> {
       initialTime: TimeOfDay.now(),
     ).then((value) {
       setState(() {
-        selectedTime= value!;
+         timeController.text= value!.format(context).toString();
       });
     });
   }
@@ -65,6 +67,7 @@ class _UpcomingState extends State<Upcoming> {
               // New date selected
               setState(() {
                 _selectedValue = date;
+                dateController.text=DateFormat.MMMd().format(date).toString();
               });
             },
           ),
@@ -118,18 +121,18 @@ class _UpcomingState extends State<Upcoming> {
                              const SizedBox(
                                width: 2,
                              ),
-                             Text('${_selectedValue.day}',
-                               style:TextStyle(
-                                 color: Colour('#5B5E60'),
-                                 fontSize: 12,
-                                 fontWeight: FontWeight.normal,
-                                 fontFamily: 'Segoe UI',
-                               ),
-                             ),
-                             const SizedBox(
-                               width: 4,
-                             ),
-                             Text('${_selectedValue.month}',
+                             // Text('${_selectedValue.day}',
+                             //   style:TextStyle(
+                             //     color: Colour('#5B5E60'),
+                             //     fontSize: 12,
+                             //     fontWeight: FontWeight.normal,
+                             //     fontFamily: 'Segoe UI',
+                             //   ),
+                             // ),
+                             // const SizedBox(
+                             //   width: 4,
+                             // ),
+                             Text('${dateController.text}',
                                style:TextStyle(
                                  color: Colour('#5B5E60'),
                                  fontSize: 12,
@@ -145,7 +148,7 @@ class _UpcomingState extends State<Upcoming> {
                        ),
                        Padding(
                          padding: const EdgeInsets.only(
-                           right: 24
+                           right: 4
                          ),
                          child: Row(
                            children: [
@@ -157,7 +160,7 @@ class _UpcomingState extends State<Upcoming> {
                              const SizedBox(
                                width: 4,
                              ),
-                             Text('${selectedTime.format(context).toString()}',
+                             Text('${timeController.text}',
                                style:TextStyle(
                                  color: Colour('#5B5E60'),
                                  fontSize: 12,

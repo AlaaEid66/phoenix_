@@ -9,6 +9,7 @@ import 'package:phoenix/modules/posts/write_post.dart';
 import 'package:phoenix/widgets/shared/components/component.dart';
 
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -17,8 +18,12 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
-
-
+  List<PostDataProfile> profile=[
+    PostDataProfile(
+        'assets/images/s1.jpg',
+        'Noah Talb'
+    )
+  ];
 
   List<PostData> post=[
     PostData(
@@ -52,24 +57,6 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsetsDirectional.all(14),
             child: Column(
               children: [
-                // Container(
-                //    width: double.infinity,
-                //    height:100,
-                //    child: ListView(
-                //      scrollDirection:Axis.horizontal,
-                //      children: [
-                //        storyButtonProfile(story[0], context),
-                //        storyButton(stories[0], context),
-                //        storyButton(stories[1], context),
-                //        storyButton(stories[2], context),
-                //        storyButton(stories[3], context),
-                //        storyButton(stories[4], context),
-                //        storyButton(stories[1], context),
-                //        storyButton(stories[3], context),
-                //        storyButton(stories[0], context),
-                //      ],
-                //    ),
-                //  ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height*0.05,
                 ),
@@ -103,9 +90,9 @@ class _HomePageState extends State<HomePage> {
                                   height: 40,
                                   decoration: BoxDecoration(
                                     borderRadius:BorderRadius.circular(50),
-                                    image: const DecorationImage(
+                                    image: DecorationImage(
                                       image:
-                                      AssetImage('assets/images/s1.jpg'
+                                      AssetImage('${profile[0].avatarUrlPostProfile}'
                                       ),
                                       fit: BoxFit.cover,
                                     ),

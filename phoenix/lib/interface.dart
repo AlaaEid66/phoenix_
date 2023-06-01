@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/registration/signUp_doctor.dart';
 import 'package:phoenix/registration/signUp_user.dart';
+import 'package:phoenix/widgets/shared/components/size_config.dart';
 class Interface extends StatefulWidget {
   const Interface({Key? key}) : super(key: key);
 
@@ -24,8 +25,8 @@ class _InterfaceState extends State<Interface> {
             Column(
               children: [
                 Container(
-                  width: 120,
-                  height: 130,
+                  width: width(context,3.3),
+                  height: height(context,6),
                   decoration: BoxDecoration(
                     border:Border.all(color:Colour('#008894'),width:3),
                     borderRadius:BorderRadius.circular(10),
@@ -55,8 +56,8 @@ class _InterfaceState extends State<Interface> {
             Column(
               children: [
                 Container(
-                  width: 120,
-                  height: 130,
+                  width: width(context,3.3),
+                  height: height(context,6),
                   decoration: BoxDecoration(
                     border:Border.all(color:Colour('#008894'),width:3),
                     borderRadius:BorderRadius.circular(10),
