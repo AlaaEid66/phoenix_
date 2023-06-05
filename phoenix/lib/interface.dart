@@ -16,9 +16,9 @@ class _InterfaceState extends State<Interface> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(
+        padding: const EdgeInsetsDirectional.only(
           top: 330,
-          left: 48,
+          start: 48,
         ),
         child: Row(
           children: [

@@ -2,7 +2,8 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:device_preview/device_preview.dart';
-import 'modules/onboarding_screens/onboarding_screen.dart';
+import 'package:phoenix/onboarding_screens/onboarding_screen.dart';
+
 void main() {
 
   runApp(DevicePreview(
@@ -53,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState()
   {
     super.initState();
-    Future.delayed(const Duration(seconds: 3),
+    Future.delayed(const Duration(seconds: 1),
             ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const OnBoardingScreen())));
 
   }
