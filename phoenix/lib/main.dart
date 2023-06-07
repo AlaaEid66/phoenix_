@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
           ),
           builder:DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
-          home: SplashScreen(),);
+          home: const SplashScreen(),
+        );
       },
     );
   }
@@ -54,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState()
   {
     super.initState();
-    Future.delayed(const Duration(seconds: 1),
+    Future.delayed(const Duration(seconds: 4),
             ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const OnBoardingScreen())));
 
   }

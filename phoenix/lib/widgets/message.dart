@@ -147,6 +147,8 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('${lastMessageData.userName}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
                       color: Colour('#505050'),
@@ -158,6 +160,8 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
                     height: 4,
                   ),
                   Text('${lastMessageData.bodyOfLastMessage}',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
                       color: Colour('#505050'),

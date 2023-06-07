@@ -48,8 +48,11 @@ class _ProfileState extends State<Profile> {
   ];
   late bool _loading;
   List? _outputs;
-  File? _image;
+  List? _outputs2;
+  File? _imageProfile;
+  File? _imageCover;
   final imagePicker = ImagePicker();
+  final imagePicker2 = ImagePicker();
 
   loadModel() async {
     await Tflite.loadModel(
@@ -101,9 +104,11 @@ class _ProfileState extends State<Profile> {
 
   Future openCamera() async {
     var image = await imagePicker.getImage(source: ImageSource.camera);
+    var image2 = await imagePicker2.getImage(source: ImageSource.camera);
     setState(() {
       _loading= true;
-      _image = File(image!.path);
+      _imageProfile = File(image!.path);
+      _imageCover = File(image2!.path);
       Navigator.pop(context);
 
     });
@@ -113,19 +118,23 @@ class _ProfileState extends State<Profile> {
   //camera method
   Future openGallery() async {
     final picture = await imagePicker.getImage(source: ImageSource.gallery);
+    final picture2 = await imagePicker2.getImage(source: ImageSource.gallery);
 
     setState(() {
       _loading= true;
-      _image = File(picture!.path);
+      _imageProfile = File(picture!.path);
+      _imageCover = File(picture2!.path);
       Navigator.pop(context);
     }
 
     );
-    classifyImage(_image!);
+    classifyImageProfile(_imageProfile!);
+    classifyImageCover(_imageCover!);
   }
 
 
-  classifyImage(File image) async {
+
+  classifyImageProfile(File image) async {
     var output = await Tflite.runModelOnImage(
       path: image.path,
       imageMean: 127.5,
@@ -139,6 +148,22 @@ class _ProfileState extends State<Profile> {
     setState(() {
       _loading = false;
       _outputs = output;
+    });
+  }
+  classifyImageCover(File image2) async {
+    var output = await Tflite.runModelOnImage(
+      path: image2.path,
+      imageMean: 127.5,
+      // defaults to 117.0
+      imageStd: 127.5,
+      // defaults to 1.0
+      numResults: 2,
+      // defaults to 5
+      threshold: 0.5, // defaults to 0.1
+    );
+    setState(() {
+      _loading = false;
+      _outputs2 = output;
     });
   }
 
@@ -157,7 +182,7 @@ class _ProfileState extends State<Profile> {
                   children: <Widget>[
                     Stack(
                       children: [
-                       _image==null?  Container(
+                       _imageCover==null?  Container(
                          color: Colour('#C5C5C5'),
                          height: 132,
                          width: double.infinity,
@@ -169,7 +194,7 @@ class _ProfileState extends State<Profile> {
                            borderRadius:BorderRadius.circular(200),
                            // border: Border.all(color:Colour('#008894'),width:3),
                          ),
-                         child: Image.file(_image!),
+                         child: Image.file(_imageCover!),
                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.only(
@@ -209,7 +234,7 @@ class _ProfileState extends State<Profile> {
                                 padding: const EdgeInsetsDirectional.only(
                                   start: 25,
                                 ),
-                                child: _image==null?
+                                child: _imageProfile==null?
                                 Container(
                                   width:92,
                                   height: 92,
@@ -227,7 +252,7 @@ class _ProfileState extends State<Profile> {
                                       borderRadius:BorderRadius.circular(200),
                                       // border: Border.all(color:Colour('#008894'),width:3),
                                     ),
-                                    child: Image.file(_image!),
+                                    child: Image.file(_imageProfile!),
                                 ),
                               ),
                               Padding(
