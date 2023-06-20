@@ -252,29 +252,16 @@ class _HomePageState extends State<HomePage> {
                                 "like",
                                 style: TextStyle(color: color),
                               );
-                            } else
+                            } else {
                               result = Text(
                                 text,
                                 style: TextStyle(color: color),
                               );
+                            }
                             return result;
                           },
                         ),
-                        // IconButton(
-                        //   icon:const Icon(Icons.thumb_up_alt_rounded,
-                        //     size: 20,
-                        //   ),
-                        //   color: Colour('#505050'),
-                        //   onPressed:(){} ,
-                        // ),
-                        // Text('Like',
-                        //   style: TextStyle(
-                        //     fontWeight: FontWeight.w500,
-                        //     fontFamily: 'Segoe UI',
-                        //     color:Colour('#505050'),
-                        //     fontSize: 14,
-                        //   ),
-                        // ),
+
                       ],
                     ),
                     Row(
@@ -385,7 +372,8 @@ class _HomePageState extends State<HomePage> {
                           icon:  Icon(Icons.share,
                             color:Colour('#505050') ,
                           ),
-                          onPressed:(){},),
+                          onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const SharePosts()))
+                        ),
                         Text('Share',
                           style: TextStyle(
                             color:Colour('#505050'),
