@@ -147,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.4,
+                             width:MediaQuery.of(context).size.width*0.40,
                            ),
                            IconButton(
                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const UploadImage())),
@@ -181,7 +181,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.56,
+                             width:MediaQuery.of(context).size.width*0.55,
                            ),
                            IconButton(
                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const FriendsPage())),
@@ -215,7 +215,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.26,
+                             width:MediaQuery.of(context).size.width*0.24,
                            ),
                            IconButton(
                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const Groups())),
@@ -259,7 +259,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.56,
+                             width:MediaQuery.of(context).size.width*0.54,
                            ),
                            IconButton(
                              onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const Doctors())),
@@ -293,7 +293,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.35,
+                             width:MediaQuery.of(context).size.width*0.33,
                            ),
                            IconButton(
                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const Appointment())),
@@ -337,7 +337,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.47,
+                             width:MediaQuery.of(context).size.width*0.45,
                            ),
                            IconButton(
                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const SavedItems())),
@@ -371,7 +371,7 @@ class _ProfilePageState extends State<ProfilePage> {
                              ),
                            ),
                            SizedBox(
-                             width:MediaQuery.of(context).size.width*0.57,
+                             width:MediaQuery.of(context).size.width*0.55,
                            ),
                            IconButton(
                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const Setting())),
@@ -416,10 +416,10 @@ class _ProfilePageState extends State<ProfilePage> {
                          ),
                        ),
                        SizedBox(
-                         width:MediaQuery.of(context).size.width*0.53,
+                         width:MediaQuery.of(context).size.width*0.51,
                        ),
                        IconButton(
-                         onPressed:(){},
+                         onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const Interface())),
                          icon:const Icon(Icons.arrow_forward_ios_rounded),
                          color:Colour('#505050'),
                          iconSize: 24,

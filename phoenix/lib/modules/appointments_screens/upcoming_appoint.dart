@@ -94,7 +94,7 @@ class _UpcomingState extends State<Upcoming> {
              ),
              child: Container(
                width: 300,
-               height: 170,
+               height: 200,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(10),
                  color:Colour('#F0FBFC')
@@ -110,6 +110,7 @@ class _UpcomingState extends State<Upcoming> {
                        Padding(
                          padding: const EdgeInsetsDirectional.only(
                            start: 100,
+                           top: 12,
                          ),
                          child: Row(
                            children: [
@@ -121,18 +122,8 @@ class _UpcomingState extends State<Upcoming> {
                              const SizedBox(
                                width: 2,
                              ),
-                             // Text('${_selectedValue.day}',
-                             //   style:TextStyle(
-                             //     color: Colour('#5B5E60'),
-                             //     fontSize: 12,
-                             //     fontWeight: FontWeight.normal,
-                             //     fontFamily: 'Segoe UI',
-                             //   ),
-                             // ),
-                             // const SizedBox(
-                             //   width: 4,
-                             // ),
-                             Text('${dateController.text}',
+
+                             Text(dateController.text,
                                style:TextStyle(
                                  color: Colour('#5B5E60'),
                                  fontSize: 12,
@@ -144,23 +135,27 @@ class _UpcomingState extends State<Upcoming> {
                          ),
                        ),
                        const SizedBox(
-                         width: 40,
+                         width: 30,
                        ),
                        Padding(
-                         padding: const EdgeInsets.only(
-                           right: 4
+                         padding: const EdgeInsetsDirectional.only(
+                           start: 4,
+                           bottom: 2,
                          ),
                          child: Row(
                            children: [
-                             Icon(
-                               Icons.access_time_rounded,
-                               size:15,
-                               color:Colour('#5B5E60'),
+                             IconButton(
+                               onPressed: _showTimePicker,
+                               icon: Icon(
+                                 Icons.access_time_rounded,
+                                 size:12,
+                                 color:Colour('#5B5E60'),
+                               ),
                              ),
                              const SizedBox(
                                width: 4,
                              ),
-                             Text('${timeController.text}',
+                             Text(timeController.text,
                                style:TextStyle(
                                  color: Colour('#5B5E60'),
                                  fontSize: 12,

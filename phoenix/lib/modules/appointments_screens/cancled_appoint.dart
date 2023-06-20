@@ -24,14 +24,25 @@ class _CanceledState extends State<Canceled> {
   DateTime _selectedValue = DateTime.now();
   var timeController = TextEditingController();
   var dateController = TextEditingController();
-  TimeOfDay selectedTime = const TimeOfDay(hour: 00, minute: 00);
+  TimeOfDay selectedTime1 = const TimeOfDay(hour: 00, minute: 00);
+  TimeOfDay selectedTime2 = const TimeOfDay(hour: 00, minute: 00);
   void _showTimePicker() {
     showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
     ).then((value) {
       setState(() {
-        selectedTime= value!;
+        selectedTime1= value!;
+      });
+    });
+  }
+  void _showTimePicker2() {
+    showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    ).then((value) {
+      setState(() {
+        selectedTime2= value!;
       });
     });
   }
@@ -87,81 +98,69 @@ class _CanceledState extends State<Canceled> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     doctor(doctorAppoint[0], context),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        right: 0,
-                        bottom: 20,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.only(
-                              start: 100,
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.calendar_month_outlined,
-                                  size:15,
-                                  color:Colour('#5B5E60'),
-                                ),
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                // Text('${_selectedValue.day}',
-                                //   style:TextStyle(
-                                //     color: Colour('#5B5E60'),
-                                //     fontSize: 12,
-                                //     fontWeight: FontWeight.normal,
-                                //     fontFamily: 'Segoe UI',
-                                //   ),
-                                // ),
-                                // const SizedBox(
-                                //   width: 4,
-                                // ),
-                                Text('${dateController.text}',
-                                  style:TextStyle(
-                                    color: Colour('#5B5E60'),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    fontFamily: 'Segoe UI',
-                                  ),
-                                ),
-                              ],
-                            ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(
+                            end: 25,
+                            top: 17,
                           ),
-                          const SizedBox(
-                            width: 80,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.calendar_month_outlined,
+                                size:15,
+                                color:Colour('#5B5E60'),
+                              ),
+                              const SizedBox(
+                                width: 2,
+                              ),
+                              Text(dateController.text,
+                                style:TextStyle(
+                                  color: Colour('#5B5E60'),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: 'Segoe UI',
+                                ),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 24
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(
+                              bottom: 2,
+                              end: 10,
+                          ),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                onPressed: _showTimePicker,
+                                 icon: Icon(
                                   Icons.access_time_rounded,
                                   size:15,
                                   color:Colour('#5B5E60'),
                                 ),
-                                const SizedBox(
-                                  width: 4,
+                              ),
+                              const SizedBox(
+                                width: 4,
+                              ),
+                              Text(selectedTime1.format(context).toString(),
+                                style:TextStyle(
+                                  color: Colour('#5B5E60'),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: 'Segoe UI',
                                 ),
-                                Text('${selectedTime.format(context).toString()}',
-                                  style:TextStyle(
-                                    color: Colour('#5B5E60'),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    fontFamily: 'Segoe UI',
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -184,81 +183,69 @@ class _CanceledState extends State<Canceled> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     doctor(doctorAppoint[0], context),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        right: 0,
-                        bottom: 20,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.only(
-                              start: 100,
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.calendar_month_outlined,
-                                  size:15,
-                                  color:Colour('#5B5E60'),
-                                ),
-                                const SizedBox(
-                                  width: 2,
-                                ),
-                                // Text('${_selectedValue.day}',
-                                //   style:TextStyle(
-                                //     color: Colour('#5B5E60'),
-                                //     fontSize: 12,
-                                //     fontWeight: FontWeight.normal,
-                                //     fontFamily: 'Segoe UI',
-                                //   ),
-                                // ),
-                                // const SizedBox(
-                                //   width: 4,
-                                // ),
-                                Text('${dateController.text}',
-                                  style:TextStyle(
-                                    color: Colour('#5B5E60'),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    fontFamily: 'Segoe UI',
-                                  ),
-                                ),
-                              ],
-                            ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(
+                            end: 30,
+                            top: 17,
                           ),
-                          const SizedBox(
-                            width: 80,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.calendar_month_outlined,
+                                size:15,
+                                color:Colour('#5B5E60'),
+                              ),
+                              const SizedBox(
+                                width: 2,
+                              ),
+                              Text(dateController.text,
+                                style:TextStyle(
+                                  color: Colour('#5B5E60'),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: 'Segoe UI',
+                                ),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 24
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(
+                              bottom: 2,
+                              end: 10
+                          ),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                onPressed: _showTimePicker2,
+                                 icon: Icon(
                                   Icons.access_time_rounded,
                                   size:15,
                                   color:Colour('#5B5E60'),
                                 ),
-                                const SizedBox(
-                                  width: 4,
+                              ),
+                              const SizedBox(
+                                width: 4,
+                              ),
+                              Text(selectedTime2.format(context).toString(),
+                                style:TextStyle(
+                                  color: Colour('#5B5E60'),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                  fontFamily: 'Segoe UI',
                                 ),
-                                Text('${selectedTime.format(context).toString()}',
-                                  style:TextStyle(
-                                    color: Colour('#5B5E60'),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    fontFamily: 'Segoe UI',
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

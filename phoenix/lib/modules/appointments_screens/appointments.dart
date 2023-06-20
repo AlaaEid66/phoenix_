@@ -1,12 +1,9 @@
-import 'dart:convert';
-
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/modules/appointments_screens/cancled_appoint.dart';
 import 'package:phoenix/modules/appointments_screens/completed_appoint.dart';
 import 'package:phoenix/modules/appointments_screens/upcoming_appoint.dart';
-import 'package:phoenix/modules/friends_screens/my_friends.dart';
-import 'package:phoenix/modules/settings/about_us.dart';
+
 
 class Appointment extends StatefulWidget {
   const Appointment({Key? key}) : super(key: key);
@@ -67,7 +64,7 @@ class _AppointmentState extends State<Appointment>
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: const EdgeInsets.all(5),
                               child: TabBar(
                                 controller: tabController2,
                                 unselectedLabelColor: Colour('#505050'),
@@ -111,141 +108,11 @@ class _AppointmentState extends State<Appointment>
                   ),
                 ),
               ),
-
             ],
           ),
         ),
       ),
     );
   }
-// Padding(
-//   padding: EdgeInsets.symmetric(horizontal: 30),
-//   child: Container(
-//     height: MediaQuery.of(context).size.height,
-//     child: Column(
-//       children: [
-//         SizedBox(height: 30),
-//         Container(
-//           // height: 50,
-//           width: MediaQuery.of(context).size.height,
-//           decoration: BoxDecoration(
-//               color: Colour('#EFEFEF'),
-//               borderRadius: BorderRadius.circular(20)),
-//           child: Column(
-//             children: [
-//               Padding(
-//                 padding: EdgeInsets.all(5),
-//                 child: TabBar(
-//                   controller: tabController,
-//                   unselectedLabelColor: Colour('#505050'),
-//                   labelColor: Colour('#008894'),
-//                   indicatorColor:Colour('#EFEFEF'),
-//                   indicatorWeight: 2,
-//                   indicator: BoxDecoration(
-//                     color: Colour('#EFEFEF'),
-//                     borderRadius: BorderRadius.circular(5),
-//                   ),
-//                   tabs:const [
-//                     Tab(
-//                       text: 'Suggestions',
-//                     ),
-//                     Tab(
-//                       text: 'Your Friends',
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//         const SizedBox(
-//           height: 40,
-//         ),
-//         Expanded(
-//           child: TabBarView(
-//             controller: tabController,
-//             children: const [
-//               Suggestions(),
-//               MyFriends(),
-//             ],
-//           ),
-//         )
-//       ],
-//     ),
-//   ),
-// ),
 }
-// Padding(
-//   padding: const EdgeInsets.only(
-//     left: 28,
-//     right: 27,
-//     top: 20,
-//   ),
-//   child: Stack(
-//     children: [
-//       Container(
-//         width: 320,
-//         height: 40,
-//         decoration: BoxDecoration(
-//           color: Colour('#EFEFEF'),
-//           borderRadius: BorderRadius.circular(20),
-//         ),
-//         child: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             //this is the filter tabs
-//             for (FilterStatus filterStatus in FilterStatus.values)
-//               Expanded(
-//                 child: GestureDetector(
-//                   onTap: () {
-//                     setState(() {
-//                       if (filterStatus == FilterStatus.Upcoming){
-//                         status = FilterStatus.Upcoming;
-//                         _alignment = Alignment.centerLeft;
-//                       } else if (filterStatus ==
-//                           FilterStatus.Completed) {
-//                         status = FilterStatus.Completed;
-//                         _alignment = Alignment.center;
-//                       } else if (filterStatus ==
-//                           FilterStatus.Canceled) {
-//                         status = FilterStatus.Canceled;
-//                         _alignment = Alignment.centerRight;
-//                       }
-//                     });
-//                   },
-//                   child: Center(
-//                     child: Text(filterStatus.name,
-//                       // style: TextStyle(
-//                       //   color: Colour('#5B5E60'),
-//                       //   fontSize:14,
-//                       //   fontWeight: FontWeight.w500,
-//                       //   fontFamily: 'Segoe UI'
-//                       // ),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//           ],
-//         ),
-//       ),
-//       AnimatedAlign(
-//         alignment: _alignment,
-//         duration: const Duration(milliseconds: 200),
-//         child: Container(
-//           color: Colour(''),
-//           width:68,
-//           height: 19,
-//           child: Center(
-//             child: Text(
-//               status.name,
-//               style: TextStyle(
-//                 color: Colour('#008894'),
-//                 fontWeight: FontWeight.bold,
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     ],
-//   ),
-// ),
+

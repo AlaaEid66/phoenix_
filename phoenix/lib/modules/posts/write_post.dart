@@ -209,9 +209,9 @@ class _WritePostState extends State<WritePost> {
                       child: Row(
                         children: [
                           IconButton(
-                            onPressed:(){},
+                            onPressed:getImage,
                             iconSize: 16,
-                            icon:Icon(Icons.add_a_photo),
+                            icon:const Icon(Icons.add_a_photo),
                             color:Colour('#505050'),
                           ),
                           Text(
