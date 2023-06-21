@@ -1,14 +1,14 @@
 import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:phoenix/widgets/shared/components/component.dart';
-class EditMail extends StatefulWidget {
-  const EditMail({Key? key}) : super(key: key);
+class EditUserName extends StatefulWidget {
+  const EditUserName({super.key});
 
   @override
-  State<EditMail> createState() => _EditMailState();
+  State<EditUserName> createState() => _EditUserNameState();
 }
 
-class _EditMailState extends State<EditMail> {
+class _EditUserNameState extends State<EditUserName> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +16,7 @@ class _EditMailState extends State<EditMail> {
         top: 50,
       ),
       child: Scaffold(
-        appBar: AppBar(
+        appBar:AppBar(
           title:const Text('Edit Password',),
           leading:IconButton(
             color:Colour('#000000').withOpacity(0.5),
@@ -46,7 +46,7 @@ class _EditMailState extends State<EditMail> {
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'Old Email',
+                      labelText: 'Old User Name',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,
@@ -72,7 +72,7 @@ class _EditMailState extends State<EditMail> {
                       border: OutlineInputBorder(
                         borderRadius:BorderRadius.circular(10),
                       ),
-                      labelText: 'New Email',
+                      labelText: 'New User Name',
                       labelStyle: TextStyle(
                           fontFamily: 'Segoe UI',
                           fontSize:18,

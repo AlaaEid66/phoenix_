@@ -2,6 +2,7 @@ import 'package:colour/colour.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phoenix/interface.dart';
+import 'package:phoenix/layout/profile_screens/edit_profile.dart';
 import 'package:phoenix/modules/appointments_screens/appointments.dart';
 import 'package:phoenix/modules/doctors_screens/doctors.dart';
 import 'package:phoenix/modules/friends_screens/your_friends.dart';
@@ -70,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                      borderRadius:BorderRadius.circular(10),
                    ),
                    child: MaterialButton(
-                     onPressed:(){},
+                     onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const EditProfile())),
                      child: Text('Edit profile',
                        style:TextStyle(
                          color:Colour('#FFFFFF'),
@@ -80,7 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
 
-            ),
+              ),
           ),
                  const SizedBox(
                    height: 33,

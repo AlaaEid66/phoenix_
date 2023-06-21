@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tflite/flutter_tflite.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:like_button/like_button.dart';
+import 'package:phoenix/layout/profile_screens/edit_profile.dart';
 import 'package:phoenix/models/postdata_model.dart';
 import 'package:phoenix/modules/posts/comments.dart';
 import 'package:phoenix/modules/posts/share_posts.dart';
@@ -288,7 +289,7 @@ class _ProfileState extends State<Profile> {
                             color: Colour('#008894'),
                             borderRadius: BorderRadius.circular(10),
                             child: MaterialButton(
-                              onPressed: () {},
+                              onPressed: ()=>Navigator.push(context,MaterialPageRoute(builder:(_)=> const EditProfile())),
                               minWidth: 96,
                               height: 36,
                               child: Text(
@@ -529,6 +530,9 @@ class _ProfileState extends State<Profile> {
                     ],
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 55,
               ),
             ],
           ),
