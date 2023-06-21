@@ -475,21 +475,6 @@ class _ProfileState extends State<Profile> {
                           return result;
                         },
                       ),
-                      // IconButton(
-                      //   icon:const Icon(Icons.thumb_up_alt_rounded,
-                      //     size: 20,
-                      //   ),
-                      //   color: Colour('#505050'),
-                      //   onPressed:(){} ,
-                      // ),
-                      // Text('Like',
-                      //   style: TextStyle(
-                      //     fontWeight: FontWeight.w500,
-                      //     fontFamily: 'Segoe UI',
-                      //     color:Colour('#505050'),
-                      //     fontSize: 14,
-                      //   ),
-                      // ),
                     ],
                   ),
                   Row(

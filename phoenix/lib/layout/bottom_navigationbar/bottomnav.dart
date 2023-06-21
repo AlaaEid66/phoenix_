@@ -37,6 +37,7 @@ class _BottomNavState extends State<BottomNav> {
         ],
       ),
       floatingActionButton:FloatingActionButton(
+        heroTag: 'Button',
         backgroundColor: Colour('#008894'),
         onPressed: (){},
         child:const Icon(

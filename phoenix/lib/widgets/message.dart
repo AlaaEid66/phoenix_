@@ -40,6 +40,7 @@ Widget onLineUserButton(OnlineUserData onlineUserData,BuildContext context){
                     width: 15,
                     height: 15,
                     child: FloatingActionButton(
+                      heroTag: 'Button3',
                       mini: true,
                       backgroundColor:onlineUserData.isOnline==true?Colour('#02FF00'):Colour('#EFEFEF'),
                       onPressed: (){},
@@ -122,6 +123,7 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
                         width: 15,
                         height: 15,
                         child: FloatingActionButton(
+                          heroTag: 'Button2',
                           mini: true,
                           backgroundColor:lastMessageData.isOnline==true?Colour('#02FF00'):Colour('#EFEFEF'),
                           onPressed: (){},
@@ -135,8 +137,6 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
                             height: 10,
                             color: Colour('#EFEFEF'),
                           ),
-                          // child: isOnline== true?
-
                         ),
                       ),
                     ),
@@ -182,19 +182,6 @@ Widget messageCard(LastMessageData lastMessageData,BuildContext context){
                   ),
                 ],
               ),
-
-              // Padding(
-              //   padding: EdgeInsetsDirectional.only(
-              //     bottom: 30,
-              //     end: lastMessageData.userName==15? 90:100,
-              //   ),
-              //   child: IconButton(
-              //     onPressed:(){},
-              //     icon:const Icon(Icons.close),
-              //     color: Colour('#505050'),
-              //     iconSize: 20,
-              //   ),
-              // ),
             ],
           ),
         ),
