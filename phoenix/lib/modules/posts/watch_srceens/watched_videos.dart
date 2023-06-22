@@ -15,8 +15,8 @@ class WatchVideos extends StatefulWidget {
 class _WatchVideosState extends State<WatchVideos> {
   List<PostData> videos=[
     PostData(
-      'assets/images/s1.jpg',
-      'Ali Mahros',
+      'assets/images/s4.jpg',
+      'Mohamed Mahros',
       '10 Oct . 2022',
       'assets/images/v1.jpg',
       60 ,
@@ -24,7 +24,7 @@ class _WatchVideosState extends State<WatchVideos> {
       '',
     ),
     PostData(
-      'assets/images/s1.jpg',
+      'assets/images/s6.jpg',
       'Ali Emam',
       '10 Oct . 2022',
       'assets/images/v2.jpg',
@@ -33,8 +33,8 @@ class _WatchVideosState extends State<WatchVideos> {
       '',
     ),
     PostData(
-      'assets/images/s1.jpg',
-      'Ahmed Mahdy',
+      'assets/images/s5.jpg',
+      'Mazen Ali',
       '10 Oct . 2022',
       'assets/images/v3.jpg',
       90 ,

@@ -200,7 +200,7 @@ Widget postVideos(PostData postData,BuildContext context){
               ],
             ),
             SizedBox(
-              width:MediaQuery.of(context).size.width*0.3,
+              width:MediaQuery.of(context).size.width*0.28,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,

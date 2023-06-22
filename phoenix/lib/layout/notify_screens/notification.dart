@@ -12,43 +12,43 @@ class Notify extends StatefulWidget {
 class _NotifyState extends State<Notify> {
   List<NotifyData> notifies=[
     NotifyData(
-      'assets/images/s1.jpg',
-      'Ahmed Mahdy',
+      'assets/images/s7.jpg',
+      'Marwan Ahmed',
       ' liked your post basics of\nmarketing',
       '4 hours',
     ),
     NotifyData(
-      'assets/images/s1.jpg',
+      'assets/images/s9.jpg',
       'Noah Alaa',
       ' mentioned you in a comment',
       '10 hours',
     ),
     NotifyData(
-      'assets/images/s1.jpg',
+      'assets/images/r1.jpg',
       'Sally Alaa',
       ' sent you a friend request',
       'Yesterday at 5:55 PM',
     ),
     NotifyData(
-      'assets/images/s1.jpg',
-      'Ahmed Mahdy',
+      'assets/images/s8.jpg',
+      'Ramiz Mahmoud',
       ' commented on your post',
       'Fri at 6:34 PM',
     ),
     NotifyData(
-      'assets/images/s1.jpg',
+      'assets/images/s10.jpg',
       'Ali Maghraby',
       ' liked your post basics of\nmarketing',
       'Fri at 3:38 PM',
     ),
     NotifyData(
-      'assets/images/s1.jpg',
+      'assets/images/s11.jpg',
       'Emam Ali',
       ' sent you a friend request',
       'Thu at 3:38 PM',
     ),
     NotifyData(
-      'assets/images/s1.jpg',
+      'assets/images/s12.jpg',
       'An admin',
       ' mentioned you in a comment\nin Medical calc',
       'Thu at 3:28 PM',

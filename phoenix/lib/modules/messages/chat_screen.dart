@@ -9,7 +9,7 @@ import 'package:phoenix/models/messagedata_model.dart';
 import 'package:phoenix/modules/messages/receive_screen.dart';
 import 'package:phoenix/modules/messages/sender_screen.dart';
 import 'package:phoenix/modules/messages/videocall_screen.dart';
-import 'package:phoenix/widgets/message.dart';
+
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
 

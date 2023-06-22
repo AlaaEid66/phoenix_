@@ -27,9 +27,9 @@ class _HomePageState extends State<HomePage> {
 
   List<PostData> post=[
     PostData(
-        'assets/images/s1.jpg',
+        'assets/images/s2.jpg',
         'Ali Magdy',
-        '10 Oct . 2022',
+        '10 June. 2023',
         'The second degree of burns should be treated\nas soon as possible to reduce the risk of\ninfection and scarring.',
         100,
         450,
@@ -38,9 +38,9 @@ class _HomePageState extends State<HomePage> {
   ];
   List<PostData> posts=[
     PostData(
-        'assets/images/s1.jpg',
+        'assets/images/s3.jpg',
         'Ahmed Mahdy',
-        '10 Oct . 2022',
+        '20 June . 2023',
         'assets/images/first-aid.jpg',
         100,
        50,

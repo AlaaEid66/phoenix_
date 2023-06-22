@@ -21,13 +21,13 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   List<PostDataProfile> profilePage=[
     PostDataProfile(
-        'assets/images/s1.jpg',
+        'assets/images/user.jpg',
         'Noah Talb'
     )
   ];
   List<PostData> post=[
     PostData(
-        'assets/images/s1.jpg',
+        'assets/images/user.jpg',
         'Noah Talb',
         '10 Oct . 2022',
         'The second degree of burns should be treated\nas soon as possible to reduce the risk of\ninfection and scarring.',
@@ -38,7 +38,7 @@ class _ProfileState extends State<Profile> {
   ];
   List<PostData> posts=[
     PostData(
-        'assets/images/s1.jpg',
+        'assets/images/user.jpg',
         'Noah Talb',
         '10 Oct . 2022',
         'assets/images/first-aid.jpg',
