@@ -60,6 +60,12 @@ class _DoctorsState extends State<Doctors> {
       'Nour Ali',
       'Therapist',
     ),
+    DoctorsDataProfile(
+      4,
+      'assets/images/d10.jpg',
+      'Lamis Nour',
+      'Therapist',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -157,7 +163,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[5], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -227,7 +233,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[7], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -297,7 +303,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[6], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -367,7 +373,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[5], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -437,7 +443,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[8], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,

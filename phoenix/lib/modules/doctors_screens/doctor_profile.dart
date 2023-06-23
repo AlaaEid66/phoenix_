@@ -30,11 +30,11 @@ class _DoctorPageState extends State<DoctorPage>
   }
   List<DoctorsDataPage> doctorPage=[
     DoctorsDataPage(
-      2.4,
+      3.3,
       'assets/images/d1.jpg',
-      'Haya Noah',
-      'Dermatologist',
-      'haya11@gmail.com',
+      'Aya Akram',
+      'Therapist',
+      'ayaA11@gmail.com',
       564235298,
     ),
   ];
