@@ -11,7 +11,7 @@ class AboutDoctor extends StatefulWidget {
 class _AboutDoctorState extends State<AboutDoctor> {
   List<DoctorsDetails> doctorExperience=[
     DoctorsDetails(
-      3 ,
+      3,
       4,
       'Sheraton,Hilopolice,Nile avon,el sheikh Zayed hospital',
 

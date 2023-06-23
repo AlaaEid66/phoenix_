@@ -11,7 +11,7 @@ class MyFriends extends StatefulWidget {
 }
 
 class _MyFriendsState extends State<MyFriends> {
-  double totalNumberOfFriends= 1.233;
+  double totalNumberOfFriends= 20;
   List<FriendsData> youFriendsList=[
     FriendsData(
       'assets/images/s1.jpg',

@@ -66,6 +66,12 @@ class _DoctorsState extends State<Doctors> {
       'Lamis Nour',
       'Therapist',
     ),
+    DoctorsDataProfile(
+      3.2,
+      'assets/images/d9.jpg',
+      'Nour Nader',
+      'Therapist',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -373,7 +379,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[5], context),
+                          doctorProfile(doctors[9], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -470,6 +476,9 @@ class _DoctorsState extends State<Doctors> {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 55,
               ),
             ],
           ),
