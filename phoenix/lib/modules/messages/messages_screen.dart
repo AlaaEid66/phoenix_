@@ -16,7 +16,7 @@ class Messages extends StatefulWidget {
 class _MessagesState extends State<Messages> {
   List<OnlineUserData> onlineUsers=[
     OnlineUserData(
-      'assets/images/s1.jpg',
+      'assets/images/s2.jpg',
       '',
       true,
     ),

@@ -56,529 +56,531 @@ class _MyFriendsState extends State<MyFriends> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 270,
-          ),
-          child: Text(
-            '(20)',
-            style: TextStyle(
-              color: Colour('#505050'),
-              fontFamily: 'Segoe UI',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 270,
+            ),
+            child: Text(
+              '(20)',
+              style: TextStyle(
+                color: Colour('#505050'),
+                fontFamily: 'Segoe UI',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[0], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[0], context),
+                const SizedBox(
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[1], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
-                ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 8,
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[2], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[1], context),
+                const SizedBox(
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[3], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
-                ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 8,
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[4], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[2], context),
+                const SizedBox(
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[5], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
-                ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 8,
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[6], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[3], context),
+                const SizedBox(
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[7], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
-                ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 8,
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[8], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[4], context),
+                const SizedBox(
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[9], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
-                ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 8,
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Card(
-          elevation: 0,
-          child:Column(
-            children: [
-              friends(youFriendsList[7], context),
-              const SizedBox(
-                height: 1,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 60,
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[5], context),
+                const SizedBox(
+                  height: 1,
                 ),
-                child: Row(
-                  children: [
-                    defButton(
-                        pressed:(){},
-                        backgroundColor: Colour('#008894'),
-                        text: 'Confirm',
-                        textColor: Colour('#FFFFFF'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    defButton(
-                        backgroundColor: Colour('#EFEFEF'),
-                        pressed:(){},
-                        text: 'Delete',
-                        textColor: Colour('#5B5E60'),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14,
-                        width: 120,
-                        height: 32
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-      ],
+          const SizedBox(
+            height: 8,
+          ),
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[6], context),
+                const SizedBox(
+                  height: 1,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[7], context),
+                const SizedBox(
+                  height: 1,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[8], context),
+                const SizedBox(
+                  height: 1,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[9], context),
+                const SizedBox(
+                  height: 1,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Card(
+            elevation: 0,
+            child:Column(
+              children: [
+                friends(youFriendsList[7], context),
+                const SizedBox(
+                  height: 1,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60,
+                  ),
+                  child: Row(
+                    children: [
+                      defButton(
+                          pressed:(){},
+                          backgroundColor: Colour('#008894'),
+                          text: 'Confirm',
+                          textColor: Colour('#FFFFFF'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      defButton(
+                          backgroundColor: Colour('#EFEFEF'),
+                          pressed:(){},
+                          text: 'Delete',
+                          textColor: Colour('#5B5E60'),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                          width: 120,
+                          height: 32
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+        ],
+      ),
     );
   }
 }
