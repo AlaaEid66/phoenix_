@@ -39,8 +39,8 @@ class _HomePageState extends State<HomePage> {
   List<PostData> posts=[
     PostData(
         'assets/images/s3.jpg',
-        'Ahmed Mahdy',
-        '20 June . 2023',
+        'Seif Ali',
+        '20 Jun.2023',
         'assets/images/first-aid.jpg',
         100,
        50,

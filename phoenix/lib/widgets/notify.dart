@@ -80,15 +80,15 @@ Widget notifyLikeNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                 SizedBox(
-                    width: MediaQuery.of(context).size.width*0.096,
-                  ),
-                  IconButton(
-                      onPressed:(){},
-                      icon:const Icon(Icons.close),
-                    color: Colour('#505050'),
-                    iconSize: 20,
-                  ),
+                 // SizedBox(
+                 //    width: MediaQuery.of(context).size.width*0.096,
+                 //  ),
+                 //  IconButton(
+                 //      onPressed:(){},
+                 //      icon:const Icon(Icons.close),
+                 //    color: Colour('#505050'),
+                 //    iconSize: 20,
+                 //  ),
                 ],
               ),
             ],
@@ -189,15 +189,15 @@ Widget notifyCommentNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    width: 27,
-                  ),
-                  IconButton(
-                    onPressed:(){},
-                    icon:const Icon(Icons.close),
-                    color: Colour('#505050'),
-                    iconSize: 20,
-                  ),
+                  // const SizedBox(
+                  //   width: 27,
+                  // ),
+                  // IconButton(
+                  //   onPressed:(){},
+                  //   icon:const Icon(Icons.close),
+                  //   color: Colour('#505050'),
+                  //   iconSize: 20,
+                  // ),
                 ],
               ),
             ],
@@ -305,15 +305,15 @@ Widget notifyAddFriendNew(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width*0.16,
-                  ),
-                  IconButton(
-                    onPressed:(){},
-                    icon:const Icon(Icons.close),
-                    color: Colour('#505050'),
-                    iconSize: 20,
-                  ),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width*0.16,
+                  // ),
+                  // IconButton(
+                  //   onPressed:(){},
+                  //   icon:const Icon(Icons.close),
+                  //   color: Colour('#505050'),
+                  //   iconSize: 20,
+                  // ),
                 ],
               ),
             ],
@@ -417,15 +417,15 @@ Widget notifyLikeEarlier(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  const  SizedBox(
-                    width: 35,
-                  ),
-                  IconButton(
-                    onPressed:(){},
-                    icon:const Icon(Icons.close),
-                    color: Colour('#505050'),
-                    iconSize: 20,
-                  ),
+                  // const  SizedBox(
+                  //   width: 35,
+                  // ),
+                  // IconButton(
+                  //   onPressed:(){},
+                  //   icon:const Icon(Icons.close),
+                  //   color: Colour('#505050'),
+                  //   iconSize: 20,
+                  // ),
                 ],
               ),
             ],
@@ -527,15 +527,15 @@ Widget notifyCommentEarlier(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  const  SizedBox(
-                    width: 30,
-                  ),
-                  IconButton(
-                    onPressed:(){},
-                    icon:const Icon(Icons.close),
-                    color: Colour('#505050'),
-                    iconSize: 20,
-                  ),
+                  // const  SizedBox(
+                  //   width: 30,
+                  // ),
+                  // IconButton(
+                  //   onPressed:(){},
+                  //   icon:const Icon(Icons.close),
+                  //   color: Colour('#505050'),
+                  //   iconSize: 20,
+                  // ),
                 ],
               ),
             ],
@@ -642,15 +642,15 @@ Widget notifyAddFriendEarlier(NotifyData notifyData,BuildContext context){
                       ],
                     ),
                   ),
-                  const  SizedBox(
-                    width: 60,
-                  ),
-                  IconButton(
-                    onPressed:(){},
-                    icon:const Icon(Icons.close),
-                    color: Colour('#505050'),
-                    iconSize: 20,
-                  ),
+                  // const  SizedBox(
+                  //   width: 60,
+                  // ),
+                  // IconButton(
+                  //   onPressed:(){},
+                  //   icon:const Icon(Icons.close),
+                  //   color: Colour('#505050'),
+                  //   iconSize: 20,
+                  // ),
                 ],
               ),
             ],

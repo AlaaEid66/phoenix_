@@ -35,7 +35,7 @@ Widget postWritten(PostData postData,BuildContext context){
               ],
             ),
             SizedBox(
-              width:MediaQuery.of(context).size.width*0.3,
+              width:MediaQuery.of(context).size.width*0.29,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -194,7 +194,7 @@ Widget postVideos(PostData postData,BuildContext context){
               children: [
                 Text('${postData.postUserName}'),
                 SizedBox(
-                  height:MediaQuery.of(context).size.height*0.0001,
+                  height:MediaQuery.of(context).size.height*0.01,
                 ),
                 Text('${postData.postDate}'),
               ],
@@ -205,16 +205,11 @@ Widget postVideos(PostData postData,BuildContext context){
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left:12,
-                  ),
-                  child: IconButton(
-                    onPressed:(){},
-                    color: Colour('#505050'),
-                    icon:  const Icon(Icons.more_horiz),
-                    iconSize: 24,
-                  ),
+                IconButton(
+                  onPressed:(){},
+                  color: Colour('#505050'),
+                  icon:  const Icon(Icons.more_horiz),
+                  iconSize: 20,
                 ),
                 IconButton(
                   iconSize: 20,

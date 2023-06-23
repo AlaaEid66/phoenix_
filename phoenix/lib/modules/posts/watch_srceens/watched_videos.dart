@@ -16,7 +16,7 @@ class _WatchVideosState extends State<WatchVideos> {
   List<PostData> videos=[
     PostData(
       'assets/images/s4.jpg',
-      'Mohamed Mahros',
+      'Mohamed Ali',
       '10 Oct . 2022',
       'assets/images/v1.jpg',
       60 ,
