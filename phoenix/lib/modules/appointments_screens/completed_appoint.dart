@@ -13,8 +13,13 @@ class Completed extends StatefulWidget {
 class _CompletedState extends State<Completed> {
   List<DoctorsData> doctorAppoint=[
     DoctorsData(
-      'assets/images/d1.jpg',
-      'Aya Akram',
+      'assets/images/d2.jpg',
+      'Hania Emad',
+      'Therapist',
+    ),
+    DoctorsData(
+      'assets/images/d3.jpg',
+      'Laila Ahmed',
       'Therapist',
     ),
   ];
@@ -175,7 +180,7 @@ class _CompletedState extends State<Completed> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    doctor(doctorAppoint[0], context),
+                    doctor(doctorAppoint[1], context),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,

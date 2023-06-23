@@ -14,8 +14,13 @@ class Canceled extends StatefulWidget {
 class _CanceledState extends State<Canceled> {
   List<DoctorsData> doctorAppoint=[
     DoctorsData(
+      'assets/images/d4.jpg',
+      'Logy Amr',
+      'Therapist',
+    ),
+    DoctorsData(
       'assets/images/d1.jpg',
-      'Aya Akram',
+      'Karim Ahmed',
       'Therapist',
     ),
   ];
@@ -182,7 +187,7 @@ class _CanceledState extends State<Canceled> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    doctor(doctorAppoint[0], context),
+                    doctor(doctorAppoint[1], context),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
