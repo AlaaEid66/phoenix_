@@ -13,7 +13,7 @@ class SharePosts extends StatefulWidget {
 class _SharePostsState extends State<SharePosts> {
   List<PostDataProfile> write=[
     PostDataProfile(
-        'assets/images/s1.jpg',
+        'assets/images/user.jpg',
         'Noah'
     )
   ];

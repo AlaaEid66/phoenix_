@@ -22,7 +22,7 @@ Widget doctor(DoctorsData doctorsData,BuildContext context){
             ),
             Padding(
               padding: const EdgeInsetsDirectional.only(
-                end: 40,
+                end: 30,
                 bottom: 50,
               ),
               child: Column(
@@ -41,7 +41,7 @@ Widget doctor(DoctorsData doctorsData,BuildContext context){
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.only(
-                      end: 22
+                      end: 18
                     ),
                     child: Text('${doctorsData.doctorDesc}',
                       style: TextStyle(
@@ -62,7 +62,7 @@ Widget doctor(DoctorsData doctorsData,BuildContext context){
               ),
               child: IconButton(
                   onPressed:(){},
-                  icon:Icon(Icons.more_vert),
+                  icon:const Icon(Icons.more_vert),
                 color: Colour('#5B5E60'),
               ),
             ),

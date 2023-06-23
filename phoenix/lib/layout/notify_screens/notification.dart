@@ -48,7 +48,7 @@ class _NotifyState extends State<Notify> {
       'Thu at 3:38 PM',
     ),
     NotifyData(
-      'assets/images/s12.jpg',
+      'assets/images/s12.png',
       'An admin',
       ' mentioned you in a comment\nin Medical calc',
       'Thu at 3:28 PM',

@@ -19,8 +19,8 @@ class _CanceledState extends State<Canceled> {
       'Therapist',
     ),
     DoctorsData(
-      'assets/images/d1.jpg',
-      'Karim Ahmed',
+      'assets/images/d5.jpg',
+      'Karim Ali',
       'Therapist',
     ),
   ];

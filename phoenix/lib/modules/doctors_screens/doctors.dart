@@ -18,6 +18,48 @@ class _DoctorsState extends State<Doctors> {
       'Aya Akram',
       'Therapist',
     ),
+    DoctorsDataProfile(
+      3.9,
+      'assets/images/d2.jpg',
+      'Hania Emad',
+      'Therapist',
+    ),
+    DoctorsDataProfile(
+      3.7,
+      'assets/images/d3.jpg',
+      'Laila Ahmed',
+      'Therapist',
+    ),
+    DoctorsDataProfile(
+      3.2,
+      'assets/images/d4.jpg',
+      'Logy Amr',
+      'Therapist',
+    ),
+    DoctorsDataProfile(
+      4,
+      'assets/images/d5.jpg',
+      'Karim Ali',
+      'Therapist',
+    ),
+    DoctorsDataProfile(
+      3.8,
+      'assets/images/d6.jpg',
+      'Loay Amr',
+      'Therapist',
+    ),
+    DoctorsDataProfile(
+      3.5,
+      'assets/images/d7.jpg',
+      'Haya Noah',
+      'Therapist',
+    ),
+    DoctorsDataProfile(
+      3.1,
+      'assets/images/d8.jpg',
+      'Nour Ali',
+      'Therapist',
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -155,7 +197,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[1], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -225,7 +267,7 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
-                          doctorProfile(doctors[0], context),
+                          doctorProfile(doctors[2], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,
@@ -295,7 +337,77 @@ class _DoctorsState extends State<Doctors> {
                       color: Colour('#FFFFFF'),
                       child: Column(
                         children: [
+                          doctorProfile(doctors[3], context),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 4,
+                              right:8,
+                              left: 8,
+                            ),
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:MaterialStateColor.resolveWith((states) =>Colour('#008894')),
+                              ),
+                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const DoctorPage())),
+                              child: Text('Book appointment',
+                                style: TextStyle(
+                                  color: Colour('#FFFFFF'),
+                                  fontFamily: 'Segoe UI',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Card(
+                      borderOnForeground: true,
+                      color: Colour('#FFFFFF'),
+                      child: Column(
+                        children: [
                           doctorProfile(doctors[0], context),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 4,
+                              right:8,
+                              left: 8,
+                            ),
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:MaterialStateColor.resolveWith((states) =>Colour('#008894')),
+                              ),
+                              onPressed:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const DoctorPage())),
+                              child: Text('Book appointment',
+                                style: TextStyle(
+                                  color: Colour('#FFFFFF'),
+                                  fontFamily: 'Segoe UI',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 24,
+                  left: 20,
+                ),
+                child: Row(
+                  children: [
+                    Card(
+                      borderOnForeground: true,
+                      color: Colour('#FFFFFF'),
+                      child: Column(
+                        children: [
+                          doctorProfile(doctors[4], context),
                           Padding(
                             padding: const EdgeInsets.only(
                               top: 4,

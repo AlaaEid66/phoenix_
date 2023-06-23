@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<PostDataProfile> profile=[
     PostDataProfile(
-        'assets/images/s1.jpg',
+        'assets/images/user.jpg',
         'Noah Talb'
     )
   ];

@@ -25,7 +25,7 @@ class _WritePostState extends State<WritePost> {
   }
   List<PostDataProfile> write=[
     PostDataProfile(
-      'assets/images/s1.jpg',
+      'assets/images/user.jpg',
       'Noah'
     )
   ];
