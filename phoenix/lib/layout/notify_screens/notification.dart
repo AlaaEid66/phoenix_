@@ -114,6 +114,9 @@ class _NotifyState extends State<Notify> {
               notifyLikeEarlier(notifies[4], context),
               notifyAddFriendEarlier(notifies[5], context),
               notifyCommentEarlier(notifies[6], context),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
